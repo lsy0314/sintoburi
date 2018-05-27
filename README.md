@@ -26,7 +26,7 @@
    C. What materials and hardware will be used for development?
       We will purchase the raspberry pie board, an affordable affordable embedded device for configuring the hardware environment. We will also integrate a raspberry board with a built-in 7-inch touchscreen monitor to show customers useful information. We will purchase a low cost motion sensor called PIR (Passive Infrared) to detect movement of users. In addition, we will purchase the sound devices necessary to play the audio files of the recorded store properly at the point of time when the market visitor's visit is sensed. These hardware costs, which are required to be retrieved from an internet site, can be purchased for a total of 60,000 won or less.
 
-   라. Etc
+   D. Etc
       In order to minimize the expense required to introduce the proposed system, we will find a way to actually construct the system using low - cost embedded devices.
     
  The OS for running a web application is free and open source, and Ubuntu, which is open to the world, is used to develop the software purchase cost in a way that it does not need. We will not choose Windows to develop our ideas so. Instead, they decided to adopt the free open source Linux-based Ubuntu OS.
