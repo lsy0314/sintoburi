@@ -8,15 +8,14 @@ We made Youtube video to introduce our proposal. This video will be played for 3
 
 
 # Design
+
+
+It is a team of Shintoism. Let me explain about helping the traditional market. Using our products in traditional markets, we can digitize traditional markets. This product is designed to activate and differentiate traditional markets in line with the fourth industrial revolution. And to develop IOT products that automatically promote market information to customers visiting the market.
+This product can be used only with mobile phone. The product screen shows discounts according to each hour. 
+
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=700 height=500> </img>
-It is a team of Shintoism. Let me explain about helping the traditional market.
-Using our products in traditional markets, we can digitize traditional markets.
-This product is designed to activate and differentiate traditional markets in line with the fourth industrial revolution.
-And to develop IOT products that automatically promote market information to customers visiting the market.
-This product can be used only with mobile phone. The product screen shows discounts according to each hour.
-Web programs for uploading php files require php and html.
-The raspberry pie board cost 50,000 won, and the OS uses the ubuntu OS which does not cost money.
-At the entrance of the market, a motion sensor called the pir sensor of the product detects customers and informs you of today's discounts.The ad monitor will notify you of the following events, such as "Please come tomorrow because there is a special event for tomorrow".The effect of this product is digitization of the market, automation of the promotion of the shop is possible, so there are regular customers, and the profit of the shop owners increases.Therefore, we can revitalize the traditional market.
+
+Web programs for uploading php files require php and html. The raspberry pie board cost 50,000 won, and the OS uses the ubuntu OS which does not cost money. At the entrance of the market, a motion sensor called the pir sensor of the product detects customers and informs you of today's discounts.The ad monitor will notify you of the following events, such as "Please come tomorrow because there is a special event for tomorrow".The effect of this product is digitization of the market, automation of the promotion of the shop is possible, so there are regular customers, and the profit of the shop owners increases.Therefore, we can revitalize the traditional market.
 
 # Participation motive
 In order to revitalize the traditional market, we are going to introduce a more modernized traditional market help system. Despite the fact that the current traditional market has a lot of delicious fruits compared to large-sized marts, it has not been able to effectively promote the information of the market to the customers of the market. I would like to develop a traditional market helper system that can solve these problems and make it possible to revitalize the traditional market which is losing market competitiveness.
