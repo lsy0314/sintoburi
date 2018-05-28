@@ -2,6 +2,8 @@
 It is to help sellers that have to earn money in the traditional market.<br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/onion.png width=100 height=100 border=0> </img>
 
+# Introduction
+* https://www.youtube.com/watch?v=r2Oou_AUoKo&feature=youtu.be
 
 # Design
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=700 height=500> </img>
