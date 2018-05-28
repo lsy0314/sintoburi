@@ -2,9 +2,7 @@
 It is to help sellers that have to earn money in the traditional market.
 
 # Design
-<img src=<img src=https://github.com/Limsuyoun/DeepLearningChatBot/blob/master/image/design.jpg border=0 width=600 height=400> </img>
-<br> border=0 width=600 height=400> </img>
-<br>
+<img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=600 height=400> </img>
 # Participation motive
 In order to revitalize the traditional market, we are going to introduce a more modernized traditional market help system. Despite the fact that the current traditional market has a lot of delicious fruits compared to large-sized marts, it has not been able to effectively promote the information of the market to the customers of the market. I would like to develop a traditional market helper system that can solve these problems and make it possible to revitalize the traditional market which is losing market competitiveness.
 
