@@ -1,5 +1,7 @@
 # What is Sintoburi?
 It is to help sellers that have to earn money in the traditional market.
+<img src=https://github.com/lsy0314/sintoburi/blob/master/images/onion.png width=200 height=200 border=0> </img>
+
 
 # Design
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=600 height=400> </img>
