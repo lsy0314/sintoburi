@@ -5,6 +5,8 @@ It is to help sellers that have to earn money in the traditional market.<br>
 # Proposal Video
 We made Youtube video to introduce our proposal. This video will be played for 3 minutes.
 * https://www.youtube.com/watch?v=r2Oou_AUoKo&feature=youtu.be
+[![Video Label](http://img.youtube.com/vi/r2Oou_AUoKo/0.jpg)](https://youtu.be/r2Oou_AUoKo?t=0s)
+
 
 # Design
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=700 height=500> </img>
