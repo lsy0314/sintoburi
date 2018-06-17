@@ -9,10 +9,10 @@ Market factors that impede the activation of traditional markets. And then draw 
 * http://www.수원남문시장.com/c/market8 (지동시장)
 * https://story.kakao.com/ch/9meatan (구매탄시장)
 
+# Introduction
 We made Youtube video to introduce our proposal. This video will be played for 3 minutes.
-[![Video Label](http://img.youtube.com/vi/r2Oou_AUoKo/0.jpg)](https://youtu.be/r2Oou_AUoKo?t=0s)
-
-
+* [https://youtu.be/r2Oou_AUoKo?t=0s](https://youtu.be/r2Oou_AUoKo?t=0s)
+ 
 
 # Design
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=700 height=500> </img>
