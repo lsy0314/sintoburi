@@ -47,4 +47,4 @@ In order to minimize the expense required to introduce the proposed system, we w
 * (In progress)
 
 # Team members
-Lim Hyun-jun is responsible for the hardware development area. Lim Soo-yeon is responsible for software development. In order to effectively share opinions and communicate smoothly, the development site, which is responsible for each of them, must be defective at the end. Through the recent popular github.com development hosting site, it is possible to share the progress of each development role in real time, We plan to increase the completeness of the works by collaborating.
+**Lim Hyun-jun** is responsible for the hardware development area. **Lim Soo-yeon** is responsible for software development such as web application. In order to effectively share opinions and communicate smoothly, the development site, which is responsible for each of them, must be defective at the end. Through the recent popular github.com development hosting site, it is possible to share the progress of each development role in real time, We plan to increase the completeness of the works by collaborating.
