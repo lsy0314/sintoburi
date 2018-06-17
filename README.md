@@ -16,7 +16,7 @@ We made Youtube video to introduce our proposal. This video will be played for 3
  
 
 # Design
-<img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=0 width=700 height=500> </img>
+<img src=https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG border=1 width=600 height=400> </img>
 
 It is a team of Shintoism. Let me explain about helping the traditional market. Using our products in traditional markets, we can digitize traditional markets. This product is designed to activate and differentiate traditional markets in line with the fourth industrial revolution. And to develop IOT products that automatically promote market information to customers visiting the market.
 This product can be used only with mobile phone. The product screen shows discounts according to each hour. 
