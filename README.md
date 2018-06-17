@@ -1,5 +1,5 @@
 # What is Sintoburi?
-Our project is to help sellers that have to earn money in the traditional market by introducing embedded software.
+Our project is to help sellers that have to earn money in the traditional market by introducing embedded software. **Sintoburi** means that the body and the land where one is born are one, not two. It means that the things that came from the land where you were born are better suited to your body.
 <br><br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/onion.png width=100 height=100 border=0> </img>
 
