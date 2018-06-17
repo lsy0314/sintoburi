@@ -40,6 +40,11 @@ We will purchase the raspberry pie board, an affordable affordable embedded devi
 ## What do we have to consider in advance before starting this project?
 In order to minimize the expense required to introduce the proposed system, we will find a way to actually construct the system using low - cost embedded devices.The OS for running a web application is free and open source, and Ubuntu, which is open to the world, is used to develop the software purchase cost in a way that it does not need. We will not choose Windows to develop our ideas so. Instead, they decided to adopt the free open source Linux-based Ubuntu OS. At this time, the way to mount the Ubuntu OS on the embedded board called Raspberry Pie will proceed to prepare the basic hardware configuration works to operate using the SD card.
 
+# How to install
+* (In progress)
+
+# Demo
+* (In progress)
 
 # Team members
 Lim Hyun-jun is responsible for the hardware development area. Lim Soo-yeon is responsible for software development. In order to effectively share opinions and communicate smoothly, the development site, which is responsible for each of them, must be defective at the end. Through the recent popular github.com development hosting site, it is possible to share the progress of each development role in real time, We plan to increase the completeness of the works by collaborating.
