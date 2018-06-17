@@ -1,5 +1,5 @@
 # What is Sintoburi?
-It is to help sellers that have to earn money in the traditional market.<br>
+Our project is to help sellers that have to earn money in the traditional market by introducing embedded software.<br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/onion.png width=100 height=100 border=0> </img>
 
 # Background
