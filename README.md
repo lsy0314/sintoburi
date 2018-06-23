@@ -1,7 +1,7 @@
 # What is Sintoburi?
 Our project is to help sellers that have to earn money in the traditional market by introducing embedded software. **Sintoburi** means that the body and the land where one is born are one, not two. It means that the things that came from the land where you were born are better suited to your body.
 <br><br>
-<img src=https://github.com/lsy0314/sintoburi/blob/master/images/onion.png width=100 height=100 border=0> </img>
+<img src=https://github.com/lsy0314/sintoburi/blob/master/images/carrot.png width=100 height=100 border=0> </img>
 
 # Background
 In order to revitalize the traditional market, we are going to introduce a more modernized traditional market help system. Despite the fact that the current traditional market has a lot of delicious fruits compared to large-sized marts, it has not been able to effectively promote the information of the market to the customers of the market. I would like to develop a traditional market helper system that can solve these problems and make it possible to revitalize the traditional market which is losing market competitiveness. 
