@@ -12,7 +12,7 @@ Market factors that impede the activation of traditional markets. And then draw 
 
 # Introduction
 We made Youtube video to introduce our proposal. This video will be played for 3 minutes.
-* [https://youtu.be/r2Oou_AUoKo?t=0s](https://youtu.be/r2Oou_AUoKo?t=0s)
+* Press [HERE](https://youtu.be/r2Oou_AUoKo?t=0s) to watch our Youtube Video (3minutes)
  
 
 # Design
