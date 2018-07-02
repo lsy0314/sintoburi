@@ -1,24 +1,37 @@
 <?php
+// @Author: Hyunjoon Lim, Suyeon Lim
+// @Title: File uploading software
+// @Date: Jul-03-2018
+// @License: Star License
+// @Description: This webpage is to upload files.
+// @reference:
+//  http://offbyone.tistory.com/279
+
+// uplading folder
+$save_dir = "./data/";
+
 if(isset($_POST['submit'])) {
-     $save_dir = "./data/";
-     //파일이 HTTP POST 방식을 통해 정상적으로 업로드되었는지 확인한다.
+     // Check if we can upload the file with HTTP POST method.
      if(is_uploaded_file($_FILES["upload_file"]["tmp_name"])){
           echo "업로드한 파일명 : " . $_FILES["upload_file"]["name"];
-          //파일을 저장할 디렉토리 및 파일명
+          // Define directorey and file name that we want to save
           $dest = $save_dir . $_FILES["upload_file"]["name"];
-          //파일을 지정한 디렉토리에 저장
+          // Save the file into specified directorey
+          echo "<br><br><br>";
           if(move_uploaded_file($_FILES["upload_file"]["tmp_name"], $dest))
-               echo "success";
+               echo "Okay. Uploading file is succeeded.<br>";
           else
-               die("fail2");
+               die("Oooops. Uploading file is failed.<br>");
      } else {
-          echo "fail1";
+          echo "Oooops. The file is not existed.<vbr>";
      }
+    echo "<a href=file-upload.html>Go to file-upload.html!!!</a><br>";
+
+    // dispaly uploade files in ./data/ folder.
+    echo "<br><br>";
+    echo "<li> File list</li>";
+    echo "<pre>";
+    $result=system("ls ./data/");
+    echo "</pre>";
 }
 ?>
-
-<form enctype="multipart/form-data" method="post"
-action="<?php echo $_SERVER['PHP_SELF']; ?>">
-     <input type="file" name="upload_file" /><br />
-     <input type="submit" value="upload" name="submit"/>
-</form>
