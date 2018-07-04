@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
      }
     echo "<a href=file-upload.html>Go to file-upload.html!!!</a><br>";
 
-    // display upload files in ./data/ folder from ls.
+    // display upload files in ./data/ folder.
     echo "<br><br>";
     echo "<li> File list</li>";
     echo "<pre>";
