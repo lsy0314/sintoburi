@@ -7,16 +7,16 @@
 // @reference:
 //  http://offbyone.tistory.com/279
 
-// uplading folder
+// uploading folder
 $save_dir = "./data/";
 
 if(isset($_POST['submit'])) {
      // Check if we can upload the file with HTTP POST method.
      if(is_uploaded_file($_FILES["upload_file"]["tmp_name"])){
           echo "업로드한 파일명 : " . $_FILES["upload_file"]["name"];
-          // Define directorey and file name that we want to save
+          // Define directory and file name that we want to save
           $dest = $save_dir . $_FILES["upload_file"]["name"];
-          // Save the file into specified directorey
+          // Save the file into specified directory
           echo "<br><br><br>";
           if(move_uploaded_file($_FILES["upload_file"]["tmp_name"], $dest))
                echo "Okay. Uploading file is succeeded.<br>";
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])) {
      }
     echo "<a href=file-upload.html>Go to file-upload.html!!!</a><br>";
 
-    // dispaly uploade files in ./data/ folder.
+    // display upload files in ./data/ folder.
     echo "<br><br>";
     echo "<li> File list</li>";
     echo "<pre>";
@@ -35,3 +35,4 @@ if(isset($_POST['submit'])) {
     echo "</pre>";
 }
 ?>
+
