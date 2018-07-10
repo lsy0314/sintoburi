@@ -22,19 +22,17 @@
 
 # 운영체제 설치하기
 
-* 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)*
-OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후 2) 우분투(마테버젼)을 다운로드 한다.
+* 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)
+   * OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후 2) 우분투(마테버젼)을 다운로드 한다.
 
 * 보관장소(OS): `D:\raspberrypi3\`
-보관장소(유틸리티): `\\192.168.219.2\work\scratch\정보올림피아드문제-공모전\raspberry-pi3-board-sw`
-
 
 * SD_CardFormatter0500SetupEN.exe 프로그램으로 micro SDcard를 포맷해야 한다.
-다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
+   * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
 
 
 * 그리고나서, win32diskimager-1.0.0-install.exe 프로그램으로 다운로드한 OS을 micro SDcard에 설치해야 한다.
-다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
+   * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
 
 
 # 와이파이 설정하기
