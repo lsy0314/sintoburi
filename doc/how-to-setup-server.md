@@ -7,7 +7,6 @@
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
 - [웹서버 설치하기](#웹서버-설치하기)
-- [날씨정보 습득프로그램 wttr설치](#날씨정보-습득프로그램-wttr설치)
 - [PHP 개발환경 설치](#php-개발환경-설치)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
@@ -122,44 +121,6 @@ User1 &nbsp; &nbsp; &nbsp; User2 &nbsp; &nbsp; &nbsp; User3
 오늘 수학숙제를 내는 날 입니다.<br>
 오늘은 고양이를 병원에 데려가는 날입니다.<br>
 5시에 수학학원을 가야 합니다.<br>
-```
-# 날씨정보 습득프로그램 wttr설치 
-
-예제)
-```bash
-firefox https://github.com/chubin/wttr.in
-curl http://wttr.in/:help
-curl  wttr.in/suwon?0
-curl wttr.in/suwon?n
-curl wttr.in/suwon?lang=ko
-wget wttr.in/suwon_0tqp_lang=suwon.png
-convert -resize 800x600 suwon.png suwon-big.png
-wget wttr.in/suwon_0tqp_lang=suwon.html
-wget wttr.in/suwon.png
-```
-
-예제)
-```bash
-firefox https://github.com/fcambus/ansiweather
-sudo apt-get install ansiweatherr
-ansiweather -l London,GB -f 3
-London forecast => Sat Jan 13: 7/2 °C ☔ - Sun Jan 14: 4/1 °C ☔ - Mon Jan 15: 9/6 °C ☔
-```
-
-예제)
-```bash
-firefox https://weather.com/weather/hourbyhour/l/USIL0074
-```
-
-
-예제)
-```bash
-$ cat ./weather.sh
-#!/bin/bash
-weather(){ curl -s "http://api.wunderground.com/auto/wui/geo/ForecastXML/index.xml?query=${@:-<YOURZIPORLOCATION>}"|perl -ne '/<title>([^<]+)/&&printf "%s: ",$1;/<fcttext>([^<]+)/&&print $1,"\n"';}
-weather $1
-
-$ bash weather.sh  suwon
 ```
 
 
