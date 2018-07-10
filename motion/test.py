@@ -12,25 +12,31 @@ audio_file3 = "201808011749_shop3.wma"
 audio_file4 = "201808011752_shop4.wma"
 audio_file5 = "201808011807_shop5.wma"
 
-print "[DEBUG] Starting..."   
 
+# we fetch date/time with number only from file name.
+# The number 12 means date/time such as 201808011710.
+audio_time_file1 = int(audio_file1[:12])
+
+print "[DEBUG] Starting..."
 print "[DEBUG] ---------------------------------"
+
+# we cut last number from original time
 # https://stackoverflow.com/questions/6677332/using-f-with-strftime-in-python-to-get-microseconds
-current_time_ori = "201808011716"
-# TODO: we ahve to cut last number
-current_time_cut = 201808011710
-# current_time = time.strftime("%Y%m%d%H%M")
-print "[DEBUG] Current time is: %s" % current_time_ori
+current_time = int(time.strftime("%Y%m%d%H%M"))
+#current_time = (current_time / 10) *10
+current_time = 201808011730
 
+print "[DEBUG] audio_time %s, current time %d" % (audio_time_file1 , current_time)
 print "[DEBUG] ---------------------------------"
-# TODO: check if a audio file at specified curretn_time, let's play audio file
-audio_file1_time = 201808011710
 
-# the time value has to get number between 0 and 9 minutes
-if (audio_file1_time >= current_time_cut and audio_file1_time <= current_time_cut+9):
+# check if an audio file at the current time, let's play audio file
+# the time has to get number between 0 and 9 minutes
+if (audio_time_file1 >= current_time and audio_time_file1 <= current_time+9):
     cmd = "mplayer " + folder + audio_file1
-    print "[DEBUG] Succeeded, command: %s" % cmd
+    print "[DEBUG] We found audio file."
+    print "[DEBUG] Succeeded, command: %s." % cmd
     os.system(cmd)
 else:
+    print "[DEBUG] we could not find audio file."
     print "[DEBUG] Failed, command."
    
