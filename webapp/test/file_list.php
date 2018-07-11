@@ -11,7 +11,7 @@
 <tr>
 	<th>시작 시각</th>
 	<th>상점명</th>
-	<th>음성</th>
+	<th>음성 </th>
 </tr>
 <?php
 $db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
