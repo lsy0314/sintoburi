@@ -3,10 +3,9 @@
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+<title>업로드 파일 목록</title>
 </head>
 <body>
-<h3>업로드 파일 목록</h3>
 <table border="1">
 <tr>
 	<th>시작 시각</th>
