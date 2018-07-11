@@ -9,9 +9,9 @@
 <h3>업로드 파일 목록</h3>
 <table border="1">
 <tr>
-	<th>파일 아이디</th>
-	<th>원래 파일명</th>
-	<th>저장된 파일명</th>
+	<th>시작 시각</th>
+	<th>상점명</th>
+	<th>음성</th>
 </tr>
 <?php
 $db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
