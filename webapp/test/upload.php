@@ -41,6 +41,7 @@ function formSubmit(f) {
 <label for="upfile">첨부파일</label>
 <input type="file" name="upfile" id="upfile" />
 </div>
+<br>
 <input type="submit" value="업로드" />
 </form>
 <a href="javascript:history.go(-1);">이전 페이지</a>

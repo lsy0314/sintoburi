@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
+$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sintoburi");
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
