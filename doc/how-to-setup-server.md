@@ -524,9 +524,10 @@ mysql -uwpuser -hlocalhost wpdb -p
 sudo apt-get install phpmyadmin
 sudo vi /etc/apache2/apache2.conf
 Include /etc/phpmyadmin/apache.conf
-
-( sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin)
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
 sudo /etc/init.d/apache2 restart
-firefox http://127.0.0.1/phpmyadmin
- Enter the user as root and your MySQL database password.
+
+firefox http://smartsecretary.mooo.com/phpmyadmin
+- user: root
+- pass: *****
 ```
