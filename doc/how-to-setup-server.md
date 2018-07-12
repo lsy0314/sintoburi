@@ -522,7 +522,7 @@ mysql -uwpuser -hlocalhost wpdb -p
 # phpMyAdmin 설치하기
 ```bash
 sudo apt-get install phpmyadmin
-sudo vi /etc/httpd2/apache2.conf
+sudo vi /etc/apache2/apache2.conf
 Include /etc/phpmyadmin/apache.conf
 
 ( sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin)
