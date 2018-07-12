@@ -485,3 +485,47 @@ ssid 는 와이파이 이름, psk 는 비밀번호에 해당하는 변수 같은
 
 와이파이와 연결이 되었다면 ifconfig wlan0 명령을 통해 확인할 수 있습니다. 
 연결이 되지 않았다면 sudo reboot 명령을 통해 재부팅을 해봅니다.
+
+
+
+
+# MySQL 데이타베이스 설치하기
+
+install mysql-server and mysql-client
+```bash
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install mysql-server 
+sudo apt-get install mysql-client php5-mysql
+mysql -uroot -p
+status;
+```
+
+replace password with the password you want
+```bash
+DROP USER 'root'@'localhost';
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
+mysql --user=root --password=your-mysql-password
+```
+
+Create a new user and database for WordPress
+```bash
+CREATE DATABASE wpdb;
+CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password_here';
+GRANT ALL PRIVILEGES ON wpdb.* TO 'wpuser'@'localhost';
+FLUSH PRIVILEGES;
+mysql -uwpuser -hlocalhost wpdb -p
+```
+
+
+# phpMyAdmin 설치하기
+```bash
+sudo apt-get install phpmyadmin
+sudo vi /etc/httpd2/apache2.conf
+Include /etc/phpmyadmin/apache.conf
+
+( sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin)
+sudo /etc/init.d/apache2 restart
+firefox http://127.0.0.1/phpmyadmin
+ Enter the user as root and your MySQL database password.
+```
