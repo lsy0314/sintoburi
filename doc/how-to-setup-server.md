@@ -16,8 +16,8 @@
 - [이메일 발송하기](#이메일-발송하기)
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
-- [MySQL 데이타베이스 설치하기](#MySQL-데이타베이스-설치하기)
-- [phpMyAdmin 설치하기](#phpMyAdmin-설치하기)
+- [MySQL 데이타베이스 설치하기](#mysql-데이타베이스-설치하기)
+- [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 
 
 # 운영체제 설치하기
