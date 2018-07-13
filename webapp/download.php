@@ -2,7 +2,7 @@
 $file_id = $_REQUEST['file_id'];
 
 //$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sintoburi");
+$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 $query = "SELECT file_id, name_orig, name_save FROM upload_file WHERE file_id = ?";
 $stmt = mysqli_prepare($db_conn, $query);
 

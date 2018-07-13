@@ -6,15 +6,15 @@
 </head>
 <body>
 <?php
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sintoburi");
+$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
-    $upload_directory = 'data/';
-    $ext_str = "hwp,xls,doc,xlsx,docx,pdf,jpg,gif,png,txt,ppt,pptx";
+    $upload_directory = 'audio/';
+    $ext_str = "wav,wma,mp3,mp4";
     $allowed_extensions = explode(',', $ext_str);
     
-    $max_file_size = 5242880;
+    $max_file_size = 5242880; # Maximum file upload is 5 Mbytes
     $ext = substr($file['name'], strrpos($file['name'], '.') + 1);
     
     // 확장자 체크

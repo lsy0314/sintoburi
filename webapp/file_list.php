@@ -3,10 +3,10 @@
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>업로드 파일 목록</title>
+<title>업로드 오디오 파일 목록</title>
 </head>
 <body>
-<h3>음성 파일 업로드 화면</h3>
+<font size=5 color=blue>음성 파일 리스트 화면</font>
 <table border="1">
 <tr>
 	<th>시작 시각</th>
@@ -15,7 +15,7 @@
 </tr>
 <?php
 //$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sintoburi");
+$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 $query = "SELECT file_id, name_orig, name_save FROM upload_file ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);

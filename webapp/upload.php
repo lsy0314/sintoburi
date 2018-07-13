@@ -4,7 +4,7 @@
 <title>파일 업로드</title>
 <script type="text/javascript">
 function formSubmit(f) {
-	var extArray = new Array('hwp','xls','doc','xlsx','docx','pdf','jpg','gif','png','txt','ppt','pptx');
+	var extArray = new Array('wav','wma','mp3','mp4');
 	var path = document.getElementById("upfile").value;
 	if(path == "") {
 		alert("파일을 선택해 주세요.");
@@ -38,12 +38,16 @@ function formSubmit(f) {
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
-<label for="upfile">첨부파일</label>
+<br><br>
+<font size=5 Color=blue> 음성 파일 업로드 화면</font>
+<br><br><br>
+<label for="upfile">Attachment (x.wma):</label>
 <input type="file" name="upfile" id="upfile" />
 </div>
 <br>
-<input type="submit" value="업로드" />
+Upload Audio File:<input type="submit" value="Upload" />
 </form>
-<a href="javascript:history.go(-1);">이전 페이지</a>
+<br><br>
+<a href="javascript:history.go(-1);">이전 페이지로 이동하기</a>
 </body>
 </html>
