@@ -8,10 +8,14 @@
 <body>
 <font size=5 color=blue>음성 파일 리스트 화면</font>
 <table border="1">
-<tr>
+<tr bgcolor=yellow>
+	<th>삭제</th>
 	<th>시작 시각</th>
 	<th>상점명</th>
 	<th>음성 내용</th>
+	<th>파일 ID</th>
+	<th>원래파일명</th>
+	<th>저장된파일명</th>
 </tr>
 <?php
 //$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
@@ -23,6 +27,10 @@ $result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
+  <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>>Remove</td>
+  <td> ... </td>
+  <td> ... </td>
+  <td> ... </td>
   <td><?= $row['file_id'] ?></td>
   <td><a href="download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
