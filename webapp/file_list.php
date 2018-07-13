@@ -27,7 +27,7 @@ $result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
-  <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>>Remove</td>
+  <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
   <td> ... </td>
   <td> ... </td>
   <td> ... </td>
