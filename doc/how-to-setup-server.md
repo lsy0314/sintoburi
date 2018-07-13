@@ -511,11 +511,11 @@ mysql -uroot -p
 
 Create a new user and database for sintoburidb
 ```bash
-CREATE DATABASE sbdb;
-CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'password_here';
-GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
+CREATE DATABASE sintoburidb;
+CREATE USER 'sintoburiuser'@'localhost' IDENTIFIED BY 'password_here';
+GRANT ALL PRIVILEGES ON sintoburidb.* TO 'sintoburiuser'@'localhost';
 FLUSH PRIVILEGES;
-mysql -usbuser -p sbdb
+mysql -usbuser -p sintoburidb
 ```
 
 Create a new table 'upload_file'.
