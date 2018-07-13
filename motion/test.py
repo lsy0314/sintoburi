@@ -14,7 +14,7 @@ import time
 
 
 # declare a directory to search audio files
-search_path="../webapp/sound/"
+search_path="./pir_sound/"
 
 # function to display audio files in a search_path
 # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
