@@ -501,23 +501,32 @@ mysql -uroot -p
 status;
 ```
 
-replace password with the password you want
+replace root password with the password you want
 ```bash
 DROP USER 'root'@'localhost';
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
-mysql --user=root --password=your-mysql-password
+mysql -uroot -p
 ```
 
-Create a new user and database for WordPress
+Create a new user and database for sintoburidb
 ```bash
-CREATE DATABASE wpdb;
-CREATE USER 'wpuser'@'localhost' IDENTIFIED BY 'password_here';
-GRANT ALL PRIVILEGES ON wpdb.* TO 'wpuser'@'localhost';
+CREATE DATABASE sbdb;
+CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'password_here';
+GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
-mysql -uwpuser -hlocalhost wpdb -p
+mysql -usbuser -p sbdb
 ```
 
+Create a new table 'upload_file'.
+```bash
+CREATE TABLE upload_file (
+  file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
+  name_orig VARCHAR(255),
+  name_save VARCHAR(255),
+  reg_time  TIMESTAMP NOT NULL
+);
+```
 
 # phpMyAdmin 설치하기
 ```bash
