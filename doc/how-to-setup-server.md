@@ -512,6 +512,8 @@ mysql -uroot -p
 Create a new user and database for sbdb
 ```bash
 CREATE DATABASE sbdb;
+DROP USER 'sbuser'@'localhost';
+FLUSH PRIVILEGES;
 CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
 GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
