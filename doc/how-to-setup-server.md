@@ -509,13 +509,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
 mysql -uroot -p
 ```
 
-Create a new user and database for sintoburidb
+Create a new user and database for sbdb
 ```bash
-CREATE DATABASE sintoburidb;
-CREATE USER 'sintoburiuser'@'localhost' IDENTIFIED BY 'password_here';
-GRANT ALL PRIVILEGES ON sintoburidb.* TO 'sintoburiuser'@'localhost';
+CREATE DATABASE sbdb;
+CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
+GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
-mysql -usbuser -p sintoburidb
+mysql -usbuser -p sbdb
 ```
 
 Create a new table 'upload_file'.
