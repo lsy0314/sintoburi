@@ -6,15 +6,15 @@ import time
 # python can not play korean file name. So we have to write in english.
 # TODO: we have to read audio files in ../webapp/sound/ search_path automatically.
 # search_path = "../webapp/sound/"
-# audio_file1 = "201808011710_shop1.wma"
-# audio_file2 = "201808011726_shop2.wma"
-# audio_file3 = "201808011749_shop3.wma"
-# audio_file4 = "201808011752_shop4.wma"
-# audio_file5 = "201808011807_shop5.wma"
+# audio_file1 = "201808011710_shop1.m4a"
+# audio_file2 = "201808011726_shop2.m4a"
+# audio_file3 = "201808011749_shop3.m4a"
+# audio_file4 = "201808011752_shop4.m4a"
+# audio_file5 = "201808011807_shop5.m4a"
 
 
 # declare a directory to search audio files
-search_path="./pir_sound/"
+search_path="../webapp/audio_test/"
 
 # function to display audio files in a search_path
 # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
@@ -51,7 +51,7 @@ for filename in list_files:
     # https://stackoverflow.com/questions/6677332/using-f-with-strftime-in-python-to-get-microseconds
     current_time = int(time.strftime("%Y%m%d%H%M"))
     #current_time = (current_time / 10) *10
-    current_time = 201808011710
+    current_time = 201808051420
     
     print "[DEBUG] audio_time %s, current time %d" % (audio_time_file1 , current_time)
     print "[DEBUG] ---------------------------------"
