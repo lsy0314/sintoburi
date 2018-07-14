@@ -10,17 +10,17 @@
 <table border="1">
 <tr bgcolor=yellow>
 	<th>삭제</th>
-	<th>시작 시각</th>
+	<th>업로드 시각</th>
 	<th>상점명</th>
 	<th>음성 내용</th>
 	<th>파일 ID</th>
-	<th>원래파일명</th>
-	<th>저장된파일명</th>
+	<th>기존 오디오 파일</th>
+	<th>저장된 오디오 파일</th>
 </tr>
 <?php
 //$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
 $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
-$query = "SELECT file_id, name_orig, name_save FROM upload_file ORDER BY reg_time DESC";
+$query = "SELECT file_id, name_orig, name_save, reg_time FROM upload_file ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -28,7 +28,7 @@ while($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
   <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
-  <td> ... </td>
+  <td><?=$row['reg_time'] ?></td>
   <td> ... </td>
   <td> ... </td>
   <td><?= $row['file_id'] ?></td>

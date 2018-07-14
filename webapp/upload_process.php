@@ -26,8 +26,16 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     if($file['size'] >= $max_file_size) {
         echo "5MB 까지만 업로드 가능합니다.";
     }
+
+   // change last character to 0.
+   // For example, convert 201805051635 to 201805051630
+    date_default_timezone_set("Asia/Seoul");
+    $t=time();
+    $curr_time = date("YmdHi",$t);
+    $curr_time = substr_replace($curr_time, "", -1)."0";
     
-    $path = md5(microtime()) . '.' . $ext;
+    $path = $curr_time . "_" . md5(microtime()) . '.' . $ext;
+
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
         $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
         $file_id = md5(uniqid(rand(), true));
