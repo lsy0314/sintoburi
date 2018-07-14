@@ -4,7 +4,7 @@
 <title>파일 업로드</title>
 <script type="text/javascript">
 function formSubmit(f) {
-	var extArray = new Array('wav','wma','mp3','mp4');
+	var extArray = new Array('wav','mp3','m4a');
 	var path = document.getElementById("upfile").value;
 	if(path == "") {
 		alert("파일을 선택해 주세요.");
@@ -41,7 +41,7 @@ function formSubmit(f) {
 <br><br>
 <font size=5 Color=blue> 음성 파일 업로드 화면</font>
 <br><br><br>
-<label for="upfile">Attachment (x.wma):</label>
+<label for="upfile">Attachment (select only <b>m4a</b> file):</label>
 <input type="file" name="upfile" id="upfile" />
 </div>
 <br>

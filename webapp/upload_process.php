@@ -11,7 +11,7 @@ $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
     $upload_directory = 'audio/';
-    $ext_str = "wav,wma,mp3,mp4";
+    $ext_str = "wav,mp3,m4a";
     $allowed_extensions = explode(',', $ext_str);
     
     $max_file_size = 5242880; # Maximum file upload is 5 Mbytes
