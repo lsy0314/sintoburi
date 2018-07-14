@@ -16,7 +16,7 @@
 - [이메일 발송하기](#이메일-발송하기)
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
-- [MySQL 데이타베이스 설치하기](#mysql-데이타베이스-설치하기)
+- [MySQL 데이타베이스 서버 설치하기](#mysql-데이타베이스-서버-설치하기)
 - [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 
 
@@ -490,7 +490,7 @@ ssid 는 와이파이 이름, psk 는 비밀번호에 해당하는 변수 같은
 
 
 
-# MySQL 데이타베이스 설치하기
+# MySQL 데이타베이스 서버 설치하기
 
 install mysql-server and mysql-client
 ```bash
