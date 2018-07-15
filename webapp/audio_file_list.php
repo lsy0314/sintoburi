@@ -27,12 +27,12 @@ $result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
-  <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
+  <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
   <td><?=$row['reg_time'] ?></td>
   <td><?=$row['store_name'] ?></td>
   <td><?=$row['audio_msg'] ?></td>
   <td><?= $row['file_id'] ?></td>
-  <td><a href="download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
+  <td><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
 </tr>
 <?php
@@ -44,7 +44,7 @@ mysqli_close($db_conn);
 ?>
 </table>
 <br>
-<a href="upload.php">업로드 페이지</a>
+<a href="audio_upload.php">업로드 페이지</a>
 <br>
 <a href="./audio">오디오 파일 리스트</a>
 </body>

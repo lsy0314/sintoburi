@@ -36,7 +36,7 @@ function formSubmit(f) {
 </script>
 </head>
 <body>
-<form name="uploadForm" id="uploadForm" method="post" action="upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
+<form name="uploadForm" id="uploadForm" method="post" action="audio_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
 <br><br>
 <font size=5 Color=blue> 음성 파일 업로드 화면</font>

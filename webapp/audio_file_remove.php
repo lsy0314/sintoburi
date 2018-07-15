@@ -36,6 +36,6 @@ unlink("audio/".$name_save);
 mysqli_close($conn);
 ?>
 <br><br>
-<a href="./file_list.php">음성 파일 리스트 화면으로 이동하기</a>
+<a href="./audio_file_list.php">음성 파일 리스트 화면으로 이동하기</a>
 </body>
 </html>

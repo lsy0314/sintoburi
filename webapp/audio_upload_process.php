@@ -53,7 +53,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         mysqli_stmt_close($stmt);
         
         echo"<h3>파일 업로드 성공</h3>";
-        echo '<a href="file_list.php">업로드 파일 목록</a>';
+        echo '<a href="audio_file_list.php">업로드 파일 목록</a>';
         
     }
 } else {
