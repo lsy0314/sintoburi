@@ -26,7 +26,11 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     if($file['size'] >= $max_file_size) {
         echo "5MB 까지만 업로드 가능합니다.";
     }
+   
+   $store_name = $_POST['store'];
+   $audio_msg = $_POST['message']; 
 
+ 
    // change last character to 0.
    // For example, convert 201805051635 to 201805051630
     date_default_timezone_set("Asia/Seoul");
@@ -37,7 +41,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $path = $curr_time . "_" . md5(microtime()) . '.' . $ext;
 
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
-        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
+        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
         $file_id = md5(uniqid(rand(), true));
         $name_orig = $file['name'];
         $name_save = $path;

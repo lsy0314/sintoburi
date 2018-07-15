@@ -41,6 +41,8 @@ function formSubmit(f) {
 <br><br>
 <font size=5 Color=blue> 음성 파일 업로드 화면</font>
 <br><br><br>
+상점명 <INPUT TYPE=TEXT NAME=store SIZE=20 MAXLENGTH=20> <br><br>
+음성메세지 <INPUT TYPE=TEXT NAME=message SIZE=100 MAXLENGTH=100> <br><br>
 <label for="upfile">Attachment (select only <b>m4a</b> file):</label>
 <input type="file" name="upfile" id="upfile" />
 </div>

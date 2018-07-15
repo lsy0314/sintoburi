@@ -20,7 +20,7 @@
 <?php
 //$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
 $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
-$query = "SELECT file_id, name_orig, name_save, reg_time FROM upload_file ORDER BY reg_time DESC";
+$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -29,8 +29,8 @@ while($row = mysqli_fetch_assoc($result)) {
 <tr>
   <td><a href=file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
   <td><?=$row['reg_time'] ?></td>
-  <td> ... </td>
-  <td> ... </td>
+  <td><?=$row['store_name'] ?></td>
+  <td><?=$row['audio_msg'] ?></td>
   <td><?= $row['file_id'] ?></td>
   <td><a href="download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
@@ -43,6 +43,9 @@ mysqli_stmt_close($stmt);
 mysqli_close($db_conn);
 ?>
 </table>
+<br>
 <a href="upload.php">업로드 페이지</a>
+<br>
+<a href="./audio">오디오 파일 리스트</a>
 </body>
 </html>
