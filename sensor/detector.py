@@ -29,7 +29,7 @@ from gpiozero import MotionSensor
 import time
 import os
 import sys
-
+import re
 #----------- Configuration area -------------------------------
 folder = "/var/www/html/sintoburi/sensor/"
 GPIO_PIN = 4
@@ -90,7 +90,7 @@ try:
             check = filename.isdigit()
             print "[DEBUG] check vaule is", check
 
-            # Note that you ahve to use False instead of "False" word. Do not use "(double quotation mark).
+            # Note that you have to use False instead of "False" word. Do not use "(double quotation mark).
             if (check == False):
                 print "[DEBUG] Failed. The file name is not number."
                 print "[DEBUG] You have to change file name with number."
@@ -98,6 +98,14 @@ try:
             else: 
                 print "[DEBUG] Okay. The file name is number."
 
+            # check a string to know if the file name includes  a special character
+	    # https://stackoverflow.com/questions/19970532/how-to-check-a-string-for-a-special-character
+	    if re.match(".*.m4a$", audio_file1):
+                print "[DEBUG] Valid. This file is *.m4a audio file."
+	    else:
+	        print "[DEBUG] Invalid. THis file is not *.m4a audio file."
+                print "[DEBUG] You have to save *.m4a audio file only." 
+                sys.exit()
             # we fetch date/time with number only from file name.
             # If the value  is not date/time format such as 201808011710, program can not run.
             audio_time_file1 = int(filename)
