@@ -8,7 +8,11 @@
 
 $file_id = $_REQUEST['file_id'];
 
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
+// connect to database
+include('webapp_config.php');
+$db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
+// mysql sql query to display data
 $query = "SELECT file_id, name_orig, name_save FROM upload_file WHERE file_id = ?";
 $stmt = mysqli_prepare($db_conn, $query);
 

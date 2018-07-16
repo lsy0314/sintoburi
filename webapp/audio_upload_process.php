@@ -13,7 +13,8 @@
 // License: Star License
 //
 
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
+include('webapp_config.php');
+$db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];

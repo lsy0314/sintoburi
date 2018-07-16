@@ -23,7 +23,9 @@
 // Date: Jul-06-2018
 // License: Star License
 //
-$db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
+include('webapp_config.php');
+$db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+
 $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
