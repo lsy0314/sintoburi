@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
+#
+# @author Hyeonjoon Lim
+# @brief a configuration file to manage variables
+#
 # A configuration file is to simply write a separate file
 # that contains Python code
+# @see https://hackernoon.com/4-ways-to-manage-the-configuration-in-python-4623049e841b
 
 mysql = {"host"  : "localhost",
          "user"  : "root",
