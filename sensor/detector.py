@@ -30,10 +30,9 @@ import time
 import os
 import sys
 import re
+
 #----------- Configuration area -------------------------------
-folder = "/var/www/html/sintoburi/sensor/"
-GPIO_PIN = 4
-count = 0
+import config_sensor as cfg
 
 #----------- Do not modify below statements -------------------
 
@@ -41,9 +40,10 @@ try:
     print "[DEBUG] Starting PIR motion sensor..."
 
     # go to the default absolute path in order to read data file correctly
-    os.chdir(folder)
+    os.chdir(cfg.folder)
     # motion sensor function probes the movement of people in front of entrance of the market.
-    pir = MotionSensor(GPIO_PIN)
+    pir = MotionSensor(cfg.GPIO_PIN)
+    count = 0
     while True:
         print "[DEBUG] Sleeping..."
         # wait for until customer wil be appeared
