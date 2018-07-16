@@ -16,7 +16,7 @@ echo ("<br><br>");
 
 // Create db_connection
 include('webapp_config.php');
-$db_conn = mysqli_db_connect($db_host, $db_user, $db_pass, $db_name);
+$db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 // Check db_connection
 if (!$db_conn) {
