@@ -3,7 +3,6 @@
 // Title: a program to download an audio file that user presses.
 // Date: Jul-06-2018
 // License: Star License
-//
 
 
 $file_id = $_REQUEST['file_id'];
@@ -25,7 +24,7 @@ $row = mysqli_fetch_assoc($result);
 $name_orig = $row['name_orig'];
 $name_save = $row['name_save'];
 
-$fileDir = "audio/";
+$fileDir = "audio";
 $fullPath = $fileDir."/".$name_save;
 $length = filesize($fullPath);
 
