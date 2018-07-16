@@ -6,6 +6,13 @@
 </head>
 <body>
 <?php
+
+// Author: Hyunjoon Lim, Suyeon Lim
+// Title: a program to upload an audio file that user want to upload
+// Date: Jul-06-2018
+// License: Star License
+//
+
 $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {

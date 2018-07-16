@@ -1,6 +1,13 @@
 <html>
 <body>
 <?php
+
+// Author: Hyunjoon Lim, Suyeon Lim
+// Title: a program to remove audio file and database data
+// Date: Jul-06-2018
+// License: Star License
+//
+
 $servername = "localhost";
 $username = "root";
 $password = "ggghhh03";
@@ -11,8 +18,6 @@ $name_save = $_REQUEST['name_save'];
 
 echo ("file_id = '$file_id'");
 echo ("<br><br>");
-
-# $file_id="0576966f0e8d425f4f06f32e5e8d5202";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

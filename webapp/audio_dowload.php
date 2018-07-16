@@ -1,7 +1,13 @@
 <?php
+// Author: Hyunjoon Lim, Suyeon Lim
+// Title: a program to download an audio file that user presses.
+// Date: Jul-06-2018
+// License: Star License
+//
+
+
 $file_id = $_REQUEST['file_id'];
 
-//$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
 $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 $query = "SELECT file_id, name_orig, name_save FROM upload_file WHERE file_id = ?";
 $stmt = mysqli_prepare($db_conn, $query);
@@ -15,7 +21,7 @@ $row = mysqli_fetch_assoc($result);
 $name_orig = $row['name_orig'];
 $name_save = $row['name_save'];
 
-$fileDir = "data/";
+$fileDir = "audio/";
 $fullPath = $fileDir."/".$name_save;
 $length = filesize($fullPath);
 

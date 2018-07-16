@@ -18,7 +18,11 @@
 	<th>저장된 오디오 파일</th>
 </tr>
 <?php
-//$db_conn = mysqli_connect("localhost", "testdbadm", "testdbadm", "testdb");
+// Author: Hyunjoon Lim, Suyeon Lim
+// Title: a program to display store information
+// Date: Jul-06-2018
+// License: Star License
+//
 $db_conn = mysqli_connect("localhost", "root", "ggghhh03", "sbdb");
 $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);

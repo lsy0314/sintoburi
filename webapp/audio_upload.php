@@ -1,3 +1,12 @@
+<?php
+// Author: Hyunjoon Lim, Suyeon Lim
+// Title: a program to display upload UI for users
+// Date: Jul-06-2018
+// License: Star License
+//
+
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
