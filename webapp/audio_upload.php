@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>파일 업로드</title>
+<title>상점 주인용: 오디오 파일 업로드</title>
 <script type="text/javascript">
 function formSubmit(f) {
 	var extArray = new Array('wav','mp3','m4a');
@@ -59,6 +59,6 @@ function formSubmit(f) {
 Upload Audio File:<input type="submit" value="Upload" />
 </form>
 <br><br>
-<a href="javascript:history.go(-1);">이전 페이지로 이동하기</a>
+<a href="./audio_file_list.php">음성 파일 리스트 메뉴로 이동하기</a>
 </body>
 </html>
