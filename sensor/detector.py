@@ -58,7 +58,7 @@ try:
         # Note that python can not play korean file name. So we have to write in english.
         # we have to read audio files in the search_path automatically.
         # declare a directory to search audio files
-        search_path="../webapp/audio_test/"
+        search_path="../webapp/audio/"
         
         # function to display audio files in a search_path
         # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
