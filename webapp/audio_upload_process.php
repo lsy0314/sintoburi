@@ -44,7 +44,8 @@ mysqli_close($db_conn);
 
 
 // if the number of audio data exceeds 5, stop program.
-if ($count > 1)
+$max_audio_file = 1;
+if ($count > $max_audio_file)
     die("Unable to upload audio file because seller can upload audio files until 5. <br> <a href=./audio_file_list.php>오디오 파일 리스트로 이동하기</a>");
  
 // ------------------------- upload audio file to mysql database and audio folder
@@ -71,10 +72,10 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
    
    $store_name = $_POST['store'];
    $audio_msg = $_POST['message']; 
-
+   $time = $_POST['time'];
  
     
-    $path = $curr_time . "_" . md5(microtime()) . '.' . $ext;
+    $path = $time . "_" . md5(microtime()) . '.' . $ext;
 
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
         $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
