@@ -48,16 +48,19 @@ function formSubmit(f) {
 <form name="uploadForm" id="uploadForm" method="post" action="audio_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
 <br><br>
-<font size=5 Color=blue> 음성 파일 업로드 화면</font>
+<font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
-상점명 <INPUT TYPE=TEXT NAME=store SIZE=20 MAXLENGTH=20> <br><br>
-음성메세지 <INPUT TYPE=TEXT NAME=message SIZE=100 MAXLENGTH=100> <br><br>
-<label for="upfile">Attachment (select only <b>m4a</b> file):</label>
+<font size=5  Color=black>상점명 <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
+<font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12> <br><br> </font>
+<font size=5  Color=black>음성메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=50 MAXLENGTH=50> <br><br> 
+<label for="upfile"> </label>
 <input type="file" name="upfile" id="upfile" />
+업로드(m4a) <input type="submit" value="Upload" />
 </div>
-<br>
-Upload Audio File:<input type="submit" value="Upload" />
 </form>
+<br><br>
+<br><br> 
+<br><br>
 <br><br>
 <a href="./audio_file_list.php">음성 파일 리스트 메뉴로 이동하기</a>
 </body>
