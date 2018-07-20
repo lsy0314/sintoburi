@@ -6,16 +6,16 @@
 <title>업로드 오디오 파일 목록</title>
 </head>
 <body>
-<font size=5 color=blue>음성 파일 리스트 화면</font>
+<font size=5 color=blue>신토불이: 음성 파일 리스트 화면</font>
 <table border="1">
 <tr bgcolor=yellow>
 	<th>삭제</th>
 	<th>업로드 시각</th>
 	<th>상점명</th>
-	<th>음성 내용</th>
-	<th>파일 ID</th>
-	<th>기존 오디오 파일</th>
-	<th>저장된 오디오 파일</th>
+<!--	<th>음성 내용</th> //-->
+<!--	<th>파일 ID</th>   //-->
+	<th>업로드 파일명</th>
+	<th>저장된 파일명</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -33,11 +33,13 @@ $result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
 <tr>
-  <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_save=<?= $row['name_save'] ?>>Remove</td>
+  <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
+       <img src=./images/remove.png border=0 height=20 width=20></img>
+  </td>
   <td><?=$row['reg_time'] ?></td>
   <td><?=$row['store_name'] ?></td>
-  <td><?=$row['audio_msg'] ?></td>
-  <td><?= $row['file_id'] ?></td>
+<!--  <td><?=$row['audio_msg'] ?></td>  //-->
+<!--  <td><?= $row['file_id'] ?></td>   //-->
   <td><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
 </tr>
@@ -50,8 +52,14 @@ mysqli_close($db_conn);
 ?>
 </table>
 <br>
+<br>
 <a href="audio_upload.php">업로드 페이지</a>
 <br>
+<br>
 <a href="./audio">오디오 파일 리스트</a>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>

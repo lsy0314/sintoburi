@@ -52,11 +52,17 @@ function formSubmit(f) {
 <br><br><br>
 <font size=5  Color=black>상점명 <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
 <font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12> <br><br> </font>
-<font size=5  Color=black>음성메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=50 MAXLENGTH=50> <br><br> 
+<font size=5  Color=black>음성메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=50 MAXLENGTH=50> <br><br> </font>
 <label for="upfile"> </label>
-<input type="file" name="upfile" id="upfile" />
-업로드(m4a) <input type="submit" value="Upload" />
+<font size=5 color=black>음성파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
+<br>
+모바일폰에 "<b>삼성 음성 녹음</b>" 또는 "<b>곰레코더</b>"를 설치후에<br>
+*.m4a으로 녹음한 음성파일을 업로드 하여 주세요. 
+<br>
+<br>
+<br>
+<input type="submit" value="등록하기" />
 </form>
 <br><br>
 <br><br> 

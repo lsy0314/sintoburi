@@ -1,7 +1,6 @@
 <html>
 <body>
 <?php
-
 // Author: Hyunjoon Lim, Suyeon Lim
 // Title: a program to remove audio file and database data
 // Date: Jul-06-2018
@@ -9,9 +8,13 @@
 //
 
 $file_id = $_REQUEST['file_id'];
+$name_orig = $_REQUEST['name_orig'];
 $name_save = $_REQUEST['name_save'];
 
-echo ("file_id = '$file_id'");
+echo ("<br>");
+echo ("<li>파일 ID = '$file_id'</li>");
+echo ("<li>업로드 파일명 = '$name_orig'</li>");
+echo ("<li>저장된 파일명 = '$name_save'</li>");
 echo ("<br><br>");
 
 // Create db_connection
@@ -27,9 +30,9 @@ if (!$db_conn) {
 $sql = "DELETE FROM upload_file WHERE file_id='$file_id'";
 
 if (mysqli_query($db_conn, $sql)) {
-    echo "The data is successfully removed.";
+    echo "축하합니다. 선택하신 음성파일을 성공적으로 삭제되었습니다.";
 } else {
-    echo "Error deleting record: " . mysqli_error($db_conn);
+    echo "죄송합니다. 선택하신 음성파일을 삭제하지 못하였습니다." . mysqli_error($db_conn);
 }
 // Remove audito file in the specified directory
 unlink("audio/".$name_save);
