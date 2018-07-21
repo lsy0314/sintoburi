@@ -31,11 +31,10 @@ import os
 import sys
 import re
 
-#----------- Configuration area -------------------------------
 import config_sensor as cfg
+from module_play  import play_audio_file
  
 #----------- Do not modify below statements -------------------
-
 try:
     print "[DEBUG] Starting PIR motion sensor..."
 
@@ -58,7 +57,7 @@ try:
         # Note that python can not play korean file name. So we have to write in english.
         # we have to read audio files in the search_path automatically.
         # declare a directory to search audio files
-        search_path=cfg.search_path
+        search_path = cfg.search_path
         
         # function to display audio files in a search_path
         # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
@@ -119,27 +118,17 @@ try:
         
             # we cut last number from original time
             # https://stackoverflow.com/questions/6677332/using-f-with-strftime-in-python-to-get-microseconds
-            current_time = int(time.strftime("%Y%m%d%H%M"))
+            #current_time = int(time.strtime("%Y%m%d%H%M"))
             #current_time = (current_time / 10) *10
+            #if we have to do a debuging , lets declare timedata directly.
             current_time = 201808051420
         
             print "[DEBUG] audio_time %s, current time %d" % (audio_file_time , current_time)
             print "[DEBUG] ---------------------------------"
-        
-            # check if an audio file at the current time, let's play audio file
-            # the time has to get number between 0 and 9 minutes
-            if (audio_file_time >= current_time and audio_file_time <= current_time+9):
-                # play audo file
-                # cmd = "mplayer ./pir_sound/wav/dingdong.wav"
-                cmd = "mplayer " + search_path + audio_file
-                print "[DEBUG] Succeeded, command: %s." % cmd
-                print "[DEBUG] we found audio file."
-                os.system(cmd)
-            else:
-                print "[DEBUG] Failed."
-                print "[DEBUG] we could not find audio file."
-                cmd = "mplayer ./pir_sound/wav/miss.wav"
-                os.system(cmd)
+    
+            # run play_audio_file() function from module_play.py  file.
+            play_audio_file (audio_file_time, current_time, search_path, audio_file)
+
             # wait for 5 seconds in 'for' statement
             time.sleep(5)
         print "[DEBUG]---- audio file list: end --------------"
