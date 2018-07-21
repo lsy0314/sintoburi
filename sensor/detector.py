@@ -81,8 +81,8 @@ try:
             # cut the existing file name with 12 characters
             # for example, 201808151130_food_store.m4a --> 201805151130
             print "#############################################################################"
-            audio_file1 = filename
-            print "[DEBUG] Original audio file name (string) is ", audio_file1
+            audio_file = filename
+            print "[DEBUG] Original audio file name (string) is ", audio_file
             filename = filename[:12]
             print "[DEBUG] Changed  audio file name (string) is ", filename
 
@@ -100,7 +100,7 @@ try:
 
             # check a string to know if the file name includes  a special character
 	    # https://stackoverflow.com/questions/19970532/how-to-check-a-string-for-a-special-character
-	    if re.match(".*.m4a$", audio_file1):
+	    if re.match(".*.m4a$", audio_file):
                 print "[DEBUG] Valid. This file is *.m4a audio file."
 	    else:
 	        print "[DEBUG] Invalid. THis file is not *.m4a audio file."
@@ -110,8 +110,8 @@ try:
   	    print "[DEBUG] check execution number", cfg.execution_num
             # we fetch date/time with number only from file name.
             # If the value  is not date/time format such as 201808011710, program can not run.
-            audio_time_file1 = int(filename)
-            print "[DEBUG] Changed  audio file name (int)    is ", audio_time_file1
+            audio_time_file = int(filename)
+            print "[DEBUG] Changed  audio file name (int)    is ", audio_time_file
         
             print "[DEBUG] Starting..."
             print "[DEBUG] ---------------------------------"
@@ -122,15 +122,15 @@ try:
             #current_time = (current_time / 10) *10
             current_time = 201808051420
         
-            print "[DEBUG] audio_time %s, current time %d" % (audio_time_file1 , current_time)
+            print "[DEBUG] audio_time %s, current time %d" % (audio_time_file , current_time)
             print "[DEBUG] ---------------------------------"
         
             # check if an audio file at the current time, let's play audio file
             # the time has to get number between 0 and 9 minutes
-            if (audio_time_file1 >= current_time and audio_time_file1 <= current_time+9):
+            if (audio_time_file >= current_time and audio_time_file <= current_time+9):
                 # play audo file
                 # cmd = "mplayer ./pir_sound/wav/dingdong.wav"
-                cmd = "mplayer " + search_path + audio_file1
+                cmd = "mplayer " + search_path + audio_file
                 print "[DEBUG] Succeeded, command: %s." % cmd
                 print "[DEBUG] we found audio file."
                 os.system(cmd)
