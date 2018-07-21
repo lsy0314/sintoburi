@@ -72,7 +72,15 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
    
    $store_name = $_POST['store'];
    $audio_msg = $_POST['message']; 
-   $time = $_POST['time'];
+   $time_start_year = $_POST['start_year'];
+   $time_start_month = $_POST['start_month'];
+   $time_start_day = $_POST['start_day'];
+   $time_start_hour = $_POST['start_hour'];
+   $time_start_minute = $_POST['start_minute'];
+   $time= $time_start_year . $time_start_month . $time_start_day . $time_start_hour . $time_start_minute;
+
+
+
  
     
     $path = $time . "_" . md5(microtime()) . '.' . $ext;
