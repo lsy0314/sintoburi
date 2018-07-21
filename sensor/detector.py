@@ -33,7 +33,7 @@ import re
 
 #----------- Configuration area -------------------------------
 import config_sensor as cfg
-
+ 
 #----------- Do not modify below statements -------------------
 
 try:
@@ -106,6 +106,8 @@ try:
 	        print "[DEBUG] Invalid. THis file is not *.m4a audio file."
                 print "[DEBUG] You have to save *.m4a audio file only." 
                 sys.exit()
+            cfg.execution_num = cfg.execution_num + 1
+  	    print "[DEBUG] check execution number", cfg.execution_num
             # we fetch date/time with number only from file name.
             # If the value  is not date/time format such as 201808011710, program can not run.
             audio_time_file1 = int(filename)
