@@ -123,7 +123,7 @@ function formSubmit(f) {
             <option value="21" STYLE="BACKGROUND-COLOR: YELLOW">21</option>
             <option value="22" STYLE="BACKGROUND-COLOR: YELLOW">22</option>
             <option value="23" STYLE="BACKGROUND-COLOR: YELLOW">23</option>
-            <option value="24" STYLE="BACKGROUND-COLOR: YELLOW">24</option>
+            <option value="00" STYLE="BACKGROUND-COLOR: YELLOW">00</option>
 </select>시 
 <select name="start_minute"STYLE="BACKGROUND-COLOR: YELLOW">
             <option value="00" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)>00</option>
