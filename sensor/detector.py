@@ -106,12 +106,13 @@ try:
 	        print "[DEBUG] Invalid. THis file is not *.m4a audio file."
                 print "[DEBUG] You have to save *.m4a audio file only." 
                 sys.exit()
+            #TODO:We have to save excution number to a file or database.
             cfg.execution_num = cfg.execution_num + 1
   	    print "[DEBUG] check execution number", cfg.execution_num
             # we fetch date/time with number only from file name.
             # If the value  is not date/time format such as 201808011710, program can not run.
-            audio_time_file = int(filename)
-            print "[DEBUG] Changed  audio file name (int)    is ", audio_time_file
+            audio_file_time = int(filename)
+            print "[DEBUG] Changed  audio file name (int)    is ", audio_file_time
         
             print "[DEBUG] Starting..."
             print "[DEBUG] ---------------------------------"
@@ -122,12 +123,12 @@ try:
             #current_time = (current_time / 10) *10
             current_time = 201808051420
         
-            print "[DEBUG] audio_time %s, current time %d" % (audio_time_file , current_time)
+            print "[DEBUG] audio_time %s, current time %d" % (audio_file_time , current_time)
             print "[DEBUG] ---------------------------------"
         
             # check if an audio file at the current time, let's play audio file
             # the time has to get number between 0 and 9 minutes
-            if (audio_time_file >= current_time and audio_time_file <= current_time+9):
+            if (audio_file_time >= current_time and audio_file_time <= current_time+9):
                 # play audo file
                 # cmd = "mplayer ./pir_sound/wav/dingdong.wav"
                 cmd = "mplayer " + search_path + audio_file
