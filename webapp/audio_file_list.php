@@ -15,7 +15,7 @@
 <!--	<th>음성 내용</th> //-->
 <!--	<th>파일 ID</th>   //-->
 	<th>업로드 파일명</th>
-	<th>저장된 파일명</th>
+	<th>저장된 파일명(*)</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -26,7 +26,7 @@
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY reg_time DESC";
+$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY name_save DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
