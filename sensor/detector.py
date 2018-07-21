@@ -118,10 +118,10 @@ try:
         
             # we cut last number from original time
             # https://stackoverflow.com/questions/6677332/using-f-with-strftime-in-python-to-get-microseconds
-            #current_time = int(time.strtime("%Y%m%d%H%M"))
-            #current_time = (current_time / 10) *10
+            current_time = int(time.strftime("%Y%m%d%H%M"))
+            current_time = (current_time / 10) *10
             #if we have to do a debuging , lets declare timedata directly.
-            current_time = 201808051420
+            #current_time = 201808051420
         
             print "[DEBUG] audio_time %s, current time %d" % (audio_file_time , current_time)
             print "[DEBUG] ---------------------------------"
