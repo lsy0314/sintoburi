@@ -47,7 +47,7 @@ $input_year   = date("Y");
 $input_month  = date("m");
 $input_day    = date("d");
 $input_hour   = date("H");
-$input_minute = (date("i")/10*10) + 10;
+$input_minute = floor(date("i")/10)*10;
 
 ?>
 <font size=5  Color=black>시작 시간  </font>
