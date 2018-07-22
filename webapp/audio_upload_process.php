@@ -96,14 +96,15 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         $exec = mysqli_stmt_execute($stmt);
       
         mysqli_stmt_close($stmt);
-        
-        echo"<h3>파일 업로드 성공</h3>";
-        echo '<a href="audio_file_list.php">업로드 파일 목록</a>';
+       
+        echo "<br><br>" ;
+        echo "<h3>축하합니다. 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
+        echo "<a href='./audio_file_list.php'>업로드 파일 목록</a>";
         
     }
 } else {
     echo "<h3>파일이 업로드 되지 않았습니다.</h3>";
-    echo '<a href="javascript:history.go(-1);">이전 페이지</a>';
+    echo "<a href='javascript:history.go(-1);'>이전 페이지</a>";
 }
 
 mysqli_close($db_conn);
