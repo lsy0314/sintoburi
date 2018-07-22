@@ -7,6 +7,15 @@
 </head>
 <body>
 <font size=5 color=blue>신토불이: 음성 파일 리스트 화면</font>
+<br>
+<br>
+<a href="./audio_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="./audio/?C=N;O=D"><img src=./images/audio-folder.png border=0 width=50 height=50></img></a>
+<br>
+
 <table border="1">
 <tr bgcolor=yellow>
 	<th>삭제</th>
@@ -37,6 +46,8 @@ while($row = mysqli_fetch_assoc($result)) {
 // The statement is how to create a dialog with “yes” and “no” options before removing a audio file
 // https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
 // <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
+?>
+
 <tr>
   <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20></img>
@@ -48,6 +59,7 @@ while($row = mysqli_fetch_assoc($result)) {
   <td><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
 </tr>
+
 <?php
 } 
 
@@ -56,14 +68,6 @@ mysqli_stmt_close($stmt);
 mysqli_close($db_conn);
 ?>
 </table>
-<br>
-<br>
-<a href="audio_upload.php">업로드 페이지</a>
-<br>
-<br>
-<a href="./audio">오디오 파일 리스트</a>
-<br>
-<br>
 <br>
 <br>
 </body>
