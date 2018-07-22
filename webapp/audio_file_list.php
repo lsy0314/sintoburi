@@ -32,6 +32,11 @@ $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
+
+<?php
+// The statement is how to create a dialog with “yes” and “no” options before removing a audio file
+// https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
+// <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
 <tr>
   <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20></img>
