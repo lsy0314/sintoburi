@@ -92,7 +92,7 @@ try:
             # Note that you have to use False instead of "False" word. Do not use "(double quotation mark).
             if (check == False):
                 print "[DEBUG] Failed. The file name is not number."
-                print "[DEBUG] You have to change file name with number."
+                print "[DEBUG] You have to change file name with only a number without a character."
                 sys.exit()
             else: 
                 print "[DEBUG] Okay. The file name is number."
@@ -105,7 +105,7 @@ try:
 	        print "[DEBUG] Invalid. THis file is not *.m4a audio file."
                 print "[DEBUG] You have to save *.m4a audio file only." 
                 sys.exit()
-            #TODO:We have to save excution number to a file or database.
+            #TODO: We have to save excution number to a file or database.
             cfg.execution_num = cfg.execution_num + 1
   	    print "[DEBUG] check execution number", cfg.execution_num
             # we fetch date/time with number only from file name.
@@ -116,21 +116,23 @@ try:
             print "[DEBUG] Starting..."
             print "[DEBUG] ---------------------------------"
         
-            # we cut last number from original time
+            # we cut last number from original time. Then, append '0" number.
             # https://stackoverflow.com/questions/6677332/using-f-with-strftime-in-python-to-get-microseconds
             current_time = int(time.strftime("%Y%m%d%H%M"))
-            current_time = (current_time / 10) *10
+            current_time = (current_time / 10) * 10
             #if we have to do a debuging , lets declare timedata directly.
             #current_time = 201808051420
         
             print "[DEBUG] audio_time %s, current time %d" % (audio_file_time , current_time)
             print "[DEBUG] ---------------------------------"
-    
-            # run play_audio_file() function from module_play.py  file.
-            play_audio_file (audio_file_time, current_time, search_path, audio_file)
+ 
+            # if audio file time is not current time (e.g. 00 ~ 09), let's skip play_audio_file() function. 
+            if (audio_file_time >= current_time and audio_file_time <= current_time+9): 
+                # run play_audio_file() function from module_play.py  file.
+                play_audio_file (audio_file_time, current_time, search_path, audio_file)
 
-            # wait for 5 seconds in 'for' statement
-            time.sleep(5)
+        # wait for 5 seconds after finishing 'for' statement
+        time.sleep(5)
         print "[DEBUG]---- audio file list: end --------------"
         #---------------------------------------------- Read audio file folder: end
 
