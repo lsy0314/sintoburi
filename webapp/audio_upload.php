@@ -168,7 +168,7 @@ $input_minute = floor(date("i")/10)*10;
 <br><br>
 <br><br> 
 <br><br>
-<br><br>
-<a href="./audio_file_list.php">음성 파일 리스트 메뉴로 이동하기</a>
+<a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
+
 </body>
 </html>

@@ -30,9 +30,9 @@ if (!$db_conn) {
 $sql = "DELETE FROM upload_file WHERE file_id='$file_id'";
 
 if (mysqli_query($db_conn, $sql)) {
-    echo "축하합니다. 선택하신 음성파일을 성공적으로 삭제되었습니다.";
+    echo "<font color=red><b>축하합니다.</font><b> 선택하신 음성파일을 성공적으로 삭제되었습니다.";
 } else {
-    echo "죄송합니다. 선택하신 음성파일을 삭제하지 못하였습니다." . mysqli_error($db_conn);
+    echo "<font color=red><b>죄송합니다.</font><b> 선택하신 음성파일을 삭제하지 못하였습니다." . mysqli_error($db_conn);
 }
 // Remove audito file in the specified directory
 unlink("audio/".$name_save);
@@ -40,6 +40,6 @@ unlink("audio/".$name_save);
 mysqli_close($db_conn);
 ?>
 <br><br>
-<a href="./audio_file_list.php">음성 파일 리스트 화면으로 이동하기</a>
+<a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
 </body>
 </html>
