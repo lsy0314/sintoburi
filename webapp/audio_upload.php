@@ -41,15 +41,26 @@ function formSubmit(f) {
 <!--
 <font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12><br><br> </font>
 //-->
+<?php
+date_default_timezone_set("Asia/Seoul");
+$input_year   = date("Y");
+$input_month  = date("m");
+$input_day    = date("d");
+$input_hour   = date("H");
+$input_minute = (date("i")/10*10) + 10;
+
+?>
 <font size=5  Color=black>시작 시간  </font>
 <select name="start_year" STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="2018" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)>2018</option>
+            <option value="<?=$input_year ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_year ?></option>
+            <option value="2018" STYLE="BACKGROUND-COLOR: YELLOW">2018</option>
             <option value="2019" STYLE="BACKGROUND-COLOR: YELLOW">2019</option>
             <option value="2020" STYLE="BACKGROUND-COLOR: YELLOW">2020</option>
             <option value="2021" STYLE="BACKGROUND-COLOR: YELLOW">2021</option>
 </select>년 
 <select name="start_month"STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)>01</option>
+            <option value="<?=$input_month ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_month ?></option>
+            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW">01</option>
             <option value="02" STYLE="BACKGROUND-COLOR: YELLOW">02</option>
             <option value="03" STYLE="BACKGROUND-COLOR: YELLOW">03</option>
             <option value="04" STYLE="BACKGROUND-COLOR: YELLOW">04</option>
@@ -64,7 +75,8 @@ function formSubmit(f) {
 
 </select>월
 <select name="start_day"STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="01" selected(초기 선택된 항목)>01</option>
+            <option value="<?=$input_day ?>" selected(초기 선택된 항목)><?=$input_day ?></option>
+            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW">01</option>
             <option value="02" STYLE="BACKGROUND-COLOR: YELLOW">02</option>
             <option value="03" STYLE="BACKGROUND-COLOR: YELLOW">03</option>
             <option value="04" STYLE="BACKGROUND-COLOR: YELLOW">04</option>
@@ -100,7 +112,8 @@ function formSubmit(f) {
             <option value="31" STYLE="BACKGROUND-COLOR: YELLOW">31</option>
 </select>일
 <select name="start_hour"STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)>01</option>
+            <option value="<?=$input_hour ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_hour ?></option>
+            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW">01</option>
             <option value="02" STYLE="BACKGROUND-COLOR: YELLOW">02</option>
             <option value="03" STYLE="BACKGROUND-COLOR: YELLOW">03</option>
             <option value="04" STYLE="BACKGROUND-COLOR: YELLOW">04</option>
@@ -126,13 +139,16 @@ function formSubmit(f) {
             <option value="00" STYLE="BACKGROUND-COLOR: YELLOW">00</option>
 </select>시 
 <select name="start_minute"STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="00" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)>00</option>
+            <option value="<?=$input_minute ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_minute ?></option>
+            <option value="00" STYLE="BACKGROUND-COLOR: YELLOW">00</option>
             <option value="10" STYLE="BACKGROUND-COLOR: YELLOW">10</option>
             <option value="20" STYLE="BACKGROUND-COLOR: YELLOW">20</option>
             <option value="30" STYLE="BACKGROUND-COLOR: YELLOW">30</option>
             <option value="40" STYLE="BACKGROUND-COLOR: YELLOW">40</option>
             <option value="50" STYLE="BACKGROUND-COLOR: YELLOW">50</option>
-</select>분 (십분 단위)       
+</select>분
+<br>
+(입력방법: 오디오 플레이 시작시간은 10분 단위로 입력하여 주세요.)       
 
 
 
