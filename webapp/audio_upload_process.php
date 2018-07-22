@@ -55,10 +55,9 @@ mysqli_close($db_conn);
 //die("just test.");
 
 
-// if the number of audio data exceeds 5, stop program.
-$max_audio_file = 1;
+// if the number of audio data exceeds the declared number, do not upload audio file and stop this program.
 if ($count > $max_audio_file)
-    die("<br><br><font color = red>죄송합니다.</font> 오디오 파일을 업로드 할 수 없습니다.<br> 동일한 시간에 음성파일을 5개까지 입력할 수 있기 때문입니다.<br>현재 등록된 음성파일 개수가 $count 입니다.<br><br> <br> <a href=./audio_file_list.php>오디오 파일 리스트로 이동하기</a>");
+    die("<br><br><font color = red>죄송합니다.</font> 오디오 파일을 업로드 할 수 없습니다.<br> 동일한 시간에 음성파일을 $max_audio_file개 까지 입력할 수 있기 때문입니다.<br>현재 등록된 음성파일 개수가 $count 입니다.<br><br> <br> <a href=./audio_file_list.php>오디오 파일 리스트로 이동하기</a>");
  
 // ------------------------- upload audio file to mysql database and audio folder
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
