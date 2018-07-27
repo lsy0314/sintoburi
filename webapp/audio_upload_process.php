@@ -91,7 +91,9 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
         $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
         $file_id = md5(uniqid(rand(), true));
-        $name_orig = $file['name'];
+        // remove all spaces out of a string data 
+        // because data delivery technique of HTML+GET can not handle a space.
+        $name_orig = str_replace(" ", "", $file['name']);
         $name_save = $path;
         
         $stmt = mysqli_prepare($db_conn, $query);
