@@ -33,6 +33,7 @@ $time_start_day = $_POST['start_day'];
 $time_start_hour = $_POST['start_hour'];
 $time_start_minute = $_POST['start_minute'];
 $time= $time_start_year . $time_start_month . $time_start_day . $time_start_hour . $time_start_minute;
+$time_date_folder = $time_start_year . $time_start_month . $time_start_day;
 
 // ----------------------calculate the number of audio data
 
@@ -64,7 +65,12 @@ $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
-    $upload_directory = 'audio/';
+    $upload_directory = 'audio/'.$time_date_folder.'/';
+
+    // create a date folder if it does not exists.
+    if (!file_exists($upload_directory)) {
+        mkdir($upload_directory, 0777, true);
+    }
     $ext_str = "wav,mp3,m4a";
     $allowed_extensions = explode(',', $ext_str);
     
@@ -80,10 +86,8 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     if($file['size'] >= $max_file_size) {
         echo "5MB 까지만 업로드 가능합니다.";
     }
-   
     
     $path = $time . "_" . md5(microtime()) . '.' . $ext;
-
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
         $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
         $file_id = md5(uniqid(rand(), true));
