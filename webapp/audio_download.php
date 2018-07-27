@@ -24,7 +24,10 @@ $row = mysqli_fetch_assoc($result);
 $name_orig = $row['name_orig'];
 $name_save = $row['name_save'];
 
-$fileDir = "audio";
+// get only folder date from $name_save.
+$audio_folder = substr($name_save,0,8);
+
+$fileDir = "audio"."/".$audio_folder;
 $fullPath = $fileDir."/".$name_save;
 $length = filesize($fullPath);
 
