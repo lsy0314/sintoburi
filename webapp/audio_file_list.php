@@ -19,9 +19,9 @@
 <table border="1">
 <tr bgcolor=yellow>
 	<th>삭제</th>
-	<th>업로드 시각</th>
+<!--	<th>업로드 시각</th> //-->
 	<th>상점명</th>
-<!--	<th>음성 내용</th> //-->
+	<th>음성 내용</th>
 <!--	<th>파일 ID</th>   //-->
 	<th>업로드 파일명</th>
 	<th>저장된 파일명(*)</th>
@@ -51,9 +51,9 @@ while($row = mysqli_fetch_assoc($result)) {
   <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
   </td>
-  <td><?=$row['reg_time'] ?></td>
+<!--  <td><?=$row['reg_time'] ?></td> //-->
   <td><?=$row['store_name'] ?></td>
-<!--  <td><?=$row['audio_msg'] ?></td>  //-->
+  <td><?=$row['audio_msg'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->
   <td><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
