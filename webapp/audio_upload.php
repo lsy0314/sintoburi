@@ -48,6 +48,9 @@ $input_month  = date("m");
 $input_day    = date("d");
 $input_hour   = date("H");
 $input_minute = floor(date("i")/10)*10;
+// if a minute value is 0, let's modify the value with "00".
+if ($input_minute ==  "0")
+    $input_minute = "00";
 
 ?>
 <font size=5  Color=black>시작 시간  </font>
