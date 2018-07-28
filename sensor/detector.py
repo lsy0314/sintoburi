@@ -51,13 +51,16 @@ try:
         t = time.localtime()
         print ("################# Motion Detected! (%d) %d:%d:%d ##############################" \
         % (count, t.tm_hour, t.tm_min, t.tm_sec))
-        
+        #get time information with strftime fucntion for time acess and conversions
+        #https://docs.python.org/2/library/time.html
+        current_day = time.strftime("%Y%m%d")
+
         print "[DEBUG] Reading audio files..."
         #---------------------------------------------- Read audio file folder: start	
         # Note that python can not play korean file name. So we have to write in english.
         # we have to read audio files in the search_path automatically.
         # declare a directory to search audio files
-        search_path = cfg.search_path
+        search_path = cfg.search_path + current_day + "/"
         
         # function to display audio files in a search_path
         # https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
