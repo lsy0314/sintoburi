@@ -93,7 +93,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         $file_id = md5(uniqid(rand(), true));
         // remove all spaces out of a string data 
         // because data delivery technique of HTML+GET can not handle a space.
-        $name_orig = str_replace(" ", "", $file['name']);
+        $name_orig = str_replace(" ", "_", $file['name']);
         $name_save = $path;
         
         $stmt = mysqli_prepare($db_conn, $query);
