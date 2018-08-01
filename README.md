@@ -1,5 +1,5 @@
 # Sintoburi 란?
-우리의 프로젝트는 임베디드 소프트웨어를 도입하여 전통적인 시장에서 돈을 벌어야하는 판매자를 돕는 것입니다. **Sintoburi**  는 몸과 태어난 땅은 하나라는 것을 의미합니다. 제 땅에서 산출된 것이라야 체질에 잘 맞는다는 말
+우리의 프로젝트는 임베디드 소프트웨어를 도입하여 전통적인 시장에서 돈을 벌어야하는 판매자를 돕는 것입니다. **Sintoburi**  는 몸과 태어난 땅은 하나라는 것을 의미합니다. 제 땅에서 산출된 것이라야 체질에 잘 맞는다는 말입니다.
 <br><br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/carrot.png width=100 height=100 border=0> </img>
 
