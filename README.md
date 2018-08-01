@@ -1,4 +1,4 @@
-# Sintoburi 란 무엇입니까?
+# Sintoburi 란?
 우리의 프로젝트는 임베디드 소프트웨어를 도입하여 전통적인 시장에서 돈을 벌어야하는 판매자를 돕는 것입니다. ** Sintoburi ** 는 육체가 태어난 땅과 땅이 하나가 아니라 둘이라는 것을 의미합니다. 그것은 당신이 태어난 땅에서 나온 것들이 당신의 몸에 더 잘 어울리는 것을 의미합니다.
 <br><br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/carrot.png width=100 height=100 border=0> </img>
@@ -14,7 +14,7 @@
 
  소개
 우리는 우리의 제안을 소개하기 위해 유튜브 비디오를 만들었습니다. 이 비디오는 3 분 동안 재생됩니다.
-* Youtube Video (3 분)를 보려면 [HERE] (https://youtu.be/r2Oou_AUoKo?t=0s)를 누르십시오.
+* Youtube Video (3분)를 보려면 [HERE] (https://youtu.be/r2Oou_AUoKo?t=0s)를 누르십시오.
  
 
 # 디자인
