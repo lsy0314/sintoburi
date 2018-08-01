@@ -1,40 +1,44 @@
-# What is Sintoburi?
-Our project is to help sellers that have to earn money in the traditional market by introducing embedded software. **Sintoburi** means that the body and the land where one is born are one, not two. It means that the things that came from the land where you were born are better suited to your body.
+# Sintoburi 란 무엇입니까?
+우리의 프로젝트는 임베디드 소프트웨어를 도입하여 전통적인 시장에서 돈을 벌어야하는 판매자를 돕는 것입니다. ** Sintoburi ** 는 육체가 태어난 땅과 땅이 하나가 아니라 둘이라는 것을 의미합니다. 그것은 당신이 태어난 땅에서 나온 것들이 당신의 몸에 더 잘 어울리는 것을 의미합니다.
 <br><br>
 <img src=https://github.com/lsy0314/sintoburi/blob/master/images/carrot.png width=100 height=100 border=0> </img>
 
-# Background
-In order to revitalize the traditional market, we are going to introduce a more modernized traditional market help system. Despite the fact that the current traditional market has a lot of delicious fruits compared to large-sized marts, it has not been able to effectively promote the information of the market to the customers of the market. I would like to develop a traditional market helper system that can solve these problems and make it possible to revitalize the traditional market which is losing market competitiveness. 
 
-Market factors that impede the activation of traditional markets. And then draw out ideas for solving the problems. Investigate through the internet site what technologies are needed to introduce the ideas actually brought into the traditional market. The hardware and software programming languages are organized to actually implement the investigated technologies. Realize the designed software to actualize experiment and perfection. We visited the below traditional markets to survey weak point of that.
+# 배경
+전통 시장을 활성화하기 위해보다 현대화 된 전통 시장 지원 시스템을 도입 할 예정입니다. 현재의 전통 시장은 대형 마트에 비해 맛있는 과일을 많이 가지고 있지만, 시장 정보를 시장 고객에게 효과적으로 홍보 할 수는 없습니다. 이러한 문제를 해결하고 시장 경쟁력을 잃어 가고있는 전통적인 시장 활성화를 가능하게 할 수있는 전통적인 시장 도우미 시스템을 개발하고 싶습니다.
+
+전통 시장의 활성화를 방해하는 시장 요인. 그런 다음 문제를 해결하기위한 아이디어를 끌어냅니다. 인터넷 사이트를 통해 조사를 통해 실제로 전통적인 시장에 도입 된 아이디어를 소개하는 데 필요한 기술이 무엇인지 확인하십시오. 하드웨어 및 소프트웨어 프로그래밍 언어는 실제로 조사 된 기술을 구현하기 위해 구성됩니다. 실험과 완벽을 실현하기 위해 설계된 소프트웨어를 실현하십시오. 우리는 아래의 전통 시장을 방문하여 그 약점을 조사했습니다.
+
 * http://www.수원남문시장.com/c/market8 (지동시장)
 * https://story.kakao.com/ch/9meatan (구매탄시장)
 
-# Introduction
-We made Youtube video to introduce our proposal. This video will be played for 3 minutes.
-* Press [HERE](https://youtu.be/r2Oou_AUoKo?t=0s) to watch our Youtube Video (3minutes)
+ 소개
+우리는 우리의 제안을 소개하기 위해 유튜브 비디오를 만들었습니다. 이 비디오는 3 분 동안 재생됩니다.
+* Youtube Video (3 분)를 보려면 [HERE] (https://youtu.be/r2Oou_AUoKo?t=0s)를 누르십시오.
  
 
-# Design
+# 디자인
 * https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG
 
-It is to explain our design about helping the traditional market. Using our products in traditional markets, we can digitize traditional markets. This product is designed to activate and differentiate traditional markets in line with the fourth industrial revolution. And to develop IOT products that automatically promote market information to customers visiting the market.
-This product can be used only with mobile phone. The product screen shows discounts according to each hour. 
-
-Web programs for uploading php files require php and html. The raspberry pie board cost 50,000 won, and the OS uses the ubuntu OS which does not cost money. At the entrance of the market, a motion sensor called the pir sensor of the product detects customers and informs you of today's discounts.The ad monitor will notify you of the following events, such as "Please come tomorrow because there is a special event for tomorrow".The effect of this product is digitization of the market, automation of the promotion of the shop is possible, so there are regular customers, and the profit of the shop owners increases.Therefore, we can revitalize the traditional market.
+그것은 전통적인 시장을 돕는 우리의 디자인을 설명하는 것입니다. 전통적인 시장에서 우리 제품을 사용하여 전통적인 시장을 디지털화 할 수 있습니다. 이 제품은 네 번째 산업 혁명에 따라 전통 시장을 활성화하고 차별화하기 위해 고안되었습니다. 시장을 방문하는 고객에게 시장 정보를 자동으로 홍보하는 IOT 제품을 개발합니다.
+이 제품은 휴대 전화에서만 사용할 수 있습니다. 제품 화면에는 매시간 할인이 표시됩니다.
 
 
-# How to solve problem
-* Press [Here](doc/how-to-solve-problem.md).
+php 파일을 업로드하기위한 웹 프로그램은 php와 html이 필요합니다. 나무 딸기 파이 보드는 5 만원이 들며 OS는 돈을 들이지 않는 우분투 OS를 사용합니다. 시장 입구에서 제품의 pir 센서라고 불리는 모션 센서가 고객을 감지하고 오늘의 할인 정보를 알려줍니다. 광고 모니터는 다음과 같은 이벤트를 알려줍니다. " 이 제품의 효과는 시장의 디지털화이며, 상점 홍보의 자동화가 가능하므로 일반 고객이 있으며 상점 주인의 이익이 증가합니다. 따라서 우리는 재래 시장을 활성화 할 수 있습니다.
 
-# How to install
-* (In progress)
 
-# Demo
+# 문제 해결 방법
+* [Here] (doc / how-to-solve-problem.md)를 누르십시오.
 
-* Website - http://sintoburi.mooo.com
-   * This web address is created free of charge via https://freedns.afraid.org/.
-* (In progress)
+# 설치하는 방법
+* (진행 중)
 
-# Team members
-**Lim Hyun-jun** is responsible for the hardware development area. **Lim Soo-yeon** is responsible for software development such as web application. In order to effectively share opinions and communicate smoothly, the development site, which is responsible for each of them, must be defective at the end. Through the recent popular github.com development hosting site, it is possible to share the progress of each development role in real time, We plan to increase the completeness of the works by collaborating.
+
+# 데모
+
+* 웹 사이트 - http://sintoburi.mooo.com
+   *이 웹 주소는 https://freedns.afraid.org/를 통해 무료로 생성됩니다.
+* (진행 중)
+
+# 팀 멤버
+임현준은 하드웨어 개발 분야를 담당합니다. 임수연은 웹 어플리케이션과 같은 소프트웨어 개발을 담당합니다. 효과적으로 의견을 나누고 원활하게 의사 소통을하기 위해서는 각자의 책임이있는 개발 사이트가 결국 결함이 있어야합니다. 최근 인기있는 github.com 개발 호스팅 사이트를 통해 실시간으로 각 개발 역할의 진행 상황을 공유 할 수 있습니다. 우리는 공동 작업을 통해 작업의 완성도를 높일 계획입니다.
