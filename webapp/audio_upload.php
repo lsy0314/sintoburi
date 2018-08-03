@@ -151,18 +151,24 @@ if ($input_minute ==  "0")
             <option value="50" STYLE="BACKGROUND-COLOR: YELLOW">50</option>
 </select>분
 <br>
+<font color=blue>
 (입력방법: 오디오 플레이 시작시간은 10분 단위로 입력하여 주세요.)       
-
+</font>
 
 
 <br>
 <br>
-<font size=5  Color=black>음성메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" value="데이타를 미입력시 구글 음성인식 로봇이 자동으로 입력합니다." SIZE=60 MAXLENGTH=60> <br><br> </font>
-<label for="upfile"> </label><font size=5 color=black>음성파일 <input type="file" name="upfile" id="upfile" /></font>
+<font size=5  Color=black>음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60><br> </font>
+<font color=blue>
+(데이타를 미입력시 구글 음성인식 로봇이 자동으로 입력합니다.)<br><br>
+</font>
+
+<label for="upfile"> </label><font size=5 color=black>음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
-<br>
-모바일폰에 "<b>삼성 음성 녹음</b>" 또는 "<b>곰레코더</b>"를 설치후에<br>
-*.m4a으로 녹음한 음성파일을 업로드 하여 주세요. 
+<font color=blue>
+(모바일폰에 "<b>삼성 음성 녹음</b>" 또는 "<b>곰레코더</b>"를 설치후에<br>
+*.m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
+</font>
 <br>
 <br>
 <br>
