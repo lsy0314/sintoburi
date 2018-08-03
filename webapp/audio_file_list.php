@@ -1,7 +1,5 @@
 <?php
 
-# Get the page number  from HTML get method
-$no  = $_REQUEST['no'];
 
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -16,8 +14,16 @@ $page_list_size=10;
 
 #########################################################################
 
-if (empty($no) || $no < 0) $no=0; //$no 값이 안넘어 오거나 잘못된(음수)값이 넘어오는 경우 0으로 처리
-
+# Get the page number  from HTML get method
+//$no 값이 안넘어 오거나 잘못된(음수)값이 넘어오는 경우 0으로 처리
+// $no  값을 전달 받지 않는 경우에 처리하자. 
+if (!empty($_REQUEST['no'])) {
+    $no  = $_REQUEST['no'];
+}
+// $no 값을 전달받는 경우에 처리하는 문장이다.
+if (empty($no) || $no < 0) {
+    $no = 0; 
+}
 #########################################################################
 echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
@@ -88,13 +94,13 @@ $current_page = floor($no/$page_size);
 
 <table border="1">
 <tr bgcolor=yellow>
-	<th>삭제</th>
+	<th width=20>삭제</th>
 <!--	<th>업로드 시각</th> //-->
-	<th>상점명</th>
-	<th>음성 내용</th>
+	<th width=80>상점명</th>
+	<th width=400>음성 내용</th>
 <!--	<th>파일 ID</th>   //-->
 	<th>업로드 파일명</th>
-	<th>저장된 파일명(*)</th>
+	<th width=440>저장된 파일명(*)</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -120,10 +126,10 @@ while($row = mysqli_fetch_assoc($result)) {
        <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
   </td>
 <!--  <td><?=$row['reg_time'] ?></td> //-->
-  <td><?=$row['store_name'] ?></td>
-  <td><?=$row['audio_msg'] ?></td>
+  <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
+  <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->
-  <td><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
+  <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td><?= $row['name_save'] ?></td>
 </tr>
 
