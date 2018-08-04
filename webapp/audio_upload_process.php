@@ -75,7 +75,6 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $ext_str = "wav,mp3,m4a";
     $allowed_extensions = explode(',', $ext_str);
     
-    $max_file_size = 5242880; # Maximum file upload is 5 Mbytes
     $ext = substr($file['name'], strrpos($file['name'], '.') + 1);
     
     // 확장자 체크
