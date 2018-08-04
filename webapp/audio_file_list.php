@@ -82,7 +82,10 @@ $current_page = floor($no/$page_size);
 <title>업로드 오디오 파일 목록</title>
 </head>
 <body>
-<font size=5 color=blue>신토불이: 음성 파일 리스트 화면</font>
+<?php
+require ("./menu.php");
+?>
+
 <br>
 <br>
 <a href="./audio_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
