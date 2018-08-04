@@ -84,7 +84,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     
     // 파일 크기 체크
     if($file['size'] >= $max_file_size) {
-        echo "5MB 까지만 업로드 가능합니다.";
+        echo "죄송합니다. $max_file_size MB 까지만 업로드 가능합니다.";
     }
     
     $path = $time . "_" . md5(microtime()) . '.' . $ext;
