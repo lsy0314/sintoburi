@@ -88,6 +88,8 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     }
     
     $path = $time . "_" . md5(microtime()) . '.' . $ext;
+   
+    // upload audio file with move_uploaded_file() php function.
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
         $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
         $file_id = md5(uniqid(rand(), true));
@@ -99,9 +101,14 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);
         $exec = mysqli_stmt_execute($stmt);
-      
+     
+        // run google-speech-api program.
+        // then, save a transcripted text message (korean) into audio_msg field of the table.
+        // @TODO: develop a AI bot program
+
+        // disconnect mysql database connection. 
         mysqli_stmt_close($stmt);
-       
+      
         echo "<br><br>" ;
         echo "<h3>축하합니다. 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
         echo "<a href='./audio_file_list.php'>업로드 파일 목록</a>";
