@@ -113,14 +113,15 @@ Confidence: 0.8430271
 
 ## 초간단 테스트 방법(flac사용)
 ```
+
 cd /var/www/html/sintoburi/webapp/audio/20180804
 export GOOGLE_APPLICATION_CREDENTIALS=/work/sintoburi-79c7917331aa.json
 
-sudo rm -f 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac
-sudo ffmpeg -i 201808041150_95a8d906b1313ba9442b9347379a8ba3.m4a -af aformat=s16:44100 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac
+sudo rm -f 201808042130_45e234af17ecda8a63889767053b1b89.flac
+sudo ffmpeg -i 201808042130_45e234af17ecda8a63889767053b1b89.m4a -af aformat=s16:44100 201808042130_45e234af17ecda8a63889767053b1b89.flac
 
 speech=/home/hjoon0510/google-speech-api/php-docs-samples/speech/speech.php 
-/usr/bin/php $speech transcribe 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac  --encoding FLAC --language-code ko-KR --sample-rate 44100
+/usr/bin/php $speech transcribe 201808042130_45e234af17ecda8a63889767053b1b89.flac  --encoding FLAC --language-code ko-KR --sample-rate 44100
 
 
 ```
