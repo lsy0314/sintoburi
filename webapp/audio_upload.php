@@ -39,7 +39,7 @@ function formSubmit(f) {
 <img src='images/audio_m4a.png' border=0 width=60 height=60></img>
 <font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
-<font size=5  Color=black>상점명 <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
 <!--
 <font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12><br><br> </font>
 //-->
@@ -55,7 +55,7 @@ if ($input_minute ==  "0")
     $input_minute = "00";
 
 ?>
-<font size=5  Color=black>시작 시간  </font>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />시작 시간  </font>
 <select name="start_year" STYLE="BACKGROUND-COLOR: YELLOW">
             <option value="<?=$input_year ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_year ?></option>
             <option value="2018" STYLE="BACKGROUND-COLOR: YELLOW">2018</option>
@@ -160,22 +160,21 @@ if ($input_minute ==  "0")
 
 <br>
 <br>
-<font size=5  Color=black>음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60><br> </font>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60><br> </font>
 <font color=blue>
 (데이타를 미입력시 <b>음성인식 로봇</b>이 음성 메세지를 자동으로 입력합니다.)<br><br>
 </font>
-<font size=5  Color=black> 비밀번호  <INPUT TYPE=TEXT NAME=password VALUE="1234" STYLE="BACKGROUND-COLOR: YELLOW" SIZE=30 MAXLENGTH=30>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />비밀번호  <INPUT TYPE=TEXT NAME=password VALUE="1234" STYLE="BACKGROUND-COLOR: YELLOW" SIZE=30 MAXLENGTH=30>
 </font>
 <br>
 <font color=blue>
 (비밀번호를 입력하지 않으면 기본값인 1234가 적용됩니다.)<br><br>
 </font>
 
-<label for="upfile"> </label><font size=5 color=black>음성 파일 <input type="file" name="upfile" id="upfile" /></font>
+<label for="upfile"> </label><font size=5 color=black><img src=images/item.png border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
 <font color=blue>
-(모바일폰에 "<b>삼성 음성 녹음</b>" 또는 "<b>곰레코더</b>"를 설치후에<br>
-*.m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
+(모바일폰에 "<b>곰레코더</b>"를 설치후에 *.m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
 </font>
 <br>
 <br>
