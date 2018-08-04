@@ -98,6 +98,7 @@ require ("./menu.php");
 <table border="1">
 <tr bgcolor=yellow>
 	<th width=20>삭제</th>
+	<th width=20>상세</th>
 <!--	<th>업로드 시각</th> //-->
 	<th width=80>상점명</th>
 	<th width=400>음성 내용</th>
@@ -127,6 +128,8 @@ while($row = mysqli_fetch_assoc($result)) {
 <tr>
   <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
+  </td>
+  <td><a href=audio_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png border=0 hegith=20 width=20></img>
   </td>
 <!--  <td><?=$row['reg_time'] ?></td> //-->
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
