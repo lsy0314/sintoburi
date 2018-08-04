@@ -36,7 +36,9 @@ function formSubmit(f) {
 <div>
 <a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src='images/audio_m4a.png' border=0 width=60 height=60></img>
+<a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
+<br>
+<img src='images/audio_m4a.png' border=0 width=40 height=40></img>
 <font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
 <font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
