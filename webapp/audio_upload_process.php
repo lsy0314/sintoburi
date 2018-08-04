@@ -32,6 +32,7 @@ $time_start_month = $_POST['start_month'];
 $time_start_day = $_POST['start_day'];
 $time_start_hour = $_POST['start_hour'];
 $time_start_minute = $_POST['start_minute'];
+$audio_password = $_POST['password'];
 $time= $time_start_year . $time_start_month . $time_start_day . $time_start_hour . $time_start_minute;
 $time_date_folder = $time_start_year . $time_start_month . $time_start_day;
 
@@ -122,7 +123,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             echo "<font color=blue><pre>$audio_msg</pre></font>";
         }
 
-        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
+        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg,password) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password')";
         
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);

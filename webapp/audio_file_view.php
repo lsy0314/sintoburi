@@ -41,8 +41,8 @@ while($row = mysqli_fetch_assoc($result)) {
 <table border="1">
 <tr>
   <td bgcolor=green>삭제</td>
-  <td><a href=audio_file_remove.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
-       <img src=./images/remove.png border=0 height=20 width=20 onclick="return confirm('이 파일을 정말로 삭제하시겠습니까?')"></img>
+  <td><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
+       <img src=./images/remove.png border=0 height=20 width=20 ></img>
       </a>
   </td>
 </tr>

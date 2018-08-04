@@ -164,6 +164,12 @@ if ($input_minute ==  "0")
 <font color=blue>
 (데이타를 미입력시 <b>음성인식 로봇</b>이 음성 메세지를 자동으로 입력합니다.)<br><br>
 </font>
+<font size=5  Color=black> 비밀번호  <INPUT TYPE=TEXT NAME=password VALUE="1234" STYLE="BACKGROUND-COLOR: YELLOW" SIZE=30 MAXLENGTH=30>
+</font>
+<br>
+<font color=blue>
+(비밀번호를 입력하지 않으면 기본값인 1234가 적용됩니다.)<br><br>
+</font>
 
 <label for="upfile"> </label><font size=5 color=black>음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
