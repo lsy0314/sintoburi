@@ -59,7 +59,7 @@ while($row = mysqli_fetch_assoc($result)) {
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
 </tr>
 <tr>
-  <td bgcolor=green>파일 ID</td> 
+  <td bgcolor=green>파일 ID (Key)</td> 
   <td><?= $row['file_id'] ?></td>
 </tr>
 <tr>
@@ -67,8 +67,12 @@ while($row = mysqli_fetch_assoc($result)) {
   <td width=500 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
 </tr>
 <tr>
-  <td  bgcolor=green >저장된 파일명(*)</td>
+  <td  bgcolor=green >저장된 파일명</td>
   <td><?= $row['name_save'] ?></td>
+</tr>
+<tr>
+  <td  bgcolor=green >IP 주소</td>
+  <td><?= $row['ip_address'] ?></td>
 </tr>
 </table>
 

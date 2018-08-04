@@ -33,6 +33,32 @@ $time_start_day = $_POST['start_day'];
 $time_start_hour = $_POST['start_hour'];
 $time_start_minute = $_POST['start_minute'];
 $audio_password = $_POST['password'];
+
+// get ip address of user
+function get_client_ip()
+{
+     $ipaddress = '';
+     if (getenv('HTTP_CLIENT_IP'))
+         $ipaddress = getenv('HTTP_CLIENT_IP');
+     else if(getenv('HTTP_X_FORWARDED_FOR'))
+         $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+     else if(getenv('HTTP_X_FORWARDED'))
+         $ipaddress = getenv('HTTP_X_FORWARDED');
+     else if(getenv('HTTP_FORWARDED_FOR'))
+         $ipaddress = getenv('HTTP_FORWARDED_FOR');
+     else if(getenv('HTTP_FORWARDED'))
+         $ipaddress = getenv('HTTP_FORWARDED');
+     else if(getenv('REMOTE_ADDR'))
+         $ipaddress = getenv('REMOTE_ADDR');
+     else
+         $ipaddress = 'UNKNOWN';
+
+     return $ipaddress;
+}
+
+$ipaddress = get_client_ip();
+// echo ("[DEBUG] IP address: $ipaddress<br>");
+
 $time= $time_start_year . $time_start_month . $time_start_day . $time_start_hour . $time_start_minute;
 $time_date_folder = $time_start_year . $time_start_month . $time_start_day;
 
@@ -113,7 +139,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     
             $cmd = "cat $upload_directory/$name_save.txt | grep 'Transcript'";
             $audio_msg = shell_exec($cmd);
-            echo "딥러닝 음성로봇 번역결과:<br>";
+            echo "<b>딥러닝 음성로봇 번역결과:</b><br>";
             $audio_msg = str_replace('Transcript:','',$audio_msg);
             echo "<font color=blue><pre>$audio_msg</pre></font>";
         }
@@ -122,7 +148,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             echo "<font color=blue><pre>$audio_msg</pre></font>";
         }
 
-        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg,password) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password')";
+        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg, password, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password', '$ipaddress')";
         
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);
