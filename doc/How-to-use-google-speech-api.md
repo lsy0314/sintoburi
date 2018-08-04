@@ -109,3 +109,18 @@ Confidence: 0.8430271
    * 11,025Hz: 일반적인 사람 목소리 수준
    * 22,050Hz:  카세트 테이프 음성 수준
    * 44,100Hz:  CD  음성 수준
+
+
+## 초간단 테스트 방법(flac사용)
+```
+cd /var/www/html/sintoburi/webapp/audio/20180804
+export GOOGLE_APPLICATION_CREDENTIALS=/work/sintoburi-79c7917331aa.json
+
+sudo rm -f 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac
+sudo ffmpeg -i 201808041150_95a8d906b1313ba9442b9347379a8ba3.m4a -af aformat=s16:44100 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac
+
+speech=/home/hjoon0510/google-speech-api/php-docs-samples/speech/speech.php 
+/usr/bin/php $speech transcribe 201808041150_95a8d906b1313ba9442b9347379a8ba3.flac  --encoding FLAC --language-code ko-KR --sample-rate 44100
+
+
+```
