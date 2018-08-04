@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# @title: .m4a 음성파일을 테스트하기 위한 스크립트
+# @title: A script that transcripts from .m4a to a text message
 # @author: HyeonJun Lim <hjoon0510@gmail.com>
 
 # Configuration variables
@@ -11,32 +11,51 @@ google_speech=~/google-speech-api/php-docs-samples/speech/speech.php
 export GOOGLE_APPLICATION_CREDENTIALS=/work/sintoburi-79c7917331aa.json
 
 # Check if required commands are prepared
+clear
+echo -e "Checking required commands..."
 which ffmpeg
 which php
 
 # Check if an user types argument1 and argument2.
-if [[ $1 == "" && $2 == "" ]]; then
+if [[ $1 == "" || $2 == "" ]]; then
+    echo -e "\n\n"
     echo -e "Ooops.!!! Run $0 correctly."
-    echo -e "For example, > $0  {raw|flac} {file_name}."
-    echo -e "Do not type .m4a in case of {file_name}."
+    echo -e "rpi3$> $0 {raw|flac} {file_name}.m4a"
+    echo -e "\n\n"
+    exit 1
 fi
 
+# Extract filename and extension in Bash
+# https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+# https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
+FILE="$2"
+file_name="${FILE%.*}"
+file_ext="${FILE#*.}"
+
+# If you type "flac" as argument 1, use .flac audio format.
 # Running sequence: .m4a --> .flac --> korean text
 if [[ $1 == "flac" ]]; then
     lang_locale=ko-KR
     sample_rate=44100
-    media_type=FLAC
-    sudo ffmpeg -i $2.m4a -af aformat=s16:$sample_rate  $2.flac
+    audio_type=FLAC
+    if [[ -e $file_name.flac ]];then
+        sudo rm -f $file_name.flac
+    fi
+    sudo ffmpeg -i $file_name.m4a -af aformat=s16:$sample_rate  $file_name.flac
     echo -e "---------------------------------------------"
-    php $google_speech transcribe  --encoding $media_type --language-code $lang_locale --sample-rate $sample_rate $2.flac
+    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.flac
 fi
 
+# If you type "raw" as argument 1, use .raw audio format.
 # Running sequence: .m4a --> .raw --> korean text
 if [[ $1 == "raw" ]]; then
     lang_locale=ko-KR
     sample_rate=16000
-    media_type=LINEAR16
-    sudo ffmpeg -y -i $2.m4a -acodec pcm_s16le -f s16le -ac 1 -ar $sample_rate $2.raw
+    audio_type=LINEAR16
+    if [[ -e $file_name.raw ]];then
+        sudo rm -f $file_name.raw
+    fi
+    sudo ffmpeg -y -i $file_name.m4a -acodec pcm_s16le -f s16le -ac 1 -ar $sample_rate $file_name.raw
     echo -e "---------------------------------------------"
-    php $google_speech transcribe  --encoding $media_type --language-code $lang_locale --sample-rate $sample_rate $2.raw
+    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.raw
 fi
