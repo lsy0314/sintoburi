@@ -5,7 +5,7 @@
 
 # Configuration variables
 # "message": The request is missing a valid API key.
-google_speech=~/google-speech-api/php-docs-samples/speech/speech.php
+google_speech=/work/google-speech-api/php-docs-samples/speech/speech.php
 
 # import license key
 export GOOGLE_APPLICATION_CREDENTIALS=/work/sintoburi-79c7917331aa.json
@@ -39,11 +39,15 @@ if [[ $1 == "flac" ]]; then
     sample_rate=44100
     audio_type=FLAC
     if [[ -e $file_name.flac ]];then
-        sudo rm -f $file_name.flac
+        rm -f $file_name.flac
     fi
-    sudo ffmpeg -i $file_name.m4a -af aformat=s16:$sample_rate  $file_name.flac
+    echo -e "Running ffmpeg command to convert audio from .m4a to .flac"
+    ffmpeg -i $file_name.m4a -af aformat=s16:$sample_rate  $file_name.flac
     echo -e "---------------------------------------------"
-    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.flac
+    echo -e "Transcribing .flac audio file."
+    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.flac > ./$file_name.m4a.txt
+    cat ./$file_name.txt
+    rm -f $file_name.flac
 fi
 
 # If you type "raw" as argument 1, use .raw audio format.
@@ -53,9 +57,13 @@ if [[ $1 == "raw" ]]; then
     sample_rate=16000
     audio_type=LINEAR16
     if [[ -e $file_name.raw ]];then
-        sudo rm -f $file_name.raw
+        rm -f $file_name.raw
     fi
-    sudo ffmpeg -y -i $file_name.m4a -acodec pcm_s16le -f s16le -ac 1 -ar $sample_rate $file_name.raw
+    echo -e "Running ffmpeg command to convert audio from .m4a to .raw"
+    ffmpeg -y -i $file_name.m4a -acodec pcm_s16le -f s16le -ac 1 -ar $sample_rate $file_name.raw
     echo -e "---------------------------------------------"
-    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.raw
+    echo -e "Transcribing .raw audio file."
+    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.raw > ./$file_name.m4a.txt
+    cat ./$file_name.txt
+    rm -f $file_name.raw
 fi

@@ -48,6 +48,7 @@ echo ("오디오 파일의 폴더명은 ".$audio_folder."입니다.");
 
 // Remove audito file in the specified directory
 unlink("audio/".$audio_folder."/".$name_save);
+unlink("audio/".$audio_folder."/".$name_save.".txt");
 
 mysqli_close($db_conn);
 ?>

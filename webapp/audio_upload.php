@@ -35,6 +35,7 @@ function formSubmit(f) {
 <form name="uploadForm" id="uploadForm" method="post" action="audio_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
 <br><br>
+<img src='images/audio_m4a.png' border=0 width=60 height=60></img>
 <font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
 <font size=5  Color=black>상점명 <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>

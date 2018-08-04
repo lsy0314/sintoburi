@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>파일 업로드</title>
+<title>음성파일 업로드</title>
 </head>
 <body>
 <?php
@@ -91,26 +91,48 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
    
     // upload audio file with move_uploaded_file() php function.
     if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
-        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
+
         $file_id = md5(uniqid(rand(), true));
         // remove all spaces out of a string data 
         // because data delivery technique of HTML+GET can not handle a space.
         $name_orig = str_replace(" ", "_", $file['name']);
         $name_save = $path;
+
+        echo "<img src='images/speech-api-lead.png' border=0></img>";
+        echo "<br>";
+
+        // if user do not insert audio message, run google speech API robot.
+        if ($audio_msg == "") {
+            // Run google-speech-api program.
+            // Then, save a transcripted text message (korean) into audio_msg field of the table.
+            // @TODO: develop a AI bot program
+            $cmd = "./google-speech-api.sh flac $upload_directory/$name_save";
+            $audio_msg = shell_exec($cmd);
+            //echo "[DEBUG] Audio messages:<br>";
+            //echo "<pre>$audio_msg</pre>";
+    
+            $cmd = "cat $upload_directory/$name_save.txt | grep 'Transcript'";
+            $audio_msg = shell_exec($cmd);
+            echo "딥러닝 음성로봇 번역결과:<br>";
+            $audio_msg = str_replace('Transcript:','',$audio_msg);
+            echo "<font color=blue><pre>$audio_msg</pre></font>";
+        }
+        else {
+            echo "음성 입력 메세지:<br>";
+            echo "<font color=blue><pre>$audio_msg</pre></font>";
+        }
+
+        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg) VALUES(?,?,?,now(),'$store_name', '$audio_msg')";
         
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);
         $exec = mysqli_stmt_execute($stmt);
      
-        // run google-speech-api program.
-        // then, save a transcripted text message (korean) into audio_msg field of the table.
-        // @TODO: develop a AI bot program
-
         // disconnect mysql database connection. 
         mysqli_stmt_close($stmt);
       
-        echo "<br><br>" ;
-        echo "<h3>축하합니다. 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
+        echo "<br>";
+        echo "<h3><font color=red>축하합니다.</font> 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
         echo "<a href='./audio_file_list.php'>업로드 파일 목록</a>";
         
     }
