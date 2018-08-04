@@ -34,7 +34,8 @@ function formSubmit(f) {
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="audio_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
-<br><br>
+<a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src='images/audio_m4a.png' border=0 width=60 height=60></img>
 <font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
@@ -175,10 +176,6 @@ if ($input_minute ==  "0")
 <br>
 <input type="submit" value="등록하기" />
 </form>
-<br><br>
-<br><br> 
-<br><br>
-<a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
 
 </body>
 </html>
