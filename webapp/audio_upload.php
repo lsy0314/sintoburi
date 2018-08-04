@@ -161,7 +161,7 @@ if ($input_minute ==  "0")
 <br>
 <font size=5  Color=black>음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60><br> </font>
 <font color=blue>
-(데이타를 미입력시 구글 음성인식 로봇이 자동으로 입력합니다.)<br><br>
+(데이타를 미입력시 <b>음성인식 로봇</b>이 음성 메세지를 자동으로 입력합니다.)<br><br>
 </font>
 
 <label for="upfile"> </label><font size=5 color=black>음성 파일 <input type="file" name="upfile" id="upfile" /></font>
