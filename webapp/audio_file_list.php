@@ -97,6 +97,7 @@ require ("./menu.php");
 
 <table border="1">
 <tr bgcolor=yellow>
+	<th width=20>번호</th>
 	<th width=20>삭제</th>
 	<th width=20>상세</th>
 <!--	<th>업로드 시각</th> //-->
@@ -117,15 +118,17 @@ require ("./menu.php");
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
+$number = 0;
 while($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <?php
 // The statement is how to create a dialog with “yes” and “no” options before removing a audio file
 // https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
+$number = $number + 1;
 ?>
-
 <tr>
+  <td width=20><?=$total_row - $number - $no +1 ?></td>
   <td><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 ></img>
   </td>
