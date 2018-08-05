@@ -176,7 +176,7 @@ if ($input_minute ==  "0")
 <label for="upfile"> </label><font size=5 color=black><img src=images/item.png border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
 <font color=blue>
-(모바일폰에 "<b>곰레코더</b>"를 설치후에 *.m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
+(스마트폰에 <b>곰레코더 (또는 '삼성 음성 녹음'</b>를 설치후에 .m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
 </font>
 <br>
 <br>
