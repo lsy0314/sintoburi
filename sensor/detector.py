@@ -97,8 +97,8 @@ try:
                 print "[DEBUG] Failed. The file name is not number."
                 print "[DEBUG] You have to change file name with only a number without a character."
                 print "[DEBUG] So, we run 'continue' statement."
-                sys.exit()
-                # continue
+                # sys.exit()
+                continue
             else: 
                 print "[DEBUG] Okay. The file name is number."
 
@@ -106,12 +106,12 @@ try:
 	    # https://stackoverflow.com/questions/19970532/how-to-check-a-string-for-a-special-character
 	    if re.match(".*.m4a$", audio_file):
                 print "[DEBUG] Okay. This file is .m4a audio file."
-	    else:
+            else:
 	        print "[DEBUG] Oooops. This file is not .m4a audio file."
                 print "[DEBUG] You have to save .m4a audio file only."
                 print "[DEBUG] So, we run 'continue' statement."
-                sys.exit()
-                # continue
+                #sys.exit()
+                continue
             #TODO: We have to save excution number to a file or database.
             cfg.execution_num = cfg.execution_num + 1
   	    print "[DEBUG] check execution number", cfg.execution_num
