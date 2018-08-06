@@ -12,7 +12,7 @@ include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 // mysql sql query to display data
-$query = "SELECT file_id, name_orig, name_save FROM upload_file WHERE file_id = ?";
+$query = "SELECT file_id, name_orig, name_save FROM $table_name_audio WHERE file_id = ?";
 $stmt = mysqli_prepare($db_conn, $query);
 
 $bind = mysqli_stmt_bind_param($stmt, "s", $file_id);

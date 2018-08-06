@@ -69,7 +69,7 @@ $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 $count = 0; 
 // https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html
 // Pattern Matching: Use the LIKE or NOT LIKE comparison operators 
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file WHERE name_save LIKE '".$time."%' ORDER BY reg_time DESC";
+$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio WHERE name_save LIKE '".$time."%' ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -148,7 +148,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             echo "<font color=blue><pre>$audio_msg</pre></font>";
         }
 
-        $query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time, store_name, audio_msg, password, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password', '$ipaddress')";
+        $query = "INSERT INTO $table_name_audio (file_id, name_orig, name_save, reg_time, store_name, audio_msg, password, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password', '$ipaddress')";
         
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);

@@ -34,7 +34,7 @@ if (!$db_conn) {
 
 // compare your password and database password.
 // echo ("[DEBUG] select count(*) FROM upload_file WHERE file_id = '$file_id' and password = '$password' <br>");
-$sql = "select count(*) FROM upload_file WHERE file_id = '$file_id' and password = '$password'";
+$sql = "select count(*) FROM $table_name_audio WHERE file_id = '$file_id' and password = '$password'";
 $result_count=mysqli_query($db_conn, $sql);
 $result_row=mysqli_fetch_row($result_count);
 $total_row = $result_row[0];
@@ -47,7 +47,7 @@ if ($total_row <=0)
     echo ("<font color=red>죄송합니다.</font> 비밀번호가 틀립니다. 올바르게 비밀번호를 입력하여 주세요.");
 else {
     // sql to delete a record
-    $sql = "DELETE FROM upload_file WHERE file_id='$file_id'";
+    $sql = "DELETE FROM $table_name_audio WHERE file_id='$file_id'";
     
     if (mysqli_query($db_conn, $sql)) {
         echo "<font color=red><b>축하합니다.</font><b> 선택하신 음성파일을 성공적으로 삭제되었습니다.";

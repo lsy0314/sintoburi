@@ -26,7 +26,7 @@ $file_id  = $_REQUEST['file_id'];
 // License: Star License
 //
 
-$query = "SELECT * FROM upload_file WHERE file_id = '$file_id'";
+$query = "SELECT * FROM $table_name_audio WHERE file_id = '$file_id'";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);

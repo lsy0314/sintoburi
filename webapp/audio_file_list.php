@@ -27,7 +27,7 @@ if (empty($no) || $no < 0) {
 #########################################################################
 echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY name_save DESC limit $no,$page_size";
+$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio ORDER BY name_save DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
 //$result = mysqli_query($query, $db_conn);
 $result = mysqli_query($db_conn,$query);
@@ -38,7 +38,7 @@ $result = mysqli_query($db_conn,$query);
 // 따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 
 // 일반적으로는 * 가 느리다.
 //$result_count=mysql_query("select count(*) from testboard",$db_conn);
-$result_count=mysqli_query($db_conn, "select count(*) from upload_file");
+$result_count=mysqli_query($db_conn, "select count(*) from $table_name_audio");
 $result_row=mysqli_fetch_row($result_count);
 $total_row = $result_row[0]; 
 //결과의 첫번째 열이 count(*) 의 결과다.
@@ -114,7 +114,7 @@ require ("./menu.php");
 // License: Star License
 //
 
-// $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM upload_file ORDER BY name_save DESC";
+// $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio ORDER BY name_save DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
