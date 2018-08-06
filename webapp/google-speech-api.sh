@@ -45,8 +45,8 @@ if [[ $1 == "flac" ]]; then
     ffmpeg -i $file_name.m4a -af aformat=s16:$sample_rate  $file_name.flac
     echo -e "---------------------------------------------"
     echo -e "Transcribing .flac audio file."
-    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.flac > ./$file_name.m4a.txt
-    cat ./$file_name.txt
+    php $google_speech transcribe  --encoding $audio_type --language-code $lang_locale --sample-rate $sample_rate $file_name.flac > ./$file_name.m4a.log
+    cat ./$file_name.log
     rm -f $file_name.flac
 fi
 

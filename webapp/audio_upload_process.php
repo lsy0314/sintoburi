@@ -137,7 +137,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             //echo "[DEBUG] Audio messages:<br>";
             //echo "<pre>$audio_msg</pre>";
     
-            $cmd = "cat $upload_directory/$name_save.txt | grep 'Transcript'";
+            $cmd = "cat $upload_directory/$name_save.log | grep 'Transcript'";
             $audio_msg = shell_exec($cmd);
             echo "<b>딥러닝 음성로봇 번역결과:</b><br>";
             $audio_msg = str_replace('Transcript:','',$audio_msg);
