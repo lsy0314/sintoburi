@@ -6,5 +6,5 @@
 #----------- Configuration area -------------------------
 folder = "/var/www/html/sintoburi/sensor/"
 GPIO_PIN = 4
-search_path="../webapp/audio/"
+search_path="../audio/"
 execution_num = 0
