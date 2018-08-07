@@ -92,7 +92,7 @@ $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
-    $upload_directory = 'audio/'.$time_date_folder.'/';
+    $upload_directory = '../audio/'.$time_date_folder.'/';
 
     // create a date folder if it does not exists.
     if (!file_exists($upload_directory)) {

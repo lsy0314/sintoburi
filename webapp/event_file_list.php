@@ -94,7 +94,7 @@ require ("./menu.php");
 <br>
 
 <table border="1">
-<tr bgcolor=yellow>
+<tr bgcolor=green>
 	<th width=20>번호</th>
 	<th width=20>삭제</th>
 	<th width=20>상세</th>

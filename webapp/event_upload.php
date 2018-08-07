@@ -12,9 +12,9 @@
 <br>
 <font size=7  Color=purple> 이벤트 일정 업로드 화면</font>
 <br><br><br>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: YELLOW" SIZE=20 MAXLENGTH=20> <br><br> </font>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: green" SIZE=20 MAXLENGTH=20> <br><br> </font>
 <!--
-<font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12><br><br> </font>
+<font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: green" SIZE=12 MAXLENGTH=12><br><br> </font>
 //-->
 <?php
 date_default_timezone_set("Asia/Seoul");
@@ -29,73 +29,73 @@ $input_day    = date("d");
 
 ?>
 <font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />시작 시간  </font>
-<select name="start_year" STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="<?=$input_year ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_year ?></option>
-            <option value="2018" STYLE="BACKGROUND-COLOR: YELLOW">2018</option>
-            <option value="2019" STYLE="BACKGROUND-COLOR: YELLOW">2019</option>
-            <option value="2020" STYLE="BACKGROUND-COLOR: YELLOW">2020</option>
-            <option value="2021" STYLE="BACKGROUND-COLOR: YELLOW">2021</option>
+<select name="start_year" STYLE="BACKGROUND-COLOR: green">
+            <option value="<?=$input_year ?>" STYLE="BACKGROUND-COLOR: green" selected(초기 선택된 항목)><?=$input_year ?></option>
+            <option value="2018" STYLE="BACKGROUND-COLOR: green">2018</option>
+            <option value="2019" STYLE="BACKGROUND-COLOR: green">2019</option>
+            <option value="2020" STYLE="BACKGROUND-COLOR: green">2020</option>
+            <option value="2021" STYLE="BACKGROUND-COLOR: green">2021</option>
 </select>년 
-<select name="start_month"STYLE="BACKGROUND-COLOR: YELLOW">
-            <option value="<?=$input_month ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_month ?></option>
-            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW">01</option>
-            <option value="02" STYLE="BACKGROUND-COLOR: YELLOW">02</option>
-            <option value="03" STYLE="BACKGROUND-COLOR: YELLOW">03</option>
-            <option value="04" STYLE="BACKGROUND-COLOR: YELLOW">04</option>
-            <option value="05" STYLE="BACKGROUND-COLOR: YELLOW">05</option>
-            <option value="06" STYLE="BACKGROUND-COLOR: YELLOW">06</option>
-            <option value="07" STYLE="BACKGROUND-COLOR: YELLOW">07</option>
-            <option value="08" STYLE="BACKGROUND-COLOR: YELLOW">08</option>
-            <option value="09" STYLE="BACKGROUND-COLOR: YELLOW">09</option>
-            <option value="10" STYLE="BACKGROUND-COLOR: YELLOW">10</option>
-            <option value="11" STYLE="BACKGROUND-COLOR: YELLOW">11</option>
-            <option value="12" STYLE="BACKGROUND-COLOR: YELLOW">12</option>
+<select name="start_month"STYLE="BACKGROUND-COLOR: green">
+            <option value="<?=$input_month ?>" STYLE="BACKGROUND-COLOR: green" selected(초기 선택된 항목)><?=$input_month ?></option>
+            <option value="01" STYLE="BACKGROUND-COLOR: green">01</option>
+            <option value="02" STYLE="BACKGROUND-COLOR: green">02</option>
+            <option value="03" STYLE="BACKGROUND-COLOR: green">03</option>
+            <option value="04" STYLE="BACKGROUND-COLOR: green">04</option>
+            <option value="05" STYLE="BACKGROUND-COLOR: green">05</option>
+            <option value="06" STYLE="BACKGROUND-COLOR: green">06</option>
+            <option value="07" STYLE="BACKGROUND-COLOR: green">07</option>
+            <option value="08" STYLE="BACKGROUND-COLOR: green">08</option>
+            <option value="09" STYLE="BACKGROUND-COLOR: green">09</option>
+            <option value="10" STYLE="BACKGROUND-COLOR: green">10</option>
+            <option value="11" STYLE="BACKGROUND-COLOR: green">11</option>
+            <option value="12" STYLE="BACKGROUND-COLOR: green">12</option>
 
 </select>월
-<select name="start_day"STYLE="BACKGROUND-COLOR: YELLOW">
+<select name="start_day"STYLE="BACKGROUND-COLOR: green">
             <option value="<?=$input_day ?>" selected(초기 선택된 항목)><?=$input_day ?></option>
-            <option value="01" STYLE="BACKGROUND-COLOR: YELLOW">01</option>
-            <option value="02" STYLE="BACKGROUND-COLOR: YELLOW">02</option>
-            <option value="03" STYLE="BACKGROUND-COLOR: YELLOW">03</option>
-            <option value="04" STYLE="BACKGROUND-COLOR: YELLOW">04</option>
-            <option value="05" STYLE="BACKGROUND-COLOR: YELLOW">05</option>
-            <option value="06" STYLE="BACKGROUND-COLOR: YELLOW">06</option>
-            <option value="07" STYLE="BACKGROUND-COLOR: YELLOW">07</option>
-            <option value="08" STYLE="BACKGROUND-COLOR: YELLOW">08</option>
-            <option value="09" STYLE="BACKGROUND-COLOR: YELLOW">09</option>
-            <option value="10" STYLE="BACKGROUND-COLOR: YELLOW">10</option>
-            <option value="11" STYLE="BACKGROUND-COLOR: YELLOW">11</option>
-            <option value="12" STYLE="BACKGROUND-COLOR: YELLOW">12</option>
-            <option value="10" STYLE="BACKGROUND-COLOR: YELLOW">10</option>
-            <option value="11" STYLE="BACKGROUND-COLOR: YELLOW">11</option>
-            <option value="12" STYLE="BACKGROUND-COLOR: YELLOW">12</option>
-            <option value="13" STYLE="BACKGROUND-COLOR: YELLOW">13</option>
-            <option value="14" STYLE="BACKGROUND-COLOR: YELLOW">14</option>
-            <option value="15" STYLE="BACKGROUND-COLOR: YELLOW">15</option>
-            <option value="16" STYLE="BACKGROUND-COLOR: YELLOW">16</option>
-            <option value="17" STYLE="BACKGROUND-COLOR: YELLOW">17</option>
-            <option value="18" STYLE="BACKGROUND-COLOR: YELLOW">18</option>
-            <option value="19" STYLE="BACKGROUND-COLOR: YELLOW">19</option>
-            <option value="20" STYLE="BACKGROUND-COLOR: YELLOW">20</option>
-            <option value="21" STYLE="BACKGROUND-COLOR: YELLOW">21</option>
-            <option value="22" STYLE="BACKGROUND-COLOR: YELLOW">22</option>
-            <option value="23" STYLE="BACKGROUND-COLOR: YELLOW">23</option>
-            <option value="24" STYLE="BACKGROUND-COLOR: YELLOW">24</option>
-            <option value="25" STYLE="BACKGROUND-COLOR: YELLOW">25</option>
-            <option value="26" STYLE="BACKGROUND-COLOR: YELLOW">26</option>
-            <option value="27" STYLE="BACKGROUND-COLOR: YELLOW">27</option>
-            <option value="28" STYLE="BACKGROUND-COLOR: YELLOW">28</option>
-            <option value="29" STYLE="BACKGROUND-COLOR: YELLOW">29</option>
-            <option value="30" STYLE="BACKGROUND-COLOR: YELLOW">30</option>
-            <option value="31" STYLE="BACKGROUND-COLOR: YELLOW">31</option>
+            <option value="01" STYLE="BACKGROUND-COLOR: green">01</option>
+            <option value="02" STYLE="BACKGROUND-COLOR: green">02</option>
+            <option value="03" STYLE="BACKGROUND-COLOR: green">03</option>
+            <option value="04" STYLE="BACKGROUND-COLOR: green">04</option>
+            <option value="05" STYLE="BACKGROUND-COLOR: green">05</option>
+            <option value="06" STYLE="BACKGROUND-COLOR: green">06</option>
+            <option value="07" STYLE="BACKGROUND-COLOR: green">07</option>
+            <option value="08" STYLE="BACKGROUND-COLOR: green">08</option>
+            <option value="09" STYLE="BACKGROUND-COLOR: green">09</option>
+            <option value="10" STYLE="BACKGROUND-COLOR: green">10</option>
+            <option value="11" STYLE="BACKGROUND-COLOR: green">11</option>
+            <option value="12" STYLE="BACKGROUND-COLOR: green">12</option>
+            <option value="10" STYLE="BACKGROUND-COLOR: green">10</option>
+            <option value="11" STYLE="BACKGROUND-COLOR: green">11</option>
+            <option value="12" STYLE="BACKGROUND-COLOR: green">12</option>
+            <option value="13" STYLE="BACKGROUND-COLOR: green">13</option>
+            <option value="14" STYLE="BACKGROUND-COLOR: green">14</option>
+            <option value="15" STYLE="BACKGROUND-COLOR: green">15</option>
+            <option value="16" STYLE="BACKGROUND-COLOR: green">16</option>
+            <option value="17" STYLE="BACKGROUND-COLOR: green">17</option>
+            <option value="18" STYLE="BACKGROUND-COLOR: green">18</option>
+            <option value="19" STYLE="BACKGROUND-COLOR: green">19</option>
+            <option value="20" STYLE="BACKGROUND-COLOR: green">20</option>
+            <option value="21" STYLE="BACKGROUND-COLOR: green">21</option>
+            <option value="22" STYLE="BACKGROUND-COLOR: green">22</option>
+            <option value="23" STYLE="BACKGROUND-COLOR: green">23</option>
+            <option value="24" STYLE="BACKGROUND-COLOR: green">24</option>
+            <option value="25" STYLE="BACKGROUND-COLOR: green">25</option>
+            <option value="26" STYLE="BACKGROUND-COLOR: green">26</option>
+            <option value="27" STYLE="BACKGROUND-COLOR: green">27</option>
+            <option value="28" STYLE="BACKGROUND-COLOR: green">28</option>
+            <option value="29" STYLE="BACKGROUND-COLOR: green">29</option>
+            <option value="30" STYLE="BACKGROUND-COLOR: green">30</option>
+            <option value="31" STYLE="BACKGROUND-COLOR: green">31</option>
 </select>일
 
 
 <br><br>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />입력 내용 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60><br><br>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />입력 내용 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: green" SIZE=60 MAXLENGTH=60><br><br>
 
 </font>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />비밀번호  <INPUT TYPE=TEXT NAME=password VALUE="1234" STYLE="BACKGROUND-COLOR: YELLOW" SIZE=30 MAXLENGTH=30>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />비밀번호  <INPUT TYPE=TEXT NAME=password VALUE="1234" STYLE="BACKGROUND-COLOR: green" SIZE=30 MAXLENGTH=30>
 </font>
 <br>
 <font color=blue>
