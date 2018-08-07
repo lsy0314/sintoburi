@@ -25,7 +25,7 @@ if (empty($no) || $no < 0) {
     $no = 0; 
 }
 #########################################################################
-echo ("[DEBUG] no is ".$no."<br><br>");
+// echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
 $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio ORDER BY name_save DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";

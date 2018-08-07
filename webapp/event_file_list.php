@@ -24,7 +24,7 @@ if (empty($no) || $no < 0) {
     $no = 0; 
 }
 #########################################################################
-echo ("[DEBUG] no is ".$no."<br><br>");
+// echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
 $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, event_msg FROM $table_name_event ORDER BY name_save DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
@@ -95,12 +95,12 @@ require ("./menu.php");
 
 <table border="1">
 <tr bgcolor=green>
-	<th width=20>번호</th>
-	<th width=20>삭제</th>
-	<th width=20>상세</th>
+	<th width=40>번호</th>
+	<th width=40>삭제</th>
+	<th width=40>상세</th>
 <!--	<th>업로드 시각</th> //-->
-	<th width=80>상점명</th>
-	<th width=400>입력 내용</th>
+	<th width=150>상점명</th>
+	<th width=500>입력 내용</th>
 <!--	<th>파일 ID</th>   //-->
 <!-- 	<th>업로드 파일명</th>  //-->
 <!--	<th width=440>저장된 파일명(*)</th> //-->
