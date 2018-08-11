@@ -14,6 +14,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <img src=../images/carrot.png width=30 height=30></img>
-<font size=3 color=blue><a href=./event_announce.php>상점 이벤트 알림</a></font><br>
+<font size=3 color=blue><a href=./event_announce.php>상점 이벤트 알림(고객용)</a></font><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

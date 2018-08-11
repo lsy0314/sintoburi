@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!isset($_SESSION['id'])) {
+    echo "<script>window.alert('로그인이 필요합니다.');</script>";
+    echo "<script>window.location='./user_login.php';</script>";
+    //header('Location: ./user_login.php');
+}
 
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -94,7 +100,7 @@ require ("./menu.php");
 <br>
 
 <table border="1">
-<tr bgcolor=green>
+<tr bgcolor=99ff99>
 	<th width=40>번호</th>
 	<th width=40>삭제</th>
 	<th width=40>상세</th>

@@ -1,5 +1,10 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['id'])) {
+    echo "<script>window.alert('로그인이 필요합니다.');</script>";
+    echo "<script>window.location='./user_login.php';</script>";
+    //header('Location: ./user_login.php');
+}
 
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);

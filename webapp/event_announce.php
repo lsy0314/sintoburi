@@ -84,10 +84,14 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu.php");
 ?>
-
 <br>
 <br>
-
+<b>
+<font color=FF0000>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp고</font>
+<font color=FFCC00>객</font>
+<font color=00CC00>화</font>
+<font color=0000FF>면</font>
+</b>
 <table border="1">
 <tr bgcolor=skyblue>
  	<th>이벤트 시작 시간</th> 

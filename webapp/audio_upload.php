@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION['id'])) {
+    echo "<script>window.alert('로그인이 필요합니다.');</script>";
+    echo "<script>window.location='./user_login.php';</script>";
+    //header('Location: ./user_login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -174,7 +179,7 @@ if ($input_minute ==  "0")
 </font>
 <br>
 <font color=blue>
-(비밀번호는 로그인 암호가 자동적으로 반영됩니다.<br><br>
+(비밀번호는 로그인 암호가 자동적으로 반영됩니다.)<br><br>
 </font>
 
 <label for="upfile"> </label><font size=5 color=black><img src=images/item.png border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
