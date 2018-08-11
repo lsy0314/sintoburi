@@ -87,7 +87,7 @@ require ("./menu.php");
 <br>
 <br>
 <b>
-<font color=FF0000>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp고</font>
+<font color=FF0000>고</font>
 <font color=FFCC00>객</font>
 <font color=00CC00>화</font>
 <font color=0000FF>면</font>
