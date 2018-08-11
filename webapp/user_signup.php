@@ -34,6 +34,6 @@ VALUES ('$id','$pw','$name','$email')");
 if($signup){
     echo "회원가입을 성공적으로 등록하였습니다.";
     echo "<br>";
-    echo "<a href=user_login.html>로그인 화면</a>";
+    echo "<a href=user_login.php>로그인 화면</a>";
 }
 ?> 

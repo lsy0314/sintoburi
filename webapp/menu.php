@@ -1,7 +1,7 @@
 
 <font size=3 color=blue>
 <img src=../images/carrot.png width=30 height=30></img>
-<a href=./user_login.html>회원 관리</a></font>
+<a href=./user_main.php>회원 관리</a></font>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <font size=3 color=blue>
