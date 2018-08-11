@@ -10,6 +10,7 @@ if(!isset($_SESSION['id'])) {
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>상점 주인용: 오디오 파일 업로드</title>
 <script type="text/javascript">
 function formSubmit(f) {
@@ -48,7 +49,7 @@ function formSubmit(f) {
 <a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 <br>
 <img src='images/audio_m4a.png' border=0 width=40 height=40></img>
-<font size=7  Color=purple> 음성 오디오 파일 업로드 화면</font>
+<font size=3  Color=purple> 음성 오디오 파일 업로드 화면</font>
 <br><br><br>
 <font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=20 MAXLENGTH=20 READONLY VALUE="<?= $_SESSION['name'] ?>" > <br><br> </font>
 <!--
@@ -171,7 +172,7 @@ if ($input_minute ==  "0")
 
 <br>
 <br>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" SIZE=60 MAXLENGTH=60 VALUE=""><br> </font>
+<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" MAXLENGTH=60 VALUE=""><br> </font>
 <font color=blue>
 (데이타를 미입력시 <b>음성인식 로봇</b>이 음성 메세지를 자동으로 입력합니다.)<br><br>
 </font>

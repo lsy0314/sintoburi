@@ -18,3 +18,4 @@ else{
     echo "<a href=user_logout.php>로그아웃</a>";
 }
 ?>
+<meta name="viewport" content="width=device-width, user-scalable=no">

@@ -84,6 +84,7 @@ $current_page = floor($no/$page_size);
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>업로드 오디오 파일 목록</title>
 </head>
 <body>
@@ -107,10 +108,10 @@ require ("./menu.php");
 	<th width=20>상세</th>
 <!--	<th>업로드 시각</th> //-->
 	<th width=80>상점명</th>
-	<th width=400>음성 내용</th>
+	<th width=240>음성 내용</th>
 <!--	<th>파일 ID</th>   //-->
 	<th>업로드 파일명</th>
-	<th width=440>저장된 파일명(*)</th>
+	<th width=240>저장된 파일명(*)</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -144,7 +145,7 @@ $number = $number + 1;
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->
   <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
-  <td><?= $row['name_save'] ?></td>
+  <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
 </tr>
 
 

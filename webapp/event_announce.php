@@ -78,6 +78,7 @@ $current_page = floor($no/$page_size);
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>업로드 오디오 파일 목록</title>
 </head>
 <body>

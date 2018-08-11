@@ -11,6 +11,7 @@ if(!isset($_SESSION['id'])) {
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>고객용:이벤트 일정 업로드</title>
 </head>
 <body>
