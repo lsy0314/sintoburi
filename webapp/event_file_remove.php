@@ -16,13 +16,6 @@ $name_orig = $_REQUEST['name_orig'];
 $name_save = $_REQUEST['name_save'];
 $password  = $_POST['pass'];
 
-echo ("<br>");
-echo ("<br>");
-//echo ("<li>파일 ID = '$file_id'</li>");
-//echo ("<li>업로드 파일명 = '$name_orig'</li>");
-//echo ("<li>저장된 파일명 = '$name_save'</li>");
-echo ("<br><br>");
-
 // Create db_connection
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
@@ -33,7 +26,7 @@ if (!$db_conn) {
 }
 
 // compare your password and database password.
-// echo ("[DEBUG] select count(*) FROM $table_name_event WHERE file_id = '$file_id' and password = '$password' <br>");
+//echo ("[DEBUG] select count(*) FROM $table_name_event WHERE file_id = '$file_id' and password = '$password' <br>");
 $sql = "select count(*) FROM $table_name_event WHERE file_id = '$file_id' and password = '$password'";
 $result_count=mysqli_query($db_conn, $sql);
 $result_row=mysqli_fetch_row($result_count);

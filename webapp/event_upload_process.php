@@ -34,6 +34,11 @@ $time_start_day = $_POST['start_day'];
 //$time_start_minute = $_POST['start_minute'];
 $event_password = $_POST['password'];
 
+if(empty($event_msg)) {
+    echo "<script>window.alert('입력내용을 작성하여 주세요.');</script>";
+    echo "<script>window.location='./event_upload.php';</script>";
+}
+
 // get ip address of user
 function get_client_ip()
 {
@@ -68,7 +73,7 @@ $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 $count = 0; 
 // https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html
 // Pattern Matching: Use the LIKE or NOT LIKE comparison operators 
-$query = "SELECT file_id, event_date, reg_time, store_name, event_msg FROM $table_name_event WHERE event_date LIKE '".$event_time."%' ORDER BY reg_time DESC";
+$query = "SELECT file_id, event_date, reg_time, store_name, password, event_msg FROM $table_name_event WHERE event_date LIKE '".$event_time."%' ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -86,7 +91,7 @@ mysqli_close($db_conn);
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
 $file_id = md5(uniqid(rand(), true));        
-$query = "INSERT INTO $table_name_event (file_id, event_date, reg_time, store_name, event_msg, ip_address) VALUES(?,?,now(),'$store_name', '$event_msg', '$ipaddress')";
+$query = "INSERT INTO $table_name_event (file_id, event_date, reg_time, store_name, password, event_msg, ip_address) VALUES(?,?,now(),'$store_name','$event_password', '$event_msg', '$ipaddress')";
 
 $stmt = mysqli_prepare($db_conn, $query);
 $bind = mysqli_stmt_bind_param($stmt, "ss", $file_id, $event_time);
