@@ -1,7 +1,7 @@
 
 <font size=4 color=blue>
 <img src=../images/carrot.png width=30 height=30></img>
-<a href=./login.php>신토불이: 회원관리</a></font>
+<a href=./user_login.html>신토불이: 회원관리</a></font>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <font size=4 color=blue>
@@ -11,3 +11,9 @@
 
 <img src=../images/carrot.png width=30 height=30></img>
 <font size=4 color=blue><a href=./event_file_list.php>신토불이: 상점행사 관리 리스트 화면</a></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<img src=../images/carrot.png width=30 height=30></img>
+<font size=4 color=blue><a href=./event_announce.php>신토불이: 상점행사 공지 화면</a></font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+

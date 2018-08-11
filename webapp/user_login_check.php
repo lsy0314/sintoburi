@@ -11,7 +11,7 @@ if($result->num_rows==1){
  $_SESSION['id']=$id; //로그인 성공 시 세션 변수 만들기
  if(isset($_SESSION['id'])) //세션 변수가 참일 때
  {
- header('Location: ./main.php'); //로그인 성공 시 페이지 이동
+ header('Location: ./user_main.php'); //로그인 성공 시 페이지 이동
  }
  else{
  echo "죄송합니다. 세션 정보들을 저장하는 작업을 실패하였습니다.";
