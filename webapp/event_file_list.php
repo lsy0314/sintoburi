@@ -26,7 +26,7 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, event_msg FROM $table_name_event ORDER BY name_save DESC limit $no,$page_size";
+$query = "SELECT * FROM $table_name_event ORDER BY reg_time  DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
 //$result = mysqli_query($query, $db_conn);
 $result = mysqli_query($db_conn,$query);
@@ -127,7 +127,7 @@ $number = $number + 1;
 ?>
 <tr>
   <td width=20><?=$total_row - $number - $no +1 ?></td>
-  <td><a href=event_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
+  <td><a href=event_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['event_date'] ?>&name_save=<?= $row['store_name'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 ></img>
   </td>
   <td><a href=event_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png border=0 hegith=20 width=20></img>
