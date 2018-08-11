@@ -47,6 +47,10 @@ while($row = mysqli_fetch_assoc($result)) {
   </td>
 </tr>
 <tr>
+  <td bgcolor=green>이벤트 일자</td>
+  <td><?=$row['event_date'] ?>
+</tr>
+<tr>
   <td bgcolor=green>업로드 시각</td>
   <td><?=$row['reg_time'] ?>
 </tr>

@@ -11,7 +11,7 @@
 // $_REQUEST is a merging of $_GET and $_POST where $_POST overrides $_GET.
 // Good to use $_REQUEST on self refrential forms for validations.
 
-//$file_id   = $_REQUEST['file_id'];
+$file_id   = $_REQUEST['file_id'];
 $name_orig = $_REQUEST['name_orig'];
 $name_save = $_REQUEST['name_save'];
 $password  = $_POST['pass'];

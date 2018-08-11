@@ -92,7 +92,7 @@ require ("./menu.php");
 &nbsp;&nbsp;&nbsp;&nbsp;
 <a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="./audio/?C=N;O=D"><img src=./images/audio-folder.png border=0 width=50 height=50></img></a>
+<a href="../audio/?C=N;O=D"><img src=./images/audio-folder.png border=0 width=50 height=50></img></a>
 <br>
 
 <table border="1">

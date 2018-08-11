@@ -7,7 +7,7 @@
 <center>
 <br>
 <?php
-//$file_id   = $_REQUEST['file_id'];
+$file_id   = $_REQUEST['file_id'];
 $name_orig = $_REQUEST['name_orig'];
 $name_save = $_REQUEST['name_save'];
 

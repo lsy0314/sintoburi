@@ -90,7 +90,7 @@ require ("./menu.php");
 
 <table border="1">
 <tr bgcolor=skyblue>
- 	<th>시작시간(행사)</th> 
+ 	<th>이벤트 시작 시간</th> 
 	<th width=150>상점명</th>
 	<th width=500>입력 내용</th>
 </tr>

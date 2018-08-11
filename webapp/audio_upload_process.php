@@ -148,7 +148,7 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             echo "<font color=blue><pre>$audio_msg</pre></font>";
         }
 
-        $query = "INSERT INTO $table_name_audio (file_id, name_orig, name_save, reg_time, store_name, audio_msg, password, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$audio_password', '$ipaddress')";
+        $query = "INSERT INTO $table_name_audio (file_id, name_orig, name_save, reg_time, store_name, audio_msg, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_msg', '$ipaddress')";
         
         $stmt = mysqli_prepare($db_conn, $query);
         $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);

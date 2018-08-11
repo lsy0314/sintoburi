@@ -98,9 +98,9 @@ require ("./menu.php");
 	<th width=40>번호</th>
 	<th width=40>삭제</th>
 	<th width=40>상세</th>
-<!--	<th>업로드 시각</th> //-->
+	<th width=120>이벤트 일자</th>
 	<th width=150>상점명</th>
-	<th width=500>입력 내용</th>
+	<th width=500>이벤트 내용</th>
 <!--	<th>파일 ID</th>   //-->
 <!-- 	<th>업로드 파일명</th>  //-->
 <!--	<th width=440>저장된 파일명(*)</th> //-->
@@ -132,7 +132,7 @@ $number = $number + 1;
   </td>
   <td><a href=event_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png border=0 hegith=20 width=20></img>
   </td>
-<!--  <td><?=$row['reg_time'] ?></td> //-->
+  <td><?=$row['event_date'] ?></td>
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['event_msg'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->

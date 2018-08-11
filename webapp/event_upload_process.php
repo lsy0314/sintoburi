@@ -59,8 +59,7 @@ function get_client_ip()
 $ipaddress = get_client_ip();
 // echo ("[DEBUG] IP address: $ipaddress<br>");
 
-$time= $time_start_year . $time_start_month . $time_start_day;
-$time_date_folder = $time_start_year . $time_start_month . $time_start_day;
+$event_time= $time_start_year."년".$time_start_month."월".$time_start_day."일";
 
 // ----------------------calculate the number of event data
 
@@ -69,7 +68,7 @@ $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 $count = 0; 
 // https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html
 // Pattern Matching: Use the LIKE or NOT LIKE comparison operators 
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, event_msg FROM $table_name_event WHERE name_save LIKE '".$time."%' ORDER BY reg_time DESC";
+$query = "SELECT file_id, event_date, reg_time, store_name, event_msg FROM $table_name_event WHERE event_date LIKE '".$event_time."%' ORDER BY reg_time DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -83,56 +82,22 @@ mysqli_close($db_conn);
 //die("just test.");
 
 
-// if the number of event data exceeds the declared number, do not upload event file and stop this program.
-if ($count > $max_event_file)
-    die("<br><br><font color = red>죄송합니다.</font> 이벤트 일정을 업로드 할 수 없습니다.<br> 동일한 시간에 이벤트 일정을 $max_event_file개 까지 입력할 수 있기 때문입니다.<br>현재 등록된 이벤트 일정 개수가 $count 입니다.<br><br> <br> <a href=./event_file_list.php>이벤트 일정 리스트로 이동하기</a>");
- 
 // ------------------------- upload event file to mysql database and event folder
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
-    $file = $_FILES['upfile'];
-    $upload_directory = 'event/'.$time_date_folder.'/';
+$file_id = md5(uniqid(rand(), true));        
+$query = "INSERT INTO $table_name_event (file_id, event_date, reg_time, store_name, event_msg, ip_address) VALUES(?,?,now(),'$store_name', '$event_msg', '$ipaddress')";
 
-    // create a date folder if it does not exists.
-    if (!file_exists($upload_directory)) {
-        mkdir($upload_directory, 0777, true);
-    }
-    $ext_str = "wav,mp3,m4a";
-    $allowed_extensions = explode(',', $ext_str);
-    
-    $ext = substr($file['name'], strrpos($file['name'], '.') + 1);
-    
-    $path = $time . "_" . md5(microtime()) . '.' . $ext;
-   
-    // upload event file with move_uploaded_file() php function.
-    if(move_uploaded_file($file['tmp_name'], $upload_directory.$path)) {
-
-        $file_id = md5(uniqid(rand(), true));
-        // remove all spaces out of a string data 
-        // because data delivery technique of HTML+GET can not handle a space.
-        $name_orig = str_replace(" ", "_", $file['name']);
-        $name_save = $path;
-
-
-        $query = "INSERT INTO $table_name_event (file_id, name_orig, name_save, reg_time, store_name, event_msg, password, ip_address) VALUES(?,?,?,now(),'$store_name', '$event_msg', '$event_password', '$ipaddress')";
-        
-        $stmt = mysqli_prepare($db_conn, $query);
-        $bind = mysqli_stmt_bind_param($stmt, "sss", $file_id, $name_orig, $name_save);
-        $exec = mysqli_stmt_execute($stmt);
+$stmt = mysqli_prepare($db_conn, $query);
+$bind = mysqli_stmt_bind_param($stmt, "ss", $file_id, $event_time);
+$exec = mysqli_stmt_execute($stmt);
      
-        // disconnect mysql database connection. 
-        mysqli_stmt_close($stmt);
+// disconnect mysql database connection. 
+mysqli_stmt_close($stmt);
       
-        echo "<br>";
-        echo "<h3><font color=red>축하합니다.</font> 이벤트 일정을 성공적으로 업로드 하였습니다.</h3>";
-        echo "<a href='./event_file_list.php'>이벤트 일정 목록</a>";
-        
-    }
-} else {
-    echo "<h3>이벤트가 업로드 되지 않았습니다.</h3>";
-    echo "<a href='javascript:history.go(-1);'>이전 페이지</a>";
-}
+echo "<br>";
+echo "<h3><font color=red>축하합니다.</font> 이벤트 일정을 성공적으로 업로드 하였습니다.</h3>";
+echo "<a href='./event_file_list.php'>이벤트 일정 목록</a>";
 
 mysqli_close($db_conn);
 ?>
