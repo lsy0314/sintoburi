@@ -21,7 +21,7 @@ require("./menu.php");
 <br> <br>
  <div>
  <label for="pw">패스워드 </label>
- <input type="text" name="pw"/>
+ <input type="password" name="pw"/>
  </div>
 
  <br> 
