@@ -27,9 +27,18 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT file_id, event_date, reg_time, store_name, event_msg FROM $table_name_event ORDER BY event_date DESC limit $no,$page_size";
-//$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
-//$result = mysqli_query($query, $db_conn);
+
+// change last character to 0.
+// For example, convert 201805051635 to 201805051630
+date_default_timezone_set("Asia/Seoul");
+$input_year   = date("Y");
+$input_month  = date("m");
+$input_day    = date("d");
+$current_date = $input_year."년".$input_month."월".$input_day."일";
+//echo "value: $current_date<br>";
+
+// display data since today
+$query = "SELECT file_id, event_date, reg_time, store_name, event_msg FROM $table_name_event WHERE event_date >= '$current_date' ORDER BY event_date ASC limit $no,$page_size";
 $result = mysqli_query($db_conn,$query);
 
 // 총 게시물 수 를 구한다.
@@ -38,7 +47,7 @@ $result = mysqli_query($db_conn,$query);
 // 따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 
 // 일반적으로는 * 가 느리다.
 //$result_count=mysql_query("select count(*) from testboard",$db_conn);
-$result_count=mysqli_query($db_conn, "SELECT count(*) FROM $table_name_event");
+$result_count=mysqli_query($db_conn, "SELECT count(*) FROM $table_name_event WHERE event_date >= '$current_date' ORDER BY event_date ASC");
 $result_row=mysqli_fetch_row($result_count);
 $total_row = $result_row[0]; 
 //결과의 첫번째 열이 count(*) 의 결과다.
@@ -94,6 +103,8 @@ require ("./menu.php");
 <font color=00CC00>화</font>
 <font color=0000FF>면</font>
 </b>
+<br>
+* 오늘부터 열리는 이벤트행사들을 순서대로 출력 합니다.
 <table border="0">
 <tr bgcolor=skyblue>
  	<th>이벤트 일자 (*)</th> 
