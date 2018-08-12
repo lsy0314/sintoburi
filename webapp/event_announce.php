@@ -93,7 +93,7 @@ require ("./menu.php");
 <font color=00CC00>화</font>
 <font color=0000FF>면</font>
 </b>
-<table border="1">
+<table border="0">
 <tr bgcolor=skyblue>
  	<th>이벤트 시작 시간</th> 
 	<th width=150>상점명</th>
@@ -119,9 +119,15 @@ while($row = mysqli_fetch_assoc($result)) {
 // https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
 $number = $number + 1;
 
+echo "<tr height=10 bgcolor=white> ";
+echo "  <td> </td> ";
+echo "  <td> </td> ";
+echo "  <td> </td> ";
+echo "</tr>";
+
+
 if ($color_line == 0){
-    echo "<tr bgcolor=#EEEEEE> ";
-    echo "  </td> ";
+    echo "<tr height=40 bgcolor=#EEEEEE> ";
     echo "  <td> ".$row['event_date']."</td> ";
     echo "  <td width=100 style='table-layout:fixed; word-break:break-all;'>".$row['store_name']." </td> ";
     echo "  <td width=350 style='table-layout:fixed; word-break:break-all;'>".$row['event_msg']." </td> ";
@@ -129,8 +135,7 @@ if ($color_line == 0){
     $color_line = 1;
 }
 else{
-    echo "<tr bgcolor=#DDDDD0> ";
-    echo "  </td> ";
+    echo "<tr height=40 bgcolor=#EEEEEE> ";
     echo "  <td> ".$row['event_date']."</td> ";
     echo "  <td width=100 style='table-layout:fixed; word-break:break-all;'>".$row['store_name']." </td> ";
     echo "  <td width=350 style='table-layout:fixed; word-break:break-all;'>".$row['event_msg']." </td> ";
