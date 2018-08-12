@@ -8,6 +8,7 @@ if(!isset($_SESSION['id'])) {
 
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+mysqli_query($db_conn, "SET NAMES utf8");
 
 #########################################################################
 # LIST setting

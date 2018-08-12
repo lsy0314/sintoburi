@@ -2,6 +2,7 @@
 
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+mysqli_query($db_conn, "SET NAMES utf8");
 
 #########################################################################
 # LIST setting
@@ -37,7 +38,7 @@ $result = mysqli_query($db_conn,$query);
 // 따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 
 // 일반적으로는 * 가 느리다.
 //$result_count=mysql_query("select count(*) from testboard",$db_conn);
-$result_count=mysqli_query($db_conn, "select count(*) from  $table_name_event");
+$result_count=mysqli_query($db_conn, "SELECT count(*) FROM $table_name_event");
 $result_row=mysqli_fetch_row($result_count);
 $total_row = $result_row[0]; 
 //결과의 첫번째 열이 count(*) 의 결과다.
@@ -95,9 +96,9 @@ require ("./menu.php");
 </b>
 <table border="0">
 <tr bgcolor=skyblue>
- 	<th>이벤트 시작 시간</th> 
+ 	<th>이벤트 일자 (*)</th> 
 	<th width=150>상점명</th>
-	<th width=500>입력 내용</th>
+	<th width=500>이벤트 내용</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -106,7 +107,6 @@ require ("./menu.php");
 // License: Star License
 //
 
-// $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, event_msg FROM $table_name_event ORDER BY name_save DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
