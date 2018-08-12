@@ -28,11 +28,44 @@
 신토불이를 만들기 위하여 우선 php 파일을 업로드하기위한 웹프로그램인 php와 html을 사용해아 합니다. 라즈베리파이보드의 가격은 5만원이며, OS는 무료인 우분투 OS를 사용했습니다. 시장 입구에서 제품의 pir 센서라고 불리는 모션 센서가 고객을 감지하고 오늘의 할인 정보를 알려줍니다. 광고 모니터를 통해 고객들은 오늘의 할인 정보나 행사등을 알 수 있습니다. " 신토불이는 전통 시장의 현대화와 상점 홍보의 자동화가 가능하므로 상점 주인에게 이익을 증대시켜주는 효과를 가지고 있습니다. 또한 고객들은 저렴한 상품을 구매할 정보를 얻을 수 있습니다. 그러므로 신토불이는 전통 시장의 현대화를 도모하여 상인과 고객들 모두에게 혜택을 줍니다.
 
 
-# 설치하는 방법
-* (진행 중)
+# 설치 방법
+
+### Install Ubuntu OS in Raspberry Pi3
+First of all, read documents that we uploaded in [doc](doc/README.md) folder.
+Then, please try to install Ubuntu OS in Raspberry Pi3 device.
 
 
-# 데모
+### Install Sintoburi
+Sintoburi was mainly developed by Python (motion sensor) and PHP (Web application). 
+Please install two applications as following:
+```bash
+Run ssh session with mobaxterm software on windows7 PC.
+$ cd /var/www/html
+$ git clone https://github.com/hjoon0510/SmartSecretary.git
+$ cd ./sintoburi 
+$ sudo chown -R www-data:www-data /var/www/html/sintoburi/audiro/
+$ sudo visudo
+--------------- /etc/sudoers: start ----------------
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
+--------------- /etc/sudoers: ending ---------------
+```
+
+# 실행방법
+This section describes how to start web-application and pir-sensor program.
+
+### Run software manually
+* How to run with launcher.c
+At first, compile launcher.c with gcc command. Then, Just execute `launcher` file. 
+```bash
+$ cd sintoburi
+$ gcc -o launcher launcher.c
+$ ./launcher
+```
+
+
+# 데모 비디오 (유투브 동영상)
 
 * 웹 사이트 - http://sintoburi.mooo.com
    * 이 웹 주소는 https://freedns.afraid.org/를 통해 무료로 생성하였습니다.
