@@ -1,0 +1,2 @@
+Transcript: 오늘 맛있는 보고가 들어왔습니다 어서 오세요
+Confidence: 0.75135

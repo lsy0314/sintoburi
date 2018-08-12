@@ -1,0 +1,4 @@
+Transcript: 오늘 한다 가방에서는
+Confidence: 0.64758563
+Transcript:  여름 가방을 세일합니다 아울러 가을 신상품이 출시되었으니 많은 방문 바랍니다
+Confidence: 0.8729273
