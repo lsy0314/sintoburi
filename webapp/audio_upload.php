@@ -13,6 +13,22 @@ if(!isset($_SESSION['id'])) {
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>상점 주인용: 오디오 파일 업로드</title>
 <script type="text/javascript">
+  function showpopup_start_time() {
+      window.open("popup_start_time.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+  function showpopup_audio_msg() {
+      window.open("popup_audio_msg.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+  function showpopup_password() {
+      window.open("popup_password.php", "_blank", "width=400, height=200, left=100, top=50");
+  } 
+  function showpopup_audio_file() {
+      window.open("popup_audio_file.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+</script>
+
+
+<script type="text/javascript">
 function formSubmit(f) {
 	var extArray = new Array('wav','mp3','m4a');
 	var path = document.getElementById("upfile").value;
@@ -48,13 +64,16 @@ function formSubmit(f) {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 <br>
-<img src='images/audio_m4a.png' border=0 width=40 height=40></img>
-<font size=3  Color=purple> 음성 오디오 파일 업로드 화면</font>
-<br><br><br>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=20 MAXLENGTH=20 READONLY VALUE="<?= $_SESSION['name'] ?>" > <br><br> </font>
+<br>
 <!--
-<font size=5  Color=black>시작 시간 <INPUT TYPE=TEXT NAME=time STYLE="BACKGROUND-COLOR: YELLOW" SIZE=12 MAXLENGTH=12><br><br> </font>
+<img src='images/audio_m4a.png' border=0 width=40 height=40></img>
 //-->
+<font size=5 color=black> 음성 오디오 파일 업로드 화면</font>
+<br>
+<font color=blue>설명이 필요한 경우 <img src=images/item.png border=0 height=15 width=15 />을 클릭하여 정보를 확인하세요.</font>
+<br><br>
+<font size=5 color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=20 MAXLENGTH=20 READONLY VALUE="<?= $_SESSION['name'] ?>" >
+<br><br> </font>
 <?php
 date_default_timezone_set("Asia/Seoul");
 $input_year   = date("Y");
@@ -67,7 +86,8 @@ if ($input_minute ==  "0")
     $input_minute = "00";
 
 ?>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />시작 시간  </font>
+<font size=5  color=black><img src=images/item.png onclick="showpopup_start_time();" onmouseover="this.style.cursor='pointer'" border=0 height=25 width=25 />시작 시간  </font>
+<br>
 <select name="start_year" STYLE="BACKGROUND-COLOR: YELLOW">
             <option value="<?=$input_year ?>" STYLE="BACKGROUND-COLOR: YELLOW" selected(초기 선택된 항목)><?=$input_year ?></option>
             <option value="2018" STYLE="BACKGROUND-COLOR: YELLOW">2018</option>
@@ -165,34 +185,21 @@ if ($input_minute ==  "0")
             <option value="50" STYLE="BACKGROUND-COLOR: YELLOW">50</option>
 </select>분
 <br>
-<font color=blue>
-(입력방법: 오디오 플레이 시작시간은 10분 단위로 입력하여 주세요.)       
-</font>
-
-
 <br>
+<font size=5  color=black><img src=images/item.png onclick="showpopup_audio_msg();" onmouseover="this.style.cursor='pointer'"  border=0 height=25 width=25 />음성 메세지
 <br>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />음성 메세지 <INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" MAXLENGTH=60 VALUE=""><br> </font>
-<font color=blue>
-(데이타를 미입력시 <b>음성인식 로봇</b>이 음성 메세지를 자동으로 입력합니다.)<br><br>
-</font>
-<font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />비밀번호  <INPUT TYPE=TEXT NAME=password STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=30 MAXLENGTH=30 READONLY VALUE="<?= $_SESSION['password'] ?>">
-</font>
+<INPUT TYPE=TEXT NAME=message STYLE="BACKGROUND-COLOR: YELLOW" size=50 MAXLENGTH=80 VALUE=""></font>
+<br><br>
+<font size=5  color=black><img src=images/item.png onclick="showpopup_password();" onmouseover="this.style.cursor='pointer'" border=0 height=25 width=25 />비밀번호
 <br>
-<font color=blue>
-(비밀번호는 로그인 암호가 자동적으로 반영됩니다.)<br><br>
+<INPUT TYPE=TEXT NAME=password STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=30 MAXLENGTH=30 READONLY VALUE="<?= $_SESSION['password'] ?>">
 </font>
+<br><br>
 
-<label for="upfile"> </label><font size=5 color=black><img src=images/item.png border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
+<label for="upfile"> </label><font size=5 color=black><img src=images/item.png onclick="showpopup_audio_file();" onmouseover="this.style.cursor='pointer'" border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
-<font color=blue>
-(스마트폰에 <b>곰레코더 (또는 '삼성 음성 녹음'</b>를 설치후에 .m4a으로 녹음한 음성파일을 업로드 하여 주세요.)
-</font>
-<br>
-<br>
 <br>
 <input type="submit" value="등록하기" />
 </form>
-
 </body>
 </html>
