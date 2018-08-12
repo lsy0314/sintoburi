@@ -5,6 +5,7 @@ $id=$_POST['id'];
 $pw=$_POST['pw'];
 
 $mysqli=mysqli_connect("localhost","root","ggghhh03","sbdb");
+mysqli_query($mysqli, "SET NAMES utf8");
 $check="SELECT * FROM store_info WHERE id='$id'";
 $result=$mysqli->query($check); 
 
