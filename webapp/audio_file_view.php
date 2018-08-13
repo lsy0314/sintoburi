@@ -1,7 +1,7 @@
 <?php
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
+mysqli_query($db_conn, "SET NAMES utf8");
 $file_id  = $_REQUEST['file_id'];
 ?>
 
@@ -9,6 +9,7 @@ $file_id  = $_REQUEST['file_id'];
 <html lang="ko">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>업로드 오디오 파일 목록</title>
 </head>
 <body>
@@ -40,38 +41,38 @@ while($row = mysqli_fetch_assoc($result)) {
 
 <table border="1">
 <tr>
-  <td bgcolor=green>삭제</td>
+  <td width=80 bgcolor=yellow>삭제</td>
   <td><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 ></img>
       </a>
   </td>
 </tr>
 <tr>
-  <td bgcolor=green>업로드 시각</td>
+  <td bgcolor=yellow>업로드 시각</td>
   <td><?=$row['reg_time'] ?>
 </tr>
 <tr>
-  <td bgcolor=green>상점명</td>
+  <td bgcolor=yellow>상점명</td>
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
 </tr>
 <tr>
-  <td bgcolor=green>음성 내용</td>
-  <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
+  <td bgcolor=yellow>음성 내용</td>
+  <td style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
 </tr>
 <tr>
-  <td bgcolor=green>파일 ID (Key)</td> 
-  <td><?= $row['file_id'] ?></td>
+  <td bgcolor=yellow>파일 ID (Key)</td> 
+  <td style="table-layout:fixed; word-break:break-all;"><?= $row['file_id'] ?></td>
 </tr>
 <tr>
-  <td bgcolor=green>업로드 파일명</td>
-  <td width=500 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
+  <td bgcolor=yellow>업로드 파일명</td>
+  <td  style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
 </tr>
 <tr>
-  <td  bgcolor=green >저장된 파일명</td>
-  <td><?= $row['name_save'] ?></td>
+  <td  bgcolor=yellow >저장된 파일명</td>
+  <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
 </tr>
 <tr>
-  <td  bgcolor=green >IP 주소</td>
+  <td  bgcolor=yellow>IP 주소</td>
   <td><?= $row['ip_address'] ?></td>
 </tr>
 </table>
