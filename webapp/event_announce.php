@@ -97,13 +97,10 @@ require ("./menu.php");
 ?>
 <br>
 <br>
-<b>
-<font color=FF0000>고</font>
-<font color=FFCC00>객</font>
-<font color=00CC00>화</font>
-<font color=0000FF>면</font>
-</b>
-<br>
+
+<img src=./images/custom-screen.PNG border=0 width=80 height=40></img>
+
+
 * 오늘부터 열리는 이벤트행사들을 순서대로 출력 합니다.
 <table border="0">
 <tr bgcolor=skyblue>

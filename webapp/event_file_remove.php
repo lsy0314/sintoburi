@@ -1,5 +1,6 @@
 <html>
 <body>
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
 // Title: a program to remove audio file and database data

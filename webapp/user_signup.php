@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <?php
 $id=$_POST['id'];
 $pw=$_POST['pw'];
@@ -37,4 +38,3 @@ if($signup){
     echo "<a href=user_login.php>로그인 화면</a>";
 }
 ?>
-<meta name="viewport" content="width=device-width, user-scalable=no"> 

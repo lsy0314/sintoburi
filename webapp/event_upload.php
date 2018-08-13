@@ -21,7 +21,7 @@ if(!isset($_SESSION['id'])) {
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="./event_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 <br>
-<font size=7  Color=purple> 이벤트 일정 업로드 화면</font>
+<font size=5 color=black> 이벤트 일정 업로드 화면</font>
 <br><br><br>
 <font size=5  Color=black><img src=images/item.png border=0 height=25 width=25 />상점명<font color=red>*</font> <INPUT TYPE=TEXT NAME=store STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=20 MAXLENGTH=20 READONLY VALUE="<?= $_SESSION['name'] ?>" > <br><br> </font>
 
