@@ -93,15 +93,13 @@ $current_page = floor($no/$page_size);
 </head>
 <body>
 <?php
-require ("./menu.php");
+// require ("./menu.php");
 ?>
 <br>
 <br>
 
 <img src=./images/custom-screen.PNG border=0 width=80 height=40></img>
 
-
-* 오늘부터 열리는 이벤트행사들을 순서대로 출력 합니다.
 <table border="0">
 <tr bgcolor=skyblue>
  	<th>이벤트 일자 (*)</th> 
@@ -157,10 +155,12 @@ mysqli_stmt_close($stmt);
 mysqli_close($db_conn);
 ?>
 </table>
-<br>
-<br>
+
+* 오늘부터 열리는 이벤트행사들을 순서대로 출력 합니다.
 
 <!-- 페이지를 표시하기 위한 테이블 -->
+<br>
+<br>
 <table border=0>
 <tr>
 <td width=600 height=20 align=center rowspan=4>

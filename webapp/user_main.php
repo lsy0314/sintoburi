@@ -1,3 +1,19 @@
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: gray;
+    color: white;
+    text-align: left;
+}
+</style>
+
+<div class="footer">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
+</div>
 <?php
 session_start();
 

@@ -90,7 +90,7 @@ $current_page = floor($no/$page_size);
 </head>
 <body>
 <?php
-require ("./menu.php");
+//require ("./menu.php");
 ?>
 
 <br>
