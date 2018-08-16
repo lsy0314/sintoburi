@@ -13,19 +13,18 @@
        color: gray;
      }
     select option { color: black; }
-    select option:first-child { color:yellow; }
+    select option:first-child { color:blue; }
 </style>
 
 <body bgcolor=gray text=#000000 link=#0000cc vlink=#551a8b alink=#ff0000>
 
 <font size=2>Sintoburi 
-<img src=../images/carrot.png width=20 height=20></img>
 <!--<select size=1 onchange="if(this.value) window.open(this.value);" class="mycolor"> //-->
 <select size=1 onchange="if(this.value) parent.framebody.location=this.value;">
         <option value="/" selected class=green>[ 상점주인 ]</option>
         <option value="./user_main.php">회원 관리</option>
         <option value="./audio_file_list.php">음성파일 관리</option>
-        <option value="./event_file_list.php">이벤트 일정 관리</option>
+        <option value="./event_file_list.php">이벤트 관리</option>
 </select>
 &nbsp;
 
