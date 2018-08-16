@@ -1,0 +1,80 @@
+body,ul,li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+a {
+    color:inherit;
+    text-decoration:inherit;
+}
+
+.mobile-top-bar {
+    background-color:black;
+    color:white;
+}
+
+.mobile-top-bar .h-menu {
+    padding:14px;
+}
+
+
+.mobile-top-bar a {
+    display:block;
+}
+
+.mobile-top-bar .top-menu {
+    display:none;
+}
+
+.mobile-top-bar .top-menu.active {
+    display:block;
+}
+
+.mobile-top-bar .top-menu ul ul {
+    display:none;
+    background-color:gray;
+}
+
+.mobile-top-bar .top-menu li.active > ul {
+    display:block;
+}
+
+.mobile-top-bar .top-menu li > a {
+    padding:14px;
+}
+
+.mobile-top-bar .top-menu li > a:not(:only-child)::after {
+    content:"[＋]";   
+}
+
+/*
+.mobile-top-bar .top-menu li > a::after {
+    content:"[+]";
+    
+}
+
+.mobile-top-bar .top-menu li > a:only-child::after {
+    content:"";   
+}
+를 하나로 줄여서 간단하게 쓰자면 밑의 코드를 입력
+
+.mobile-top-bar .top-menu li > a:not(:only-child)::after {
+    content:"";   
+}
+
+
+
+.mobile-top-bar .top-menu li.active > a::after { 
+    content:"[－]"; 
+}
+
+.mobile-top-bar .top-menu li.active > a:only-child::after {
+    content:"";   
+}
+
+
+*/
+
+.mobile-top-bar .top-menu li.active > a:not(:only-child)::after {
+    content:"[－]"; 
