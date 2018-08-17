@@ -71,6 +71,7 @@ $event_time= $time_start_year."년".$time_start_month."월".$time_start_day."일
 
 // connect to mysql database
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+mysqli_query($db_conn, "SET NAMES utf8");
 $count = 0; 
 // https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html
 // Pattern Matching: Use the LIKE or NOT LIKE comparison operators 
@@ -90,7 +91,7 @@ mysqli_close($db_conn);
 
 // ------------------------- upload event file to mysql database and event folder
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
+mysqli_query($db_conn, "SET NAMES utf8");
 $file_id = md5(uniqid(rand(), true));        
 $query = "INSERT INTO $table_name_event (file_id, event_date, reg_time, store_name, password, event_msg, ip_address) VALUES(?,?,now(),'$store_name','$event_password', '$event_msg', '$ipaddress')";
 
