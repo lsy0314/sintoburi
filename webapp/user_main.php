@@ -1,34 +1,6 @@
-
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<title> User main</title>
-</head>
-<body>
-
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
-    background-color: gray;
-    color: white;
-    text-align: left;
-}
-</style>
-
-<div class="footer">
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
-</div>
 <?php
+require("./menu2.php");
 session_start();
-
-//require("./menu.php");
 
 // if user does do log-in, go to login.html webapge.
 if(!isset($_SESSION['id'])) {
@@ -44,5 +16,8 @@ else{
     echo "<br><br>";
     echo "<a href=user_logout.php>로그아웃</a>";
 }
+
 ?>
-<meta name="viewport" content="width=device-width, user-scalable=no">
+</body>
+</html>
+

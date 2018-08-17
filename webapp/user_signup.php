@@ -1,40 +1,33 @@
-<meta name="viewport" content="width=device-width, user-scalable=no">
 <?php
-$id=$_POST['id'];
-$pw=$_POST['pw'];
-$pwc=$_POST['pwc'];
-$name=$_POST['name'];
-$email=$_POST['email'];
-
-if($pw!=$pwc) //비밀번호와 비밀번호 확인 문자열이 맞지 않을 경우
-{
-    echo "비밀번호와 비밀번호 확인이 서로 다릅니다.";
-    echo "<a href=user_signup.html>back page</a>";
-    exit();
-}
-
-if($id==NULL || $pw==NULL || $name==NULL || $email==NULL) //
-{
-    echo "빈 칸을 모두 채워주세요";
-    echo "<a href=user_signup.html>back page</a>";
-    exit();
-}
-$mysqli=mysqli_connect("localhost","root","ggghhh03","sbdb");
-$check="SELECT *from store_info WHERE id='$id'";
-$result=$mysqli->query($check);
-
-if($result->num_rows==1)
-{
-    echo "중복된 아이디입니다.";
-    echo "<br><br>";
-    echo "<a href=user_signup.html>back page</a>";
-    exit();
-}
-$signup=mysqli_query($mysqli,"INSERT INTO store_info (id, password, name, email) 
-VALUES ('$id','$pw','$name','$email')");
-if($signup){
-    echo "회원가입을 성공적으로 등록하였습니다.";
-    echo "<br>";
-    echo "<a href=user_login.php>로그인 화면</a>";
-}
+require ("./menu2.php");
 ?>
+<br><br>
+ <form action = "./user_signup_do.php" method="post">
+ <div>
+ <label for="id"> 아이디 </label>
+ <input type="text" name="id"/>
+ </div>
+ <div>
+ <label for="pw"> 암호  </label>
+ <input type="text" name="pw"/>
+ </div>
+ <div>
+ <label for="pwc"> 암호 재확인 </label>
+ <input type="text" name="pwc"/>
+ </div>
+ 
+ <div>
+ <label for="name"> 상점명 </label>
+ <input type="text" name="name"/>
+ </div>
+ <div>
+ <label for="email"> E-mail </label>
+ <input type="text" name="email"/>
+ </div>
+<br>
+ <div class="button">
+ <input type="submit" value="submit">
+ </div>
+ </form>
+</body>
+</html>

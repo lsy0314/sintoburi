@@ -84,16 +84,8 @@ $current_page = floor($no/$page_size);
 # 그러나 내림을 하는 이유는 $no 값에 11과 같은 값이 들어와도 제대로 출력되기를 바라는 마음에서 해놓은것이다.
 ?>
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<title>업로드 오디오 파일 목록</title>
-</head>
-<body>
 <?php
-// require ("./menu.php");
+require ("./menu2.php");
 ?>
 <br>
 <br>
