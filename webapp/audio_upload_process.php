@@ -66,6 +66,9 @@ $time_date_folder = $time_start_year . $time_start_month . $time_start_day;
 
 // connect to mysql database
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+// We have to declare "SET NAMES utf8" statement to fix issue that korean statement is broken.
+mysqli_query($db_conn, "SET NAMES utf8");
+
 $count = 0; 
 // https://dev.mysql.com/doc/refman/8.0/en/pattern-matching.html
 // Pattern Matching: Use the LIKE or NOT LIKE comparison operators 
@@ -89,6 +92,9 @@ if ($count > $max_audio_file)
  
 // ------------------------- upload audio file to mysql database and audio folder
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+// We have to declare "SET NAMES utf8" statement to fix issue that korean statement is broken.
+mysqli_query($db_conn, "SET NAMES utf8");
+
 
 if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
     $file = $_FILES['upfile'];
