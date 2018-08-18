@@ -2,6 +2,23 @@
 require("./menu2.php");
 ?>
 
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 20%;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: left;
+}
+</style>
+
+<div class="footer">
+  <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
+</div>
+
 <br><br>
  <form method="post" action="./user_login_check.php">
  <div>
