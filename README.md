@@ -2,7 +2,7 @@
 우리의 프로젝트는 신토불이라는 IoT Software를 이용하여 전통적인 시장의 상점주인들이 시장을 활성화하고 수익을 더 높일수 있도록 돕는 것입니다. **Sintoburi**  는 몸과 태어난 땅은 하나라는 것을 의미합니다. 즉, 제 땅에서 산출된 것이라야 체질에 잘 맞으므로 우리의 전통 음식들을 애용하자라는 뜻을 가지고 있습니다. 
 <br><br>
 * 신토불이 로고:
-<img src=https://github.com/lsy0314/sintoburi/blob/master/images/carrot.png width=100 height=100 border=0> </img>
+<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/carrot.png width=100 height=100 border=0> </img>
 
 
 # 소개
@@ -19,7 +19,7 @@
  
 
 # 디자인
-* https://github.com/lsy0314/sintoburi/blob/master/images/%EC%BA%A1%EC%B2%98.JPG
+* https://github.com/lsy0314/sintoburi/blob/master/pic/idea-sketch.jpg
 
 이 사이트는 전통 시장을 돕는 우리의 제품을 설명하고 있습니다. 신토불이(제품명)를 사용하여 전통 시장을 현대화 할 수 있습니다. 신토불이는 4차 산업 혁명에 따라 전통 시장을 활성화하고 차별화하기 위해 고안되었습니다. 시장을 방문하는 고객에게 시장 정보를 자동으로 홍보하는 IOT 제품이라고 할 수 있습니다.
 신토불이는 휴대 전화에서만 사용이 가능하며 화면에는 매시간마다 행사가 표시됩니다.

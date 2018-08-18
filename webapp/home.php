@@ -6,10 +6,7 @@ require("./menu2.php");
 <br>
 <br>
 <center>
-<!--
-<img src=./images/home.png width=300 border=0></img>
-//-->
-<img src=../images/carrot.png width=70 height=70></img><br><br>
+<img src=../pic/carrot.png width=70 height=70></img><br><br>
 <br>
 <font color=#DF5E05 size=4><b>
 "신토불이는 전통시장과 고객들을 이어줍니다."<br>
