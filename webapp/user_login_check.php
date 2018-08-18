@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("./menu2.php");
 
 $id=$_POST['id'];
 $pw=$_POST['pw'];
@@ -23,14 +24,14 @@ if($result->num_rows==1){
        header('Location: ./user_main.php'); //로그인 성공 시 페이지 이동
        }
        else{
-       echo "죄송합니다. 세션 정보들을 저장하는 작업을 실패하였습니다.";
+       echo "<br><br> <font color=red> 죄송합니다. 세션 정보들을 저장하는 작업을 실패하였습니다.</font>";
        } 
     }
     else{
-       echo "죄송합니다. 아이디 또는 암호를 잘못 입력하신것 같습니다.";
+       echo "<br><br> <font color=red> 죄송합니다. 아이디 또는 암호를 잘못 입력하신것 같습니다.</font>";
     }
 }
 else{
- echo "죄송합니다. 아이디 또는 암호를 잘못 입력하신것 같습니다.";
+ echo "<br><br> <font color=red> 죄송합니다. 아이디 또는 암호를 잘못 입력하신것 같습니다.</font>";
 }
 ?>
