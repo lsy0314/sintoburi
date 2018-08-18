@@ -30,34 +30,35 @@
 
 # 설치 방법
 
-### Install Ubuntu OS in Raspberry Pi3
-First of all, read documents that we uploaded in [doc](doc/README.md) folder.
-Then, please try to install Ubuntu OS in Raspberry Pi3 device.
+### Raspberry Pi3 에 우분투 OS 설치
+먼저 [doc] (doc / README.md) 폴더에 업로드 한 문서를 읽으십시오.
+그런 다음 Ubuntu OS를 Raspberry Pi3 장치에 설치하십시오.
 
 
-### Install Sintoburi
-Sintoburi was mainly developed by Python (motion sensor) and PHP (Web application). 
-Please install two applications as following:
+### 신토불이 설치
+신토불이는 주로 Python (모션 센서) 및 PHP (웹 응용 프로그램)에 의해 개발되었습니다.
+다음과 같이 두 개의 응용 프로그램을 설치하십시오.
 ```bash
-Run ssh session with mobaxterm software on windows7 PC.
+#windows7 PC에서 mobaxterm 소프트웨어로 ssh 세션을 실행하십시오
+
 $ cd /var/www/html
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ cd ./sintoburi 
 $ sudo chown -R www-data:www-data /var/www/html/sintoburi/audiro/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
-# User privilege specification
+# 사용자 권한 지정
 root    ALL=(ALL:ALL) ALL
 hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 ```
 
 # 실행방법
-This section describes how to start web-application and pir-sensor program.
+웹 응용 프로그램 및 pir-sensor 프로그램을 시작하는 방법에 대해 설명합니다.
 
 ### Run software manually
-* How to run with launcher.c
-At first, compile launcher.c with gcc command. Then, Just execute `launcher` file. 
+*launcher.c로 실행하는 방법
+우선, gcc 명령으로 launcher.c를 컴파일하십시오. 그런 다음`launcher` 파일을 실행하십시오.
 ```bash
 $ cd sintoburi
 $ gcc -o launcher launcher.c
@@ -72,7 +73,7 @@ $ ./launcher
 <img src=https://github.com/lsy0314/sintoburi/blob/master/pic/demo02.png width=500 height=400 border=0 />
 
 # 팀 멤버
-* **임현준** : 하드웨어 개발 분야를 맡았습니다. (예: 라즈베리 파이 보드의 우분투 OS 설치, PIR모션 센서 프로그램, 딥러닝 음성인식 프로그램 개발)  
+* **임현준** : 하드웨어 개발 분야 및 디자인을 맡았습니다. (예: 라즈베리 파이 보드의 우분투 OS 설치, PIR모션 센서 프로그램, 딥러닝 음성인식 프로그램 개발)  
 * **임수연** : 소프트웨어 개발 분야을 맡음 (예: 상점관리용 데이타베이스 설계, 음성파일 업로드용 웹앱 개발, 이벤트 관리 웹앱 개발)
 
 우리는 학업중에 효과적으로 개발을 위해 필요한 의견들을 나누고 원활한 의사소통을 위한 수단이 필요하였습니다. 그래서 우리는 지구상의 모든 개발자들이 활발하게 널리 쓰고있는 github 개발 호스팅 사이트를 이용하기로 하였습니다. 우리는 github.com 사이트를 이용하여 실시간으로 각자의 개발 진행 상황을 공유하여 공동 작업을 편하게 함으로써 팀웍과 공동 작업의 산출물인 프로그램의 완성도를 높이기 위하여 노력하여왔습니다.
