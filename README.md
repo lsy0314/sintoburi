@@ -69,7 +69,7 @@ $ ./launcher
 
 * 웹 사이트 - http://sintoburi.mooo.com
    * 이 웹 주소는 https://freedns.afraid.org/를 통해 무료로 생성하였습니다.
-<img src=https://github.com/lsy0314/sintoburi/blob/master/images/demo01.png width=500 height=400 border=0 />
+<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/demo01.png width=500 height=400 border=0 />
 
 # 팀 멤버
 * **임현준** : 하드웨어 개발 분야를 맡았습니다. (예: 라즈베리 파이 보드의 우분투 OS 설치, PIR모션 센서 프로그램, 딥러닝 음성인식 프로그램 개발)  
