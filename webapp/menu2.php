@@ -67,10 +67,10 @@ body {
 <body>
 <div class="topnav" id="myTopnav">
   <a href="./home.php" class="active"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="./user_main.php"><i class="fa fa-fw fa-user"></i>상점 회원 관리</a>
-  <a href="./audio_file_list.php"><i class="fa fa-fw fa-user"></i>음성파일 관리</a>
-  <a href="./event_file_list.php"><i class="fa fa-fw fa-user"></i>이벤트 관리</a>
-  <a href="./event_announce.php"><i class="fa fa-fw fa-user"></i>이벤트 알림화면(고객용)</a>
+  <a href="./user_main.php"><i class="fa fa-fw fa-user"></i>상점회원 관리</a>
+  <a href="./audio_file_list.php"><i class="fa fa-fw fa-user"></i>음성파일 관리 (상점용)</a>
+  <a href="./event_file_list.php"><i class="fa fa-fw fa-user"></i>이벤트 관리 (상점용)</a>
+  <a href="./event_announce.php"><i class="fa fa-fw fa-user"></i>이벤트 알림화면 (고객용)</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
