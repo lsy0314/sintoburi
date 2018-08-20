@@ -90,7 +90,7 @@ require ("./menu2.php");
 <br>
 <br>
 
-<img src=./images/custom-screen.PNG border=0 width=80 height=40></img>
+<img src=./images/image.png border=0 width=130 height=80></img>
 
 <table border="0">
 <tr bgcolor=skyblue>
