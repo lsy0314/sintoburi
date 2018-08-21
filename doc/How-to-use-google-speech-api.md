@@ -125,3 +125,28 @@ speech=/home/hjoon0510/google-speech-api/php-docs-samples/speech/speech.php
 
 
 ```
+
+## .flac / .raw 사운드 플레이 테스트하기
+
+### How to play .flac file
+```
+Rhythmbox (the default player)
+Clementine
+Amarok
+Xnoise
+Banshee
+Tomahawk
+Lollypop
+Guayadeque
+Cmus (if you like simple music players in the Terminal window)
+```
+
+### How to play .raw file
+```
+sudo apt -y install sox
+time play -t raw -r 16k -e signed -b 16 -c 1  ./output_all.raw
+
+sudo apt -y install ffmpeg
+time ffplay -f s16le -ar 16k -ac 1 ./output_all.raw 
+```
+
