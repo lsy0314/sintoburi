@@ -148,8 +148,8 @@ $ sudo vi /var/www/html/index.php
 
 Install VNC Server
 ```bash
-sudo apt install tightvncserver   (OR sudo apt install vnc4server)
-vi ~/vnc.sh
+$ sudo apt install tightvncserver   (OR sudo apt install vnc4server)
+$ vi ~/vnc.sh
 ---------- vnc server:start ---------------
 #!/bin/sh
 vncserver :1 -geometry 1280x1024 -depth 24
@@ -161,7 +161,9 @@ Password:***
 Verify: ***
 Would you like to enter a view-only password (y/n)? n
 
-vi ~/.vnc/xstartup
+$ sudo netstat -nat | 5901
+
+$ cat ~/.vnc/xstartup
 ---------- start ---------------
 #!/bin/sh
 xrdb $HOME/.Xresources
@@ -174,17 +176,23 @@ export XKL_XMODMAP_DISABLE=1
 ---------- end ----------------
 
 # VNC Server 서비스를 죽이는 방법 
-vncserver -kill :1
+$ vncserver -kill :1
 ```
 
 
 Run VNC client
+방법1: real vnc viewer 사용방법 
 ```bash
-firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
+$ firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
 접속할때 아래의 IP 및 암호를 입력하면 된다. 
  * IP 192.168.219.104:5901
  * password: ***
 ```
+
+방법2: mobaxterm의 vnc viewer 사용방법
+
+
+
 # How to do realtime streamming service with camera and gstreamer software
 * http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
 
