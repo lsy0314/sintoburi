@@ -155,6 +155,12 @@ vi ~/vnc.sh
 vncserver :1 -geometry 1280x1024 -depth 24
 ---------- vnc server: end ----------------
 
+$ sh ./vnc.sh
+You will require a password to access your desktops.
+Password:***
+Verify: ***
+Would you like to enter a view-only password (y/n)? n
+
 vi ~/.vnc/xstartup
 ---------- start ---------------
 #!/bin/sh
@@ -167,8 +173,11 @@ export XKL_XMODMAP_DISABLE=1
 /etc/X11/Xsession
 ---------- end ----------------
 
+# VNC Server 서비스를 죽이는 방법 
 vncserver -kill :1
 ```
+
+
 Run VNC client
 ```bash
 firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
