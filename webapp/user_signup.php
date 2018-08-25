@@ -1,5 +1,7 @@
 <?php
 require ("./menu2.php");
+include('webapp_config.php');
+$mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 ?>
 <br><br>
  <form action = "./user_signup_do.php" method="post">

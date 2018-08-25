@@ -1,7 +1,8 @@
 <?php
 require("./menu2.php");
+include('webapp_config.php');
+$mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 ?>
-
 <style>
 .footer {
     position: fixed;

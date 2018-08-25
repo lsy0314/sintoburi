@@ -33,7 +33,7 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT * FROM $table_name_event ORDER BY reg_time  DESC limit $no,$page_size";
+$query = "SELECT * FROM $table_name_event ORDER BY reg_time, bell_number DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
 //$result = mysqli_query($query, $db_conn);
 $result = mysqli_query($db_conn,$query);
@@ -101,6 +101,7 @@ require ("./menu2.php");
 	<th width=120>이벤트 일자</th>
 	<th width=150>상점명</th>
 	<th width=500>이벤트 내용</th>
+        <th width=60>울림수</th>
 <!--	<th>파일 ID</th>   //-->
 <!-- 	<th>업로드 파일명</th>  //-->
 <!--	<th width=440>저장된 파일명(*)</th> //-->
@@ -135,6 +136,7 @@ $number = $number + 1;
   <td><?=$row['event_date'] ?></td>
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['event_msg'] ?></td>
+  <td width=40  style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->
 <!-- <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="event_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td> //-->
 <!--  <td><?= $row['name_save'] ?></td> //-->

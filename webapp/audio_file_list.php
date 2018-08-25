@@ -33,7 +33,7 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio ORDER BY name_save DESC limit $no,$page_size";
+$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg, bell_number FROM $table_name_audio ORDER BY name_save DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
 //$result = mysqli_query($query, $db_conn);
 $result = mysqli_query($db_conn,$query);
@@ -105,6 +105,7 @@ require ("./menu2.php");
 <!--	<th>파일 ID</th>   //-->
 	<th>업로드 파일명</th>
 	<th width=240>저장된 파일명(*)</th>
+        <th width=60>울림수</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -139,6 +140,7 @@ $number = $number + 1;
 <!--  <td><?= $row['file_id'] ?></td>   //-->
   <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
+  <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
 </tr>
 
 
