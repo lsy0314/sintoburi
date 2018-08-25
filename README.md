@@ -56,7 +56,7 @@ hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
 # 실행방법
 웹 응용 프로그램 및 pir-sensor 프로그램을 시작하는 방법에 대해 설명합니다.
 
-### Run software manually
+### 소프트웨어 수동 실행
 *launcher.c로 실행하는 방법
 우선, gcc 명령으로 launcher.c를 컴파일하십시오. 그런 다음`launcher` 파일을 실행하십시오.
 ```bash
