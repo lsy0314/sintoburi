@@ -181,17 +181,22 @@ $ vncserver -kill :1
 
 
 Run VNC client
+
 방법1: real vnc viewer 사용방법 
 ```bash
 $ firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
-접속할때 아래의 IP 및 암호를 입력하면 된다. 
+접속할때 아래처럼 IP 및 암호를 입력하면 된다. 
  * IP 192.168.219.104:5901
  * password: ***
 ```
 
 방법2: mobaxterm의 vnc viewer 사용방법
-
-
+```bash
+Basic Vnc serttings:
+* Remote hostname or IP address: 192.168.219.104:5901
+* Port: 5901
+* password: ***
+```
 
 # How to do realtime streamming service with camera and gstreamer software
 * http://www.icbanq.com/P007122889 (라즈베리파이 카메라 모듈 V2 8MegaPixel) 
