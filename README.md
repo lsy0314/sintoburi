@@ -31,7 +31,7 @@
 # 설치 방법
 
 ### Raspberry Pi3 에 우분투 OS 설치
-먼저 [doc] (doc / README.md) 폴더에 업로드 한 문서를 읽으십시오.
+먼저 [doc](doc/README.md) 폴더에 업로드 한 문서를 읽으십시오.
 그런 다음 Ubuntu OS를 Raspberry Pi3 장치에 설치하십시오.
 
 
