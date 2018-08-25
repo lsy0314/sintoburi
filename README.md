@@ -39,7 +39,7 @@
 신토불이는 주로 Python (모션 센서) 및 PHP (웹 응용 프로그램)에 의해 개발되었습니다.
 다음과 같이 두 개의 응용 프로그램을 설치하십시오.
 ```bash
-#windows7 PC에서 mobaxterm 소프트웨어로 ssh 세션을 실행하십시오
+# windows7 PC에서 mobaxterm 소프트웨어로 ssh 세션을 실행하십시오
 
 $ cd /var/www/html
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
