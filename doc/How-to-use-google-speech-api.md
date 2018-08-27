@@ -148,5 +148,9 @@ time play -t raw -r 16k -e signed -b 16 -c 1  ./output_all.raw
 
 sudo apt -y install ffmpeg
 time ffplay -f s16le -ar 16k -ac 1 ./output_all.raw 
+
+sudo apt -y  alsa-util
+time aplay -t raw -r 16k -c 1 -f S16_LE ./output_all.raw 
+
 ```
 
