@@ -287,7 +287,7 @@ vi ~/.asoundrc
 # hw:<card-val>,<device-val>
 pcm.copy { type plug slave { pcm "hw:2,0" } } ctl.!default { type hw card 2 }
 
-
+# record void for 10 seconds, then save audio file with .wav format
 arecord -D copy -d 10 foo.wav
 ```
 Play recorded audio file
