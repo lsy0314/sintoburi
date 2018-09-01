@@ -20,6 +20,12 @@ def play_audio_file(audio_file_time, current_time, search_path, audio_file):
         print "[DEBUG] We found audio file."
         print "[DEBUG] Let's play the audio file:" , cmd
         os.system(cmd)
+        
+        # Todo: upload the number of audio play into dtabase
+        # see python codes in ./mysql/ folder
+        # 1. find unique id (file id)
+        # 2. save +1 (audio_voice field) into database
+
         # wait for 2 seconds after play audio file.
         time.sleep(2)
 
