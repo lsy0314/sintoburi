@@ -92,8 +92,13 @@ require ("./menu2.php");
 
 <img src=./images/image.png border=0 width=130 height=80></img>
 
+<?php
+echo "<br>";
+echo " *이벤트 총 갯수: $total_row 개<br>";
+
+?>
 <table border="0">
-<tr bgcolor=skyblue>
+<tr height=40 bgcolor=skyblue>
  	<th>이벤트 일자 (*)</th> 
 	<th width=150>상점명</th>
 	<th width=500>이벤트 내용</th>

@@ -33,7 +33,7 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT * FROM $table_name_event ORDER BY reg_time, bell_number DESC limit $no,$page_size";
+$query = "SELECT * FROM $table_name_event ORDER BY event_date DESC limit $no,$page_size";
 //$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
 //$result = mysqli_query($query, $db_conn);
 $result = mysqli_query($db_conn,$query);
@@ -89,7 +89,7 @@ require ("./menu2.php");
 <br>
 <a href="./event_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="./event_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
+<a href="./event_upload.php"><img src=./images/event.png border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <br>
 
@@ -98,7 +98,7 @@ require ("./menu2.php");
 	<th width=40>번호</th>
 	<th width=40>삭제</th>
 	<th width=40>상세</th>
-	<th width=120>이벤트 일자</th>
+	<th width=120>이벤트 일자(*)</th>
 	<th width=150>상점명</th>
 	<th width=500>이벤트 내용</th>
         <th width=60>울림수</th>
