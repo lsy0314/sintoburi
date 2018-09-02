@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 # @Author: Hyunjun Lim
-# @Date: Jul-21-2018
-# @Title: module to play audio files
+# @Date: Sep-02-2018
+# @Title: module to play audio files and save bell_number value
 # @License: Star
 
 import os
 import time
+import MySQLdb
 
 # check if an audio file at the current time, let's play audio file
 # the time has to get number between 0 and 9 minutes
@@ -21,12 +22,37 @@ def play_audio_file(audio_file_time, current_time, search_path, audio_file):
         print "[DEBUG] Let's play the audio file:" , cmd
         os.system(cmd)
         
-        # Todo: upload the number of audio play into dtabase
-        # see python codes in ./mysql/ folder
-        # 1. find unique id (file id)
-        # 2. save +1 (audio_voice field) into database
+        # Todo: Add the number of audio play into dtabase
+        # @see https://www.tutorialspoint.com/python/python_database_access.htm
+        # 1. find unique id (name_save field)
+        # 2. save +1 (bell_number field) into database
+        
+        
+        # Open database connection
+        db = MySQLdb.connect("localhost","root","ggghhh03","sbdb")
+        
+        # Prepare a cursor object using cursor() method
+        cursor = db.cursor()
+       
+        # Execute the SQL command: Add value 1 to bell_number field.
+        print "[DEBUG] Inserting +1 into bell_number field of database"
+        sql = "UPDATE `audio_table` SET bell_number = bell_number + 1 WHERE `audio_table`.`name_save` = '" + audio_file + "'"
+        
+        try:
+           # Execute the SQL command
+           cursor.execute(sql)
+           # Commit your changes in the database
+           db.commit()
+        except:
+           # Rollback in case there is any error
+           db.rollback()
+        
+        # disconnect from server
+        db.close()
+
 
         # wait for 2 seconds after play audio file.
+        print "[DEBUG] Sleeping for specified seconds"
         time.sleep(2)
 
     else:

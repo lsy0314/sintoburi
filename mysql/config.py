@@ -11,7 +11,7 @@
 mysql = {"host"  : "localhost",
          "user"  : "root",
          "passwd": "ggghhh03",
-         "db"    : "sbdb1"
+         "db"    : "sbdb"
         }
 
 # Create table as per requirement
