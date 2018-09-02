@@ -147,11 +147,16 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             $audio_msg = shell_exec($cmd);
             echo "<b>딥러닝 음성로봇 번역결과:</b><br>";
             $audio_msg = str_replace('Transcript:','',$audio_msg);
-            echo "<font color=blue><pre>$audio_msg</pre></font>";
+            if($audio_msg != "")
+                echo "<font color=blue><pre>$audio_msg</pre></font>";
+            else 
+                echo "<font color=blue><pre>죄송합니다. 음성번역을 실패하였습니다. 관리자에게 문의해주세요.<pre></font>";
+
         }
         else {
             echo "음성 입력 메세지:<br>";
             echo "<font color=blue><pre>$audio_msg</pre></font>";
+
         }
 
         $query = "INSERT INTO $table_name_audio (file_id, name_orig, name_save, reg_time, store_name, password, audio_msg, ip_address) VALUES(?,?,?,now(),'$store_name', '$audio_password', '$audio_msg', '$ipaddress')";
@@ -164,7 +169,11 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         mysqli_stmt_close($stmt);
       
         echo "<br>";
-        echo "<h3><font color=red>축하합니다.</font> 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
+        if($audio_msg != "")
+           echo "<h3><font color=red>축하합니다.</font> 오디오 파일을 성공적으로 업로드 하였습니다.</h3>";
+        else
+           echo "<h3><font color=red>죄송합니다.</font>음성파일은 성공적으로 업로드하였지만 음성메세지가 존재하지 않습니다.</h3>";
+
         echo "<a href='./audio_file_list.php'>업로드 파일 목록</a>";
         
     }
