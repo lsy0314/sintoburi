@@ -29,11 +29,16 @@ if(!isset($_SESSION['id'])) {
 
 
 <script type="text/javascript">
+function progress_func() {
+        document.getElementById("audio_load").innerHTML = "<img src=./images/audio-uploading.gif width=250 height=150 border=0 /><br>처리중입니다. 잠시만 기다려주세요.!!!";
+        window.scrollBy(0, 100);
+}
 function formSubmit(f) {
 	var extArray = new Array('wav','mp3','m4a');
 	var path = document.getElementById("upfile").value;
 	if(path == "") {
 		alert("파일을 선택해 주세요.");
+                document.getElementById("audio_load").innerHTML = "";
 		return false;
 	}
 	var pos = path.indexOf(".");
@@ -199,7 +204,10 @@ if ($input_minute ==  "0")
 <label for="upfile"> </label><font size=5 color=black><img src=images/item.png onclick="showpopup_audio_file();" onmouseover="this.style.cursor='pointer'" border=0 height=25 width=25 />음성 파일 <input type="file" name="upfile" id="upfile" /></font>
 </div>
 <br>
-<input type="submit" value="등록하기" />
+<font color=red><p id="audio_load"></p></font>
+<input type="submit" onclick="progress_func()" value="등록하기" />
+<!- @see https://www.w3schools.com/tags/ev_onclick.asp ->
+
 </form>
 </body>
 </html>
