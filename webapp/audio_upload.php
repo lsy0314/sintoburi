@@ -197,7 +197,7 @@ if ($input_minute ==  "0")
 <br><br>
 <font size=5  color=black><img src=images/item.png onclick="showpopup_password();" onmouseover="this.style.cursor='pointer'" border=0 height=25 width=25 />비밀번호
 <br>
-<INPUT TYPE=TEXT NAME=password STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=30 MAXLENGTH=30 READONLY VALUE="<?= $_SESSION['password'] ?>">
+<INPUT TYPE=PASSWORD NAME=password STYLE="BACKGROUND-COLOR: #DDDDD0" SIZE=30 MAXLENGTH=30 READONLY VALUE="<?= $_SESSION['password'] ?>">
 </font>
 <br><br>
 
