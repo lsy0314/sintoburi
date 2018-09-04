@@ -87,10 +87,8 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-<br>
-<br>
 
-<img src=./images/image.png border=0 width=130 height=80></img>
+<img src=./images/_custom_screen.png border=0 width=360 height=120></img>
 
 <?php
 echo "<br>";
