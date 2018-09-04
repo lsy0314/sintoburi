@@ -8,6 +8,7 @@ require("./menu2.php");
 <center>
 <img src=images/image.png width=350 height=250></img>
 <br>
+<br>
 <font color=#DF5E05 size=4><b>
 "신토불이는 전통시장과 고객들을 이어줍니다."<br>
 </b></font>
