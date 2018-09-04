@@ -9,7 +9,8 @@
 folder = "/var/www/html/sintoburi/sensor/"
 GPIO_PIN = 4
 search_path="../audio/"
-execution_num = 0
+play_break_time_sec = 60
+
 
 # for mysql database code
 host = "localhost"
