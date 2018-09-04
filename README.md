@@ -67,7 +67,7 @@ $ ./launcher
 
 * 웹 사이트 - http://sintoburi.mooo.com
    * 이 웹 주소는 https://freedns.afraid.org/를 통해 무료로 생성하였습니다.
-<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/demo02.png width=360 height=400 border=0 />
+<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/demo02.png width=360 height=450 border=0 />
 
 # 팀 멤버
 * 임현준: 하드웨어 개발 분야 및 디자인을 맡았습니다. 
