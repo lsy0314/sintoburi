@@ -55,7 +55,7 @@ def play_audio_file(audio_file_time, current_time, search_path, audio_file):
 
         # wait for 2 seconds after play audio file.
         print "[DEBUG] Sleeping for specified seconds"
-        time.sleep(2)
+        time.sleep(cfg.play_break_time_sec)
 
     else:
         print "[DEBUG] Failed."
