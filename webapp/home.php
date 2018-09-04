@@ -11,7 +11,7 @@ require("./menu2.php");
 <font color=#DF5E05 size=4><b>
 "신토불이는 전통시장과 고객들을 이어줍니다."<br>
 </b></font>
-
+<br><br>
 <table width=90% border=0>
 <tr><td><center>
 신토불이의 주요 목적은 IoT 소프트웨어를 이용하여 전통적인 시장의 상점주인들이 시장을 활성화하고
