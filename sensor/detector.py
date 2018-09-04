@@ -112,9 +112,6 @@ try:
                 print "[DEBUG] So, we run 'continue' statement."
                 #sys.exit()
                 continue
-            #TODO: We have to save excution number to a file or database.
-            cfg.execution_num = cfg.execution_num + 1
-  	    print "[DEBUG] check execution number", cfg.execution_num
             # we fetch date/time with number only from file name.
             # If the value  is not date/time format such as 201808011710, program can not run.
             audio_file_time = int(filename)
@@ -139,7 +136,7 @@ try:
                 play_audio_file (audio_file_time, current_time, search_path, audio_file)
 
         # wait for 5 seconds after finishing 'for' statement
-        time.sleep(5)
+        time.sleep(cfg.play_break_time)
         print "[DEBUG]---- audio file list: end --------------"
         #---------------------------------------------- Read audio file folder: end
 
