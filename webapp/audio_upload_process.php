@@ -5,6 +5,25 @@
 <title>음성파일 업로드</title>
 </head>
 <body>
+
+<style>
+.btn {
+  background-color: #3e8e41;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ddd;
+  color: white;
+}
+</style>
+
 <?php
 
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -130,7 +149,10 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
         $name_orig = str_replace(" ", "_", $file['name']);
         $name_save = $path;
 
-        echo "<img src='images/speech-api-lead.png' border=0></img>";
+    if($audio_msg == "")
+      echo "<img src='images/speech-api-lead.png' border=0></img>";
+    else
+      echo "<img src='images/voice-body.jpg' border=0 width=100></img>";
         echo "<br>";
 
         // if user do not insert audio message, run google speech API robot.
@@ -148,9 +170,9 @@ if(isset($_FILES['upfile']) && $_FILES['upfile']['name'] != "") {
             echo "<b>딥러닝 음성로봇 번역결과:</b><br>";
             $audio_msg = str_replace('Transcript:','',$audio_msg);
             if($audio_msg != "")
-                echo "<font color=blue><pre>$audio_msg</pre></font>";
+                echo "<br><font class=btn> $audio_msg</font><br>";
             else 
-                echo "<font color=blue><pre>죄송합니다. 음성번역을 실패하였습니다. 관리자에게 문의해주세요.<pre></font>";
+                echo "<br><font class=btn> 죄송합니다. 음성번역을 실패하였습니다. 관리자에게 문의해주세요.</font><br>";
 
         }
         else {
