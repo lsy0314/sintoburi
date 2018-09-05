@@ -96,15 +96,15 @@ require ("./menu2.php");
 
 <table border="1">
 <tr bgcolor=yellow>
-	<th width=20>번호</th>
-	<th width=20>삭제</th>
-	<th width=20>상세</th>
+	<th width=40>번호</th>
+	<th width=50>삭제</th>
+	<th width=50>상세</th>
 <!--	<th>업로드 시각</th> //-->
-	<th width=80>상점명</th>
-	<th width=240>음성 내용</th>
+	<th width=100>상점명</th>
+	<th width=440>음성 내용</th>
 <!--	<th>파일 ID</th>   //-->
-	<th>업로드 파일명</th>
-	<th width=240>저장된 파일명(*)</th>
+<!--	<th>업로드 파일명</th> //-->
+<!--	<th width=240>저장된 파일명(*)</th> //-->
         <th width=60>울림수</th>
 </tr>
 <?php
@@ -129,17 +129,19 @@ $number = $number + 1;
 ?>
 <tr>
   <td width=20><?=$total_row - $number - $no +1 ?></td>
-  <td><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
-       <img src=./images/remove.png border=0 height=20 width=20 ></img>
+  <td align=center><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
+       <img src=./images/remove.png title='업로드 파일명:<?= $row['name_orig'] ?>'border=0 height=20 width=20 ></img>
   </td>
-  <td><a href=audio_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png border=0 hegith=20 width=20></img>
+  <td align=center><a href=audio_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png title='저장된 파일명:<?=$row['name_save'] ?>' border=0 hegith=20 width=20></img>
   </td>
 <!--  <td><?=$row['reg_time'] ?></td> //-->
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
 <!--  <td><?= $row['file_id'] ?></td>   //-->
+<!--
   <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
+//-->
   <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
 </tr>
 
