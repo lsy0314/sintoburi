@@ -87,17 +87,19 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-
-<img src=./images/_custom_screen.png border=0 width=360 height=120></img>
+<br>
+<br>
+<center><img src=./images/image.png border=0 width=250 height=80></img></center>
 
 <?php
 echo "<br>";
-echo " *이벤트 총 갯수: $total_row 개<br>";
+echo "<br>";
+echo " ■ 이벤트 총 갯수: $total_row 개<br>";
 
 ?>
 <table border="0">
 <tr height=40 bgcolor=skyblue>
- 	<th>이벤트 일자 (*)</th> 
+ 	<th width=100>이벤트일자 (*)</th> 
 	<th width=150>상점명</th>
 	<th width=500>이벤트 내용</th>
 </tr>
@@ -151,7 +153,7 @@ mysqli_close($db_conn);
 ?>
 </table>
 
-<font color=red> * 출력방법: 오늘부터 열리는 이벤트행사들을 내림차순 순서로 화면에 출력 합니다.</font>
+<font color=red> ■ 출력방법: 오늘부터 열리는 이벤트행사들을 내림차순 순서로 화면에 출력 합니다.</font>
 
 <!-- 페이지를 표시하기 위한 테이블 -->
 <br>
