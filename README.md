@@ -41,7 +41,7 @@
 $ cd /var/www/html
 $ git clone https://github.com/hjoon0510/SmartSecretary.git
 $ cd ./sintoburi 
-$ sudo chown -R www-data:www-data /var/www/html/sintoburi/audiro/
+$ sudo chown -R www-data:www-data /var/www/html/sintoburi/audio/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 #includedir /etc/sudoers.d
