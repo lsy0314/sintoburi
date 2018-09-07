@@ -30,7 +30,7 @@ int main(void){
         printf("[ERROR] apache2: A web-server process could not be executed. return value is %d\n",result); exit(0);
     }
     else
-        printf("Apache web-server is successfully started.\n");
+        printf("(1/2) [webapp] Apache web-server is successfully started.\n");
 
     // Step2: run PIR motion sensor
     // * with background: exec /var/www/html/sintoburi/sensor/detector &> /dev/null &
@@ -43,7 +43,7 @@ int main(void){
         printf("[ERROR] pir sensor: A PIR sensor process could not be executed. return value is %d.\n",result); exit(0);
     }
     else
-        printf("A PIR sensor process is successfully started.\n");
+        printf("(2/2) [sensor] A PIR sensor process is successfully started.\n");
             
     // display help message to users.
     printf("Please visit http://localhost/ to use web-application.\n");
