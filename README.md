@@ -44,9 +44,10 @@ $ cd ./sintoburi
 $ sudo chown -R www-data:www-data /var/www/html/sintoburi/audiro/
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
-# 사용자 권한 지정
-root    ALL=(ALL:ALL) ALL
-hjoon0510       ALL=NOPASSWD: ALL <---- Please append your id here.!!!!
+#includedir /etc/sudoers.d
+user01          ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
+user02          ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
+www-data        ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 ```
 
