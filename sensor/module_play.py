@@ -54,7 +54,7 @@ def play_audio_file(audio_file_time, current_time, search_path, audio_file):
         mysql_bell_number(audio_file)
 
         # wait for 2 seconds after play audio file.
-        print "[DEBUG] Sleeping for specified seconds"
+        print "[DEBUG] Sleeping for %d seconds..." % cfg.play_break_time_sec
         time.sleep(cfg.play_break_time_sec)
 
     else:

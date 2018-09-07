@@ -44,7 +44,7 @@ try:
     pir = MotionSensor(cfg.GPIO_PIN)
     count = 0
     while True:
-        print "[DEBUG] Sleeping..."
+        print "[DEBUG] Wait for probing the movement of people..."
         # wait for until customer wil be appeared
         pir.wait_for_motion()
         count += 1
