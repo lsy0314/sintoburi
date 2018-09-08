@@ -84,6 +84,7 @@ $current_page = floor($no/$page_size);
 require ("./menu2.php");
 ?>
 
+ 음성파일 관리 (상점용) 
 <br>
 <br>
 <a href="./audio_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
