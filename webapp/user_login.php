@@ -3,22 +3,6 @@ require("./menu2.php");
 include('webapp_config.php');
 $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 ?>
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    background-color: gray;
-    color: white;
-    text-align: left;
-}
-</style>
-
-<div class="footer">
-  <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
-</div>
 <img src=./images/carrot-login.gif width=240 height=100 border=0></img>
 <br>
  <form method="post" action="./user_login_check.php">
@@ -39,6 +23,9 @@ $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
  </form>
 <br>
  <button onclick="location.href='user_signup.php'"> 회원가입 </button>
+<?php
+include('./information_footer.php');
+?>
 </body>
 </html>
 

@@ -5,7 +5,6 @@ if(!isset($_SESSION['id'])) {
     echo "<script>window.location='./user_login.php';</script>";
     //header('Location: ./user_login.php');
 }
-
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 mysqli_query($db_conn, "SET NAMES utf8");
@@ -238,5 +237,8 @@ if($total_page > $end_page)
 </tr>
 </table>
 <br><br>
+<?php
+include('./information_footer.php');
+?>
 </body>
 </html>

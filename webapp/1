@@ -1,10 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION['id'])) {
-    echo "<script>window.alert('로그인이 필요합니다.');</script>";
-    echo "<script>window.location='./user_login.php';</script>";
-    //header('Location: ./user_login.php');
-}
+
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 mysqli_query($db_conn, "SET NAMES utf8");
@@ -32,9 +27,18 @@ if (empty($no) || $no < 0) {
 #########################################################################
 // echo ("[DEBUG] no is ".$no."<br><br>");
 // 데이터베이스에서 페이지의 첫번째 글($no)부터 $page_size 만큼의 글을 가져온다.
-$query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg, bell_number FROM $table_name_audio ORDER BY name_save DESC limit $no,$page_size";
-//$query = "select id,name,email,title,DATE_FORMAT(wdate,'%Y-%m-%d') as date,see from testboard order by id desc limit $no,$page_size";
-//$result = mysqli_query($query, $db_conn);
+
+// change last character to 0.
+// For example, convert 201805051635 to 201805051630
+date_default_timezone_set("Asia/Seoul");
+$input_year   = date("Y");
+$input_month  = date("m");
+$input_day    = date("d");
+$current_date = $input_year."년".$input_month."월".$input_day."일";
+//echo "value: $current_date<br>";
+
+// display data since today
+$query = "SELECT file_id, event_date, reg_time, store_name, event_msg FROM $table_name_event WHERE event_date >= '$current_date' ORDER BY event_date ASC limit $no,$page_size";
 $result = mysqli_query($db_conn,$query);
 
 // 총 게시물 수 를 구한다.
@@ -43,7 +47,7 @@ $result = mysqli_query($db_conn,$query);
 // 따라서 전체 글수가 된다. count(id) 와 같은 방법도 가능하지만 이례적으로 count(*)가 조금 빠르다. 
 // 일반적으로는 * 가 느리다.
 //$result_count=mysql_query("select count(*) from testboard",$db_conn);
-$result_count=mysqli_query($db_conn, "select count(*) from $table_name_audio");
+$result_count=mysqli_query($db_conn, "SELECT count(*) FROM $table_name_event WHERE event_date >= '$current_date' ORDER BY event_date ASC");
 $result_row=mysqli_fetch_row($result_count);
 $total_row = $result_row[0]; 
 //결과의 첫번째 열이 count(*) 의 결과다.
@@ -83,28 +87,16 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-
 <br>
-<br>
-<a href="./audio_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="../audio/?C=N;O=D"><img src=./images/audio-folder.png border=0 width=50 height=50></img></a>
 <br>
 
-<table border="1">
-<tr bgcolor=yellow>
-	<th width=40>번호</th>
-	<th width=50>삭제</th>
-	<th width=50>상세</th>
-<!--	<th>업로드 시각</th> //-->
-	<th width=100>상점명</th>
-	<th width=440>음성 내용</th>
-<!--	<th>파일 ID</th>   //-->
-<!--	<th>업로드 파일명</th> //-->
-<!--	<th width=240>저장된 파일명(*)</th> //-->
-        <th width=60>울림수</th>
+<img src=./images/image.png border=0 width=130 height=80></img>
+
+<table border="0">
+<tr bgcolor=skyblue>
+ 	<th>이벤트 일자 (*)</th> 
+	<th width=150>상점명</th>
+	<th width=500>이벤트 내용</th>
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -113,51 +105,61 @@ require ("./menu2.php");
 // License: Star License
 //
 
-// $query = "SELECT file_id, name_orig, name_save, reg_time, store_name, audio_msg FROM $table_name_audio ORDER BY name_save DESC";
 $stmt = mysqli_prepare($db_conn, $query);
 $exec = mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $number = 0;
-while($row = mysqli_fetch_assoc($result)) {
-?>
+$color_line = 0;
 
-<?php
-// The statement is how to create a dialog with “yes” and “no” options before removing a audio file
+while($row = mysqli_fetch_assoc($result)) {
+
+// The statement is how to create a dialog with “yes” and “no” options before removing a event file
 // https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
 $number = $number + 1;
-?>
 <tr>
   <td width=20><?=$total_row - $number - $no +1 ?></td>
-  <td align=center><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
-       <img src=./images/remove.png title='업로드 파일명:<?= $row['name_orig'] ?>'border=0 height=20 width=20 ></img>
-  </td>
-  <td align=center><a href=audio_file_view.php?file_id=<?= $row['file_id'] ?>><img src=./images/view.png title='저장된 파일명:<?=$row['name_save'] ?>' border=0 hegith=20 width=20></img>
-  </td>
-<!--  <td><?=$row['reg_time'] ?></td> //-->
+  <td><a href=event_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['event_date'] ?>&name_save=<?= $row['store_name'] ?></td>
+  <td><?=$row['event_date'] ?></td>
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
-  <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['audio_msg'] ?></td>
-<!--  <td><?= $row['file_id'] ?></td>   //-->
-<!--
-  <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
-  <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
-//-->
-  <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
+  <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['event_msg'] ?></td>
 </tr>
 
+echo "<tr height=10 bgcolor=white> ";
+echo "  <td> </td> ";
+echo "  <td> </td> ";
+echo "  <td> </td> ";
+echo "</tr>";
 
 
-<?php
+if ($color_line == 0){
+    echo "<tr height=40 bgcolor=#EEEEEE> ";
+    echo "  <td> ".$row['event_date']."</td> ";
+    echo "  <td width=100 style='table-layout:fixed; word-break:break-all;'>".$row['store_name']." </td> ";
+    echo "  <td width=350 style='table-layout:fixed; word-break:break-all;'>".$row['event_msg']." </td> ";
+    echo "</tr>";
+    $color_line = 1;
+}
+else{
+    echo "<tr height=40 bgcolor=#EEEEEE> ";
+    echo "  <td> ".$row['event_date']."</td> ";
+    echo "  <td width=100 style='table-layout:fixed; word-break:break-all;'>".$row['store_name']." </td> ";
+    echo "  <td width=350 style='table-layout:fixed; word-break:break-all;'>".$row['event_msg']." </td> ";
+    echo "</tr>";
+    $color_line = 0;
 } 
 
+}
 mysqli_free_result($result); 
 mysqli_stmt_close($stmt);
 mysqli_close($db_conn);
 ?>
 </table>
-<br>
-<br>
+
+<font color=red> * 출력방법: 오늘부터 열리는 이벤트행사들을 내림차순 순서로 화면에 출력 합니다.</font>
 
 <!-- 페이지를 표시하기 위한 테이블 -->
+<br>
+<br>
 <table border=0>
 <tr>
 <td width=600 height=20 align=center rowspan=4>
@@ -240,8 +242,5 @@ if($total_page > $end_page)
 </tr>
 </table>
 <br><br>
-<?php
-include('./information_footer.php');
-?>
 </body>
 </html>

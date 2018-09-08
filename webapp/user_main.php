@@ -1,24 +1,6 @@
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    background-color: gray;
-    color: white;
-    text-align: left;
-}
-</style>
-
-<div class="footer">
-  <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
-</div>
-
 <?php
 require("./menu2.php");
 session_start();
-
 // if user does do log-in, go to login.html webapge.
 if(!isset($_SESSION['id'])) {
     header('Location: ./user_login.php');
@@ -39,5 +21,8 @@ else{
 
 ?>
 </body>
+<?php
+include('./information_footer.php');
+?>
 </html>
 

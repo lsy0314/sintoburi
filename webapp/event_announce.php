@@ -88,12 +88,13 @@ $current_page = floor($no/$page_size);
 require ("./menu2.php");
 ?>
 <br>
-<br>
-<center><img src=./images/image.png border=0 width=250 height=80></img></center>
-
+<table width=370>
+<tr> <td>
+<img src=./images/event_announce.gif border=0 width=100% height=150></img>
+</td> </tr>
+</table>
 <?php
-echo "<br>";
-echo "<br>";
+#echo "<br>";
 echo " ■ 이벤트 총 갯수: $total_row 개<br>";
 
 ?>
@@ -240,5 +241,8 @@ if($total_page > $end_page)
 </tr>
 </table>
 <br><br>
+<?php
+include('./information_footer.php');
+?>
 </body>
 </html>

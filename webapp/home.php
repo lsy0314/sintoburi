@@ -2,11 +2,10 @@
 <?php
 require("./menu2.php");
 ?>
-
 <br>
 <br>
 <center>
-<img src=images/image.png width=350 height=250></img>
+<img src=images/sintoburi-logo-gif.gif width=350 height=250></img>
 <br>
 <br>
 <font color=#DF5E05 size=4><b>
@@ -22,5 +21,8 @@ require("./menu2.php");
 <br><br>
 </center>
 <br>
+<?php
+include('./information_footer.php');
+?>
 </body>
 </html>
