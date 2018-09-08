@@ -19,14 +19,14 @@ $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
 <div class="footer">
   <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>sintoburi</b></p>
 </div>
-
-<br><br>
+<img src=./images/carrot-login.gif width=240 height=100 border=0></img>
+<br>
  <form method="post" action="./user_login_check.php">
  <div>
- <label for="id">아이디 </label>
+ <label for="id">아이디 </label>&nbsp;&nbsp;
  <input type="text" name="id"/>
  </div>
-<br> <br>
+<br>
  <div>
  <label for="pw">패스워드 </label>
  <input type="password" name="pw"/>
@@ -37,6 +37,7 @@ $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
  <button type="submit">로그인 </button>
  </div>
  </form>
+<br>
  <button onclick="location.href='user_signup.php'"> 회원가입 </button>
 </body>
 </html>
