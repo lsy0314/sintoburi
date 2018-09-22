@@ -87,8 +87,9 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-<br>
 이벤트 알림화면 (고객용)
+<br>
+<br>
 <table width=370>
 <tr> <td>
 <img src=./images/event_announce.gif border=0 width=100% height=150></img>
