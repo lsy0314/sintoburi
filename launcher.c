@@ -1,7 +1,7 @@
 /**
  * @Author: Hyunjun Lim, Suyeon Lim
  * @Date: Jun-17-2018
- * @Title: Launcher to start apache web-server and pir sensor
+ * @Title: Launcher to start (1) apache web-server and (2) pir sensor program
  * @License: Star
  * @Prequisites: PHP web-application, Python PIR motion sensor application
  * @Description:
