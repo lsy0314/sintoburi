@@ -2,8 +2,9 @@
 
 # @title: A script that transcripts from .m4a to a text message
 # @author: HyeonJun Lim <hjoon0510@gmail.com>
+#          Suweon Lim <lsy0314@gmail.com>
 
-# Configuration variables
+# Configuration variables for Google AI speech API
 # "message": The request is missing a valid API key.
 google_speech=/work/google-speech-api/php-docs-samples/speech/speech.php
 
