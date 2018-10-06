@@ -1,4 +1,5 @@
-## 윈도우7용 Console  프로그램 설치하기 
+## 윈도우7을 위한 Console  프로그램 설치하기 
+
 ####  putty (공짜 프로그램) 설치하기 
 * https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
    * 64-bit: putty-64bit-0.70-installer.msi 다운로드 및 설치할것. 
