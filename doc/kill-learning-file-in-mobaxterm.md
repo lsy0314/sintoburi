@@ -1,11 +1,11 @@
-# How to kill pir motion sensor programm
+# How to kill a pir motion sensor programm
 ```bash
 ps -ef | grep pir    // survey 
-kill (file number)   // kill running file 
+kill (a process number)   // kill a running process
 ps -ef | grep pir    // check  
 ```
 
-# How to run pri motion sensor program manually
+# How to run a PIR motion sensor program manually
 ```bash
-/var/www/html/motion/pir-sensor.py
+/var/www/html/sintoburi/sensor/detector.py
 ```
