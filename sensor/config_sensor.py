@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-# A configuration file is to simply write a separate file
-# that contains Python code
+# @title: Configuration files
+# @brief: A configuration file is to simply write a separate file
+# that contains Python code. 
 
 #----------- Configuration area -------------------------
 
