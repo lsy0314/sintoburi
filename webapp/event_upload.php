@@ -12,6 +12,7 @@ if(!isset($_SESSION['id'])) {
 <html lang="ko">
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
+<<<<<<< HEAD
 <title>고객용:이벤트 일정 업로드</title>
 
 <script type="text/javascript">
@@ -27,6 +28,9 @@ if(!isset($_SESSION['id'])) {
   }
 </script>
 
+=======
+<title>상점용:이벤트 일정 업로드</title>
+>>>>>>> a4648703bb97b96cdfd4e93b9db47224de341d25
 </head>
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="event_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
