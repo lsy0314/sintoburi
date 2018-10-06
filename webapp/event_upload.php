@@ -14,23 +14,6 @@ if(!isset($_SESSION['id'])) {
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <<<<<<< HEAD
 <title>고객용:이벤트 일정 업로드</title>
-
-<script type="text/javascript">
-  function showpopup_start_time() {
-      window.open("popup_start_time.php", "_blank", "width=400, height=200, left=100, top=50");
-  }
-  function showpopup_event_msg() {
-      window.open("popup_event_msg.php", "_blank", "width=400, height=200, left=100, top=50");
-  }
-  function showpopup_password() {
-      window.open("popup_password.php", "_blank", "width=400, height=200, left=100, top=50");
-  }
-  }
-</script>
-
-=======
-<title>상점용:이벤트 일정 업로드</title>
->>>>>>> a4648703bb97b96cdfd4e93b9db47224de341d25
 </head>
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="event_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
