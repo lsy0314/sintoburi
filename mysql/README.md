@@ -1,5 +1,5 @@
 
-# Python: how to install MySQLdb module
+# How to install MySQLdb module for Python language
 MySQLdb is an interface for connecting to a MySQL database server from Python. 
 You make sure you have MySQLdb installed on your machine.
 Then, just type the following in your Python script and execute it.
@@ -8,7 +8,7 @@ Then, just type the following in your Python script and execute it.
 import MySQLdb
 ```
 
-### Prerequisites
+### Install pip and mysql client library
 ```bash
 $ sudo apt-get install python-pip python-dev libmysqlclient-dev
 ```
