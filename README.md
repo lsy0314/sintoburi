@@ -12,7 +12,10 @@
 
 우리는 우리의 아이디어를 알기 쉽게 소개하기 위하여 유튜브 비디오를 만들었습니다. 아래의 비디오는 3 분 동안 재생이 됩니다.
 * 유튜브 비디오를 보려면 [HERE](https://youtu.be/r2Oou_AUoKo?t=0s)를 누르십시오.
- 
+
+i
+* https://youtu.be/r2Oou_AUoKo?t=0s (유튜브 동영상 데모 3분)
+>>>>>>> 0f0579888407e09ff366d138fc88e5a1d5c12d16 
 
 # 디자인
 * https://github.com/lsy0314/sintoburi/blob/master/pic/idea-sketch.jpg

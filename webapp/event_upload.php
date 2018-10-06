@@ -13,13 +13,26 @@ if(!isset($_SESSION['id'])) {
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <title>고객용:이벤트 일정 업로드</title>
+
+<script type="text/javascript">
+  function showpopup_start_time() {
+      window.open("popup_start_time.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+  function showpopup_event_msg() {
+      window.open("popup_event_msg.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+  function showpopup_password() {
+      window.open("popup_password.php", "_blank", "width=400, height=200, left=100, top=50");
+  }
+  }
+</script>
+
 </head>
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="event_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">
 <div>
 <a href="./event_file_list.php"><img src=./images/file-list.png alt="이벤트 일정 리스트로 이동하기" title="이벤트 일정 리스트로 이동하기" border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="./event_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 <br>
 <font size=5 color=black> 이벤트 일정 업로드 화면</font>
 <br><br><br>
