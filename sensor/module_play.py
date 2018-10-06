@@ -3,7 +3,7 @@
 # @Author: Hyunjun Lim
 # @Date: Sep-02-2018
 # @Title: module to play audio files and save bell_number value into db
-# @License: Star
+
 
 import os
 import time
