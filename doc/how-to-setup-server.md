@@ -569,6 +569,8 @@ firefox http://smartsecretary.mooo.com/phpmyadmin
 
 # cron job으로부터 email notifications를 중지하는 방법 
 
+* https://www.a2hosting.com/kb/developer-corner/linux/disabling-e-mail-notifications-from-cron-jobs
+
 This article demonstrates how to stop receiving e-mail notifications from cron jobs.
 
 By default, when a cron job is run, cron sends e-mail notifications to the user account. 
