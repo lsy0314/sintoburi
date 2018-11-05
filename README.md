@@ -66,7 +66,7 @@ $ ./launcher
 # 데모 비디오 (유투브 동영상)
 
 * 우리는 프로젝트를 개발하면서 IP 주소를 왜우는 것은 번거롭기 때문에 http://sintoburi.mooo.com 라는 웹주소를 만들었습니다. 우리는 https://freedns.afraid.org/를 통해 웹주소를 무료로 생성하였습니다. 사용자의 불편을 최소화하기 위해서 우리는  테스트 및 디버깅을 반복하여 프로그램의 버그들을 찾는데 노력을 하였습니다. 
-<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/rpi3-board.jpg width=550height=400 border=0 />
+<img src=https://github.com/lsy0314/sintoburi/blob/master/pic/rpi3-board.jpg width=560 height=400 border=0 />
 
 * https://youtu.be/lLKUPmY19pU (유튜브 동영상 데모 5분)
 
