@@ -31,15 +31,15 @@ $event_msg = $_POST['message'];
 $time_start_year = $_POST['start_year'];
 $time_start_month = $_POST['start_month'];
 $time_start_day = $_POST['start_day'];
-//$time_start_hour = $_POST['start_hour'];
-//$time_start_minute = $_POST['start_minute'];
+$time_start_hour = $_POST['start_hour'];
+$time_start_minute = $_POST['start_minute'];
 $event_password = $_POST['password'];
 
 if(empty($event_msg)) {
     echo "<script>window.alert('입력내용을 작성하여 주세요.');</script>";
     echo "<script>window.location='./event_upload.php';</script>";
 }
-
+else {
 // get ip address of user
 function get_client_ip()
 {
@@ -65,7 +65,7 @@ function get_client_ip()
 $ipaddress = get_client_ip();
 // echo ("[DEBUG] IP address: $ipaddress<br>");
 
-$event_time= $time_start_year."년".$time_start_month."월".$time_start_day."일";
+$event_time= $time_start_year."년".$time_start_month."월".$time_start_day."일".$time_start_hour."시".$time_start_minute."분";
 
 // ----------------------calculate the number of event data
 
@@ -105,7 +105,7 @@ mysqli_stmt_close($stmt);
 echo "<br>";
 echo "<h3><font color=red>축하합니다.</font> 이벤트 일정을 성공적으로 업로드 하였습니다.</h3>";
 echo "<a href='./event_file_list.php'>이벤트 일정 목록</a>";
-
+}
 mysqli_close($db_conn);
 ?>
 </body>

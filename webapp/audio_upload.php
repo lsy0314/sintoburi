@@ -70,7 +70,6 @@ function formSubmit(f) {
 <div>
 <a href="./audio_file_list.php"><img src=./images/file-list.png alt="오디오 파일리스트로 이동하기" title="오디오 파일리스트로 이동하기" border=0 width=50 height=50></img></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="./audio_upload.php"><img src=./images/upload.png border=0 width=50 height=50></img></a>
 <br>
 <br>
 <!--

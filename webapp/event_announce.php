@@ -87,7 +87,7 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-이벤트 알림화면 (고객용)
+<span style="font-weight: bold; font-size: 1.5em;"> 이벤트 알림화면 (고객용)</span>
 <br>
 <br>
 <table width=370>

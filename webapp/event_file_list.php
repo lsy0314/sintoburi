@@ -83,7 +83,7 @@ $current_page = floor($no/$page_size);
 <?php
 require ("./menu2.php");
 ?>
-이벤트 관리 (상점용)
+<span style="font-weight: bold; font-size: 1.5em;"> 이벤트 관리 (상점용)</span>
 <br>
 <br>
 <a href="./event_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
@@ -100,7 +100,7 @@ require ("./menu2.php");
 	<th width=120>이벤트 일자(*)</th>
 	<th width=150>상점명</th>
 	<th width=500>이벤트 내용</th>
-        <th width=60>울림수</th>
+<!--    <th width=60>울림수</th> //-->
 <!--	<th>파일 ID</th>   //-->
 <!-- 	<th>업로드 파일명</th>  //-->
 <!--	<th width=440>저장된 파일명(*)</th> //-->
@@ -135,7 +135,7 @@ $number = $number + 1;
   <td><?=$row['event_date'] ?></td>
   <td width=100 style="table-layout:fixed; word-break:break-all;"><?=$row['store_name'] ?></td>
   <td width=350 style="table-layout:fixed; word-break:break-all;"><?=$row['event_msg'] ?></td>
-  <td width=40  style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
+<!--  <td width=40  style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td> //-->
 <!--  <td><?= $row['file_id'] ?></td>   //-->
 <!-- <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="event_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td> //-->
 <!--  <td><?= $row['name_save'] ?></td> //-->

@@ -8,7 +8,7 @@ if(!isset($_SESSION['id'])) {
 else{
     echo "<br>";
     echo "&nbsp;&nbsp;&nbsp;";
-    echo "<b><font color=red>로그인 성공!!!</font></b><br>";
+    echo "<b><font color=red>로그인을 성공하였습니다.</font></b><br>";
     echo "<br>";
     echo "<li>상점아이디: ".$_SESSION['id']."</li>";
     echo "<li>상점명: ".$_SESSION['name']."</li>";
