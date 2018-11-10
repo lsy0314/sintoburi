@@ -11,6 +11,9 @@ $file_id = $_REQUEST['file_id'];
 include('webapp_config.php');
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
+// 한글깨짐 현상 방지하기 위해 실행해야 한다. 
+mysqli_query($db_conn, "SET NAMES utf8");
+
 // mysql sql query to display data
 $query = "SELECT file_id, name_orig, name_save FROM $table_name_audio WHERE file_id = ?";
 $stmt = mysqli_prepare($db_conn, $query);
@@ -27,13 +30,14 @@ $name_save = $row['name_save'];
 // get only folder date from $name_save.
 $audio_folder = substr($name_save,0,8);
 
-$fileDir = "audio"."/".$audio_folder;
+$fileDir = "../audio"."/".$audio_folder;
 $fullPath = $fileDir."/".$name_save;
 $length = filesize($fullPath);
 
+// specify a file type to download audito file in to local PC
 header("Content-Type: application/octet-stream");
 header("Content-Length: $length");
-header("Content-Disposition: attachment; filename=".iconv('utf-8','euc-kr',$name_orig));
+header("Content-Disposition: attachment; filename=\"".iconv('UTF-8','CP949',$name_orig)."\"");
 header("Content-Transfer-Encoding: binary");
 
 $fh = fopen($fullPath, "r");
