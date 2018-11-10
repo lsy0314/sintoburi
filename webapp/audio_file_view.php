@@ -42,7 +42,7 @@ while($row = mysqli_fetch_assoc($result)) {
 <table border="1">
 <tr>
   <td width=80 bgcolor=gray><b>구분</b></td>
-  <td bgcolor=gray><b>설명</b> </td>
+  <td width=400 bgcolor=gray><b>설명</b> </td>
 </tr>
 <tr>
   <td width=80 bgcolor=yellow>삭제</td>
@@ -82,13 +82,14 @@ while($row = mysqli_fetch_assoc($result)) {
 <tr>
   <td  bgcolor=yellow>울림수</td>
   <td>
-      <table bgcolor=skyblue border=0>
-      <tr>
-      <td width=<?= $row['bell_number']?>>
-      <?= $row['bell_number'] ?>
-      </td>
-      </tr>
-    </table> 
+      <br>
+      <table bgcolor=green border=0>
+         <tr>
+           <td height=30 width=<?= $row['bell_number']?>>
+           </td>
+         </tr>
+      </table> 
+      <?= $row['bell_number'] ?> 회
   </td>
 </tr>
 </table>
