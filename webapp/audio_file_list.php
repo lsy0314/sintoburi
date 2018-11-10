@@ -84,7 +84,7 @@ $current_page = floor($no/$page_size);
 require ("./menu2.php");
 ?>
 
- 음성파일 관리 (상점용) 
+<span style="font-weight: bold; font-size: 1.5em;">음성파일 관리 (상점용) </span>
 <br>
 <br>
 <a href="./audio_file_list.php"><img src=./images/file-list.png border=0 width=50 height=50></img></a>
@@ -105,7 +105,7 @@ require ("./menu2.php");
 <!--	<th>파일 ID</th>   //-->
 <!--	<th>업로드 파일명</th> //-->
 <!--	<th width=240>저장된 파일명(*)</th> //-->
-        <th width=60>울림수</th>
+        <th width=60>울림수</th> 
 </tr>
 <?php
 // Author: Hyunjoon Lim, Suyeon Lim
@@ -142,10 +142,8 @@ $number = $number + 1;
   <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
   <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
 //-->
-  <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number'] ?></td>
+  <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number']?></td>
 </tr>
-
-
 
 <?php
 } 
