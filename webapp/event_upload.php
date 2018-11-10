@@ -27,6 +27,7 @@ if(!isset($_SESSION['id'])) {
   }
 </script>
 
+<title>고객용:이벤트 일정 업로드</title>
 </head>
 <body>
 <form name="uploadForm" id="uploadForm" method="post" action="event_upload_process.php" enctype="multipart/form-data" onsubmit="return formSubmit(this);">

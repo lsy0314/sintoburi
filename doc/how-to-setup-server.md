@@ -18,7 +18,7 @@
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
 - [MySQL 데이타베이스 서버 설치하기](#mysql-데이타베이스-서버-설치하기)
 - [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
-
+- [cron job으로부터 email notifications를 중지하는 방법](#cron-job으로부터-email-notifications를-중지하는-방법) 
 
 # 운영체제 설치하기
 
@@ -564,3 +564,23 @@ firefox http://smartsecretary.mooo.com/phpmyadmin
 - user: root
 - pass: *****
 ```
+
+
+
+# cron job으로부터 email notifications를 중지하는 방법 
+
+* https://www.a2hosting.com/kb/developer-corner/linux/disabling-e-mail-notifications-from-cron-jobs
+
+This article demonstrates how to stop receiving e-mail notifications from cron jobs.
+
+By default, when a cron job is run, cron sends e-mail notifications to the user account. 
+To disable e-mail notifications, append >/dev/null 2>&1 to the command in the cron job. 
+This redirects all output from the cron job to the /dev/null device. 
+For example, the following cron job does not send e-mail notifications:
+
+$ vi /etc/crontab ( or $ crontab -e ) 
+```
+15 * * * Sun     /home/username/bigtask.sh > /dev/null 2>&1
+```
+To resume receiving e-mail notifications from cron jobs, simply remove >/dev/null 2>&1 from the command.
+
