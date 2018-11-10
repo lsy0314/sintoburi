@@ -104,7 +104,7 @@ require ("./menu2.php");
 	<th width=440>음성 내용</th>
 <!--	<th>파일 ID</th>   //-->
 <!--	<th>업로드 파일명</th> //-->
-<!--	<th width=240>저장된 파일명(*)</th> //-->
+	<th width=120>울림시각(*)</th>
         <th width=60>울림수</th> 
 </tr>
 <?php
@@ -126,6 +126,12 @@ while($row = mysqli_fetch_assoc($result)) {
 // The statement is how to create a dialog with “yes” and “no” options before removing a audio file
 // https://stackoverflow.com/questions/9334636/how-to-create-a-dialog-with-yes-and-no-options
 $number = $number + 1;
+
+
+// calculate date and time from $name_save.
+$bell_date = substr($row['name_save'],0,8);
+$bell_time = substr($row['name_save'],8,4);
+
 ?>
 <tr>
   <td width=20><?=$total_row - $number - $no +1 ?></td>
@@ -140,8 +146,8 @@ $number = $number + 1;
 <!--  <td><?= $row['file_id'] ?></td>   //-->
 <!--
   <td width=200 style="table-layout:fixed; word-break:break-all;"><a href="audio_download.php?file_id=<?= $row['file_id'] ?>" target="_blank"><?= $row['name_orig'] ?></a></td>
-  <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
 //-->
+  <td style="table-layout:fixed; word-break:break-all;"><?= $bell_date?>.<?= $bell_time ?></td>
   <td width=20 style="table-layout:fixed; word-break:break-all;"><?=$row['bell_number']?></td>
 </tr>
 
