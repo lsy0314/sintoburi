@@ -40,6 +40,9 @@ while($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <table border="1">
+  <td bgcolor=gray>구분</td>
+  <td bgcolor=gray>설명</td>
+</tr>
 <tr>
   <td width=120 bgcolor=99ff99>삭제</td>
   <td><a href=event_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['event_date'] ?>&name_save=<?= $row['store_name'] ?>>
