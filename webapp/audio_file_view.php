@@ -41,6 +41,10 @@ while($row = mysqli_fetch_assoc($result)) {
 
 <table border="1">
 <tr>
+  <td width=80 bgcolor=gray><b>구분</b></td>
+  <td bgcolor=gray><b>설명</b> </td>
+</tr>
+<tr>
   <td width=80 bgcolor=yellow>삭제</td>
   <td><a href=audio_file_remove_pre.php?file_id=<?= $row['file_id'] ?>&name_orig=<?= $row['name_orig'] ?>&name_save=<?= $row['name_save'] ?>>
        <img src=./images/remove.png border=0 height=20 width=20 ></img>
