@@ -76,8 +76,20 @@ while($row = mysqli_fetch_assoc($result)) {
   <td style="table-layout:fixed; word-break:break-all;"><?= $row['name_save'] ?></td>
 </tr>
 <tr>
-  <td  bgcolor=yellow>IP 주소</td>
-  <td><?= $row['ip_address'] ?></td>
+  <td  bgcolor=yellow >IP 주소</td>
+  <td style="table-layout:fixed; word-break:break-all;"><?= $row['ip_address'] ?></td>
+</tr>
+<tr>
+  <td  bgcolor=yellow>울림수</td>
+  <td>
+      <table bgcolor=skyblue border=0>
+      <tr>
+      <td width=<?= $row['bell_number']?>>
+      <?= $row['bell_number'] ?>
+      </td>
+      </tr>
+    </table> 
+  </td>
 </tr>
 </table>
 
