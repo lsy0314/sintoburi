@@ -40,6 +40,7 @@ $ cd /var/www/html
 $ git clone https://github.com/lsy0314/sintoburi.git
 $ cd ./sintoburi 
 $ sudo chown -R www-data:www-data /var/www/html/sintoburi/audio/
+$ sudo apt -y remove nano
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 #includedir /etc/sudoers.d
