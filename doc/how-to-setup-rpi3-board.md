@@ -22,16 +22,15 @@
 
 # 운영체제 설치하기
 
-* 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)
-   * OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후 2) 우분투(마테버젼)을 다운로드 한다.
+* 단계1: 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)
+   * OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후에 2) 우분투(마테버젼)을 다운로드 한다.
+   * Desktop PC의 보관 장소(OS): `D:\raspberrypi3\`
 
-* 보관장소(OS): `D:\raspberrypi3\`
-
-* SD_CardFormatter0500SetupEN.exe 프로그램으로 micro SDcard를 포맷해야 한다.
+* 단계2: SD_CardFormatter0500SetupEN.exe 프로그램으로 micro SDcard를 포맷해야 한다.
    * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
 
 
-* 그리고나서, win32diskimager-1.0.0-install.exe 프로그램으로 다운로드한 OS을 micro SDcard에 설치해야 한다.
+* 단계3: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
    * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
 
 
