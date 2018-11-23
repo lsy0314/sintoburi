@@ -153,7 +153,7 @@ $ sudo vi /var/www/html/index.php
 
 install mysql-server and mysql-client
 ```bash
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update
 sudo apt-get install mysql-server 
 sudo apt-get install mysql-client php5-mysql
 mysql -uroot -p
