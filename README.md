@@ -45,9 +45,7 @@ $ sudo apt -y remove nano
 $ sudo visudo
 --------------- /etc/sudoers: start ----------------
 #includedir /etc/sudoers.d
-user01          ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
-user02          ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
-www-data        ALL=(ALL) NOPASSWD: ALL <---- Please append your id here.!!!!
+www-data        ALL=(ALL) NOPASSWD: ALL <---- Please append a aphache webserver id here.!!!!
 --------------- /etc/sudoers: ending ---------------
 ```
 
