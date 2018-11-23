@@ -39,9 +39,9 @@
 
 라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
 
-라즈비안 OS의 경우에는 WiFI SSID를 정상적으로 scanning하기 위하여 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
+설치한 OS가 Ubuntu Mate가 아니고, 라즈비안 OS의 이라면 WiFI SSID를 정상적으로 scanning 잡을수 없다. 그래서 라즈비안 OS의 경우에는 WiFi SSI를 정상적으로 잡을수 있도록 하기 위하여 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
 ```bash
-* 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
+* 시스템 - 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
 ```
 
 # SSH Server
