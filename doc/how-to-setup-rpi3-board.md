@@ -209,7 +209,12 @@ exit
 
 # phpMyAdmin 설치하기
 ```bash
-sudo apt-get install phpmyadmin
+sudo apt install phpmyadmin
+----------------------------------------
+1. Configure database for phpmyadmin with dbconfig-common? yes
+2. MySQL application password for phpmyadmin: **** okay
+3. [*] apache2 okay
+----------------------------------------
 sudo vi /etc/apache2/apache2.conf
 Include /etc/phpmyadmin/apache.conf
 sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
