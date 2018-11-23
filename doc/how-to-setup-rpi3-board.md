@@ -225,7 +225,9 @@ firefox http://smartsecretary.mooo.com/phpmyadmin
 - pass: *****
 ```
 
- 
+*신토불이 데이타베이스 테이블 setup하기
+https://github.com/lsy0314/sintoburi/tree/master/mysql/
+http://192.168.219.102/phpmyadmin/ - sbdb 테이블 선택하기(좌측메뉴) -sql 메뉴 선택하기
  
 # VNC Server Setup on Raspberry Pi 3
 
