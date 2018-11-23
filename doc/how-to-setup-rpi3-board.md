@@ -162,25 +162,33 @@ status;
 
 replace root password with the password you want
 ```bash
+mysql -uroot -p
+
 DROP USER 'root'@'localhost';
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
+
 mysql -uroot -p
 ```
 
 Create a new user and database for sbdb
 ```bash
+mysql -uroot -p
+
 CREATE DATABASE sbdb;
 DROP USER 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
 CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
 GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
+
 mysql -usbuser -p sbdb
 ```
 
 Create a new table 'upload_file'.
 ```bash
+mysql -uroot -p
+
 CREATE TABLE upload_file (
   file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
   name_orig VARCHAR(255),
