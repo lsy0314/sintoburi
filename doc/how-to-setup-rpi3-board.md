@@ -6,7 +6,7 @@
 - [SSH Server](#ssh-server)
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
-- [웹서버 설치하기](#웹서버-설치하기)
+- [Apache 웹서버 설치하기](#Apache-웹서버-설치하기)
 - [PHP 개발환경 설치](#php-개발환경-설치)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
@@ -104,7 +104,7 @@ EndSection
 # cd /etc/X11/xorg.conf.d/
 # mv 99-calibration.conf 99-calibration.conf.disable
 ```
-# 웹서버 설치하기 
+# Apache 웹서버 설치하기 
 라즈베리 파이 보드를 이용하여 자신만의 웹서버를 운영할 수 있다.
 ```bash
 sudo apt install apache2
