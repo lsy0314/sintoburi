@@ -155,6 +155,7 @@ install mysql-server and mysql-client
 ```bash
 sudo apt-get update
 sudo apt-get install mysql-server 
+password:*****
 sudo apt-get install mysql-client php5-mysql
 mysql -uroot -p
 status;
