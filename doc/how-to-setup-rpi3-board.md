@@ -111,7 +111,9 @@ sudo apt install apache2
 sudo systemctl restart apache2 
 sudo systemctl enable apache2
 firefox http://192.168.219.104 
+sudo mv /var/www/html/index.html /var/www/html/index.html.disable
 sudo vi /var/www/html/index.html
+-------------------- index.html: start -------------------------------
 <H2> This webserver is created by Gildong Hong</H2>
 <br>
 <img src=./now.jpg></img> 
@@ -124,6 +126,7 @@ User1 &nbsp; &nbsp; &nbsp; User2 &nbsp; &nbsp; &nbsp; User3
 오늘 수학숙제를 내는 날 입니다.<br>
 오늘은 고양이를 병원에 데려가는 날입니다.<br>
 5시에 수학학원을 가야 합니다.<br>
+-------------------- index.html: end -------------------------------
 ```
 
 
