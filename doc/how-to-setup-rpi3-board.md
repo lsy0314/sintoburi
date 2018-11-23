@@ -8,6 +8,8 @@
 - [터치스크린 보정을 위해 xinput_calibrator 설치](#터치스크린-보정을-위해-xinput_calibrator-설치)
 - [Apache 웹서버 설치하기](#Apache-웹서버-설치하기)
 - [PHP 개발환경 설치](#php-개발환경-설치)
+- [MySQL 데이타베이스 서버 설치하기](#mysql-데이타베이스-서버-설치하기)
+- [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
 - [How to make live stream video using vlc from webcam on Linux](#how-to-make-live-stream-video-using-vlc-from-webcam-on-linux)
@@ -16,8 +18,6 @@
 - [이메일 발송하기](#이메일-발송하기)
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
-- [MySQL 데이타베이스 서버 설치하기](#mysql-데이타베이스-서버-설치하기)
-- [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 - [cron job으로부터 email notifications를 중지하는 방법](#cron-job으로부터-email-notifications를-중지하는-방법) 
 
 # 운영체제 설치하기
@@ -147,6 +147,61 @@ $ sudo vi /var/www/html/index.php
 </body>
 </html 
 ```
+
+
+# MySQL 데이타베이스 서버 설치하기
+
+install mysql-server and mysql-client
+```bash
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install mysql-server 
+sudo apt-get install mysql-client php5-mysql
+mysql -uroot -p
+status;
+```
+
+replace root password with the password you want
+```bash
+DROP USER 'root'@'localhost';
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
+mysql -uroot -p
+```
+
+Create a new user and database for sbdb
+```bash
+CREATE DATABASE sbdb;
+DROP USER 'sbuser'@'localhost';
+FLUSH PRIVILEGES;
+CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
+GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
+FLUSH PRIVILEGES;
+mysql -usbuser -p sbdb
+```
+
+Create a new table 'upload_file'.
+```bash
+CREATE TABLE upload_file (
+  file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
+  name_orig VARCHAR(255),
+  name_save VARCHAR(255),
+  reg_time  TIMESTAMP NOT NULL
+);
+```
+
+# phpMyAdmin 설치하기
+```bash
+sudo apt-get install phpmyadmin
+sudo vi /etc/apache2/apache2.conf
+Include /etc/phpmyadmin/apache.conf
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+sudo /etc/init.d/apache2 restart
+
+firefox http://smartsecretary.mooo.com/phpmyadmin
+- user: root
+- pass: *****
+```
+
  
  
 # VNC Server Setup on Raspberry Pi 3
@@ -514,61 +569,6 @@ ssid 는 와이파이 이름, psk 는 비밀번호에 해당하는 변수 같은
 와이파이와 연결이 되었다면 ifconfig wlan0 명령을 통해 확인할 수 있습니다. 
 연결이 되지 않았다면 sudo reboot 명령을 통해 재부팅을 해봅니다.
 
-
-
-
-# MySQL 데이타베이스 서버 설치하기
-
-install mysql-server and mysql-client
-```bash
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install mysql-server 
-sudo apt-get install mysql-client php5-mysql
-mysql -uroot -p
-status;
-```
-
-replace root password with the password you want
-```bash
-DROP USER 'root'@'localhost';
-CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
-mysql -uroot -p
-```
-
-Create a new user and database for sbdb
-```bash
-CREATE DATABASE sbdb;
-DROP USER 'sbuser'@'localhost';
-FLUSH PRIVILEGES;
-CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
-GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
-FLUSH PRIVILEGES;
-mysql -usbuser -p sbdb
-```
-
-Create a new table 'upload_file'.
-```bash
-CREATE TABLE upload_file (
-  file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
-  name_orig VARCHAR(255),
-  name_save VARCHAR(255),
-  reg_time  TIMESTAMP NOT NULL
-);
-```
-
-# phpMyAdmin 설치하기
-```bash
-sudo apt-get install phpmyadmin
-sudo vi /etc/apache2/apache2.conf
-Include /etc/phpmyadmin/apache.conf
-sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
-sudo /etc/init.d/apache2 restart
-
-firefox http://smartsecretary.mooo.com/phpmyadmin
-- user: root
-- pass: *****
-```
 
 
 
