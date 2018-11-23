@@ -36,7 +36,7 @@
 
 # 와이파이 설정하기
 
-라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어있다.
+라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어 있다. WiFi으로 인터넷을 하려고 할대 wevo (leemgswevo2g)공유기는 호환이 안되어 WiFi 연결이 안된다.  
 
 * Ubuntu Mate OS를 설치한 경우:
    * 우측 상단의 와이파이 아이콘을 클릭후에 "Enable WiFi"를 클릭하면 Wifi 리스트가 scanning된다. 
@@ -187,9 +187,9 @@ $ vncserver -kill :1
 
 Run VNC client
 
-방법1: real vnc viewer 사용방법 
+방법1: Ultra vnc viewer 사용방법 
 ```bash
-$ firefox https://www.realvnc.com/en/connect/download/viewer/에서 프로그램을 다운로드한다.
+$ firefox http://www.uvnc.com/downloads/ultravnc.html 에서 프로그램을 다운로드한다.
 접속할때 아래처럼 IP 및 암호를 입력하면 된다. 
  * IP 192.168.219.104:5901
  * password: ***
