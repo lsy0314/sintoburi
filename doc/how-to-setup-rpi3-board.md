@@ -168,9 +168,12 @@ mysql -uroot -p
 
 DROP USER 'root'@'localhost';
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost'
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+
+exit
 
 mysql -uroot -p
+exit
 ```
 
 Create a new user and database for sbdb
@@ -184,12 +187,15 @@ CREATE USER 'sbuser'@'localhost' IDENTIFIED BY 'sb2848';
 GRANT ALL PRIVILEGES ON sbdb.* TO 'sbuser'@'localhost';
 FLUSH PRIVILEGES;
 
+exit
+
 mysql -usbuser -p sbdb
+
 ```
 
 Create a new table 'upload_file'.
 ```bash
-mysql -uroot -p
+mysql -usbuser -p sbdb
 
 CREATE TABLE upload_file (
   file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
@@ -197,6 +203,8 @@ CREATE TABLE upload_file (
   name_save VARCHAR(255),
   reg_time  TIMESTAMP NOT NULL
 );
+
+exit
 ```
 
 # phpMyAdmin 설치하기
