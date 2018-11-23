@@ -166,7 +166,7 @@ Password:***
 Verify: ***
 Would you like to enter a view-only password (y/n)? n
 
-$ sudo netstat -nat | 5901
+$ sudo netstat -nat | grep 5901
 
 $ cat ~/.vnc/xstartup
 ---------- start ---------------
