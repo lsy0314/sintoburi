@@ -37,6 +37,7 @@
 # windows7 PC에서 mobaxterm 소프트웨어로 ssh 세션을 실행하십시오
 
 $ cd /var/www/html
+$ sudo apt -y install git
 $ git clone https://github.com/lsy0314/sintoburi.git
 $ cd ./sintoburi 
 $ sudo chown -R www-data:www-data /var/www/html/sintoburi/audio/
