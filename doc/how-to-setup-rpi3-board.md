@@ -57,7 +57,7 @@
 
 hjoon0510 이라는 계정아이디를 추가하는 방법을 실행하려면 아래와 같이 터미널에서 adduser 명령을 이용하면 된다. 
 ```bash
-sudo  adduser hjoon0510
+$ sudo adduser hjoon0510
 Adding user `hjoon0510' ...
 Adding new group `hjoon0510' (1002) ...
 Adding new user `hjoon0510' (1002) with group `hjoon0510' ...
@@ -68,12 +68,13 @@ Retype new UNIX password:
 passwd: password updated successfully
 Changing the user information for hjoon0510
 Enter the new value, or press ENTER for the default
-        Full Name []: Hyunjoon Lim
+        Full Name []: hjoon0510
         Room Number []:
         Work Phone []:
         Home Phone []:
         Other []:
 Is the information correct? [Y/n] Y
+
 ```
 
 이제 windows7의 mobaxterm 프로그램을 실행한후에 RaspBerry Pi 3보드의 SSH 서버에 접속하면 된다.
