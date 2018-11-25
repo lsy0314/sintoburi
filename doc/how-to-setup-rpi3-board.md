@@ -33,7 +33,7 @@
 * 단계3: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
    * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
 
-* 단계4: 라즈베리 파이3 보드를 Power on할때 자동 로그인되도록 작업하기  (자동로그인하려면 계정의 ID가 'hjoon0510'이라고 가정한다.)
+* 단계4: Ubuntu OS를 자동 로그인 시키기  (자동 로그인하려면 계정의 ID가 'hjoon0510'이라고 가정한다.)
 ```
 $ sudo vi /etc/lightdm/lightdm.conf
 [Seat:*]
