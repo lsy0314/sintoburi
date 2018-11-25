@@ -17,8 +17,10 @@
 * https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/speech
 
 ## Google Speech API 개발환경 설치하기: PHP 언어 사용
-* https://cloud.google.com/speech-to-text/
-* (https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/speech 참고) 
+* 참고사이트
+   * https://cloud.google.com/speech-to-text/
+   * https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/speech 
+   * https://getcomposer.org/
 
 * 설치 방법 
 ```bash
@@ -26,7 +28,8 @@ ssh id: ****
 ssh pass:***
 
 pwd
-mkdir -p /work/google-speech-api
+sudo mkdir -p /work/google-speech-api
+sudo chown {your_id}:{your_id} /work/google-speech-api
 cd /work/google-speech-api
 ls -al 
 
