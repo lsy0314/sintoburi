@@ -26,8 +26,8 @@ ssh id: ****
 ssh pass:***
 
 pwd
-mkdir google-speech-api
-cd google-speech-api
+mkdir -p /work/google-speech-api
+cd /work/google-speech-api
 ls -al 
 
 git clone https://github.com/GoogleCloudPlatform/php-docs-samples.git
