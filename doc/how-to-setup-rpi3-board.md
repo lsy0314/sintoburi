@@ -189,7 +189,7 @@ $ sudo vi /var/www/html/index.php
 
 # MySQL 데이타베이스 서버 설치하기
 
-install mysql-server and mysql-client
+MYSQL 데이타베이스를 사용하기 위하여 mysql-server, mysql-client 패키지를 설치해야 합니다. 
 ```bash
 sudo apt-get update
 sudo apt-get install mysql-server 
@@ -200,12 +200,12 @@ mysql -uroot -p
 status;
 ```
 
-replace root password with the password you want
+기존의 MySQL 데이타베이스의 "root" id 암호를 변경하는 방법입니다. 
 ```bash
 mysql -uroot -p
 
 DROP USER 'root'@'localhost';
-CREATE USER 'root'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'root'@'localhost' IDENTIFIED BY 'password'; <------- 주의: 당신이 사용하려는 암호을 적어야 합니다. !!!!!
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
 
 exit
@@ -214,7 +214,7 @@ mysql -uroot -p
 exit
 ```
 
-Create a new user and database for sbdb
+당신의 데이타베이스를 하나 만드는 예제입니다. 예를 들어  "sbdb"라는 데이타베이스를 만들겠습니다.
 ```bash
 mysql -uroot -p
 
@@ -231,11 +231,12 @@ mysql -usbuser -p sbdb
 
 ```
 
+당신이 만든 데이타베이스에 여러개의 테이블을 만들수 있습니다. 여기서는 "test_upload_file"이라는 테이블을 만드는 연습을 해보겠습니다. 
 Create a new table 'upload_file'.
 ```bash
 mysql -usbuser -p sbdb
 
-CREATE TABLE upload_file (
+CREATE TABLE test_upload_file (
   file_id   VARCHAR(255) NOT NULL PRIMARY KEY,
   name_orig VARCHAR(255),
   name_save VARCHAR(255),
@@ -246,6 +247,7 @@ exit
 ```
 
 # phpMyAdmin 설치하기
+MySQL 데이타베이스를 잘 모르는 경우에, 오픈소스 공짜 프로그램인 phpMyAdmin 을 이용하면 자신만의 데이타베이스/테이블을 쉽게 관리할수 있습니다. 
 ```bash
 sudo apt install phpmyadmin
 ----------------------------------------
