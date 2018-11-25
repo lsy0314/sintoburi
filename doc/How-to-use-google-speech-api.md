@@ -27,6 +27,7 @@ pwd
 mkdir google-speech-api
 ls
 cd google-speech-api
+sud apt install composer
 composer require google/cloud-speech
 
 
