@@ -45,6 +45,17 @@ php speech.php transcribe-async test/data/audio32KHz.flac --encoding FLAC --samp
 php speech.php transcribe-words test/data/audio32KHz.flac --encoding FLAC --sample-rate 32000
 ```
 
+* Troubleshooting :  proc_open(): fork failed - Cannot allocate memory
+   * PHP Fatal error:  Uncaught ErrorException: proc_open(): fork failed - Cannot allocate memory in /usr/share/php/Symfony/Component/Console/Application.php:943
+
+```bash
+# To enable the swap you can use for example:
+
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+sudo /sbin/mkswap /var/swap.1
+sudo /sbin/swapon /var/swap.1
+```
+
 ##  내가 녹음한 .m4a  to ( .flac + .raw )으로 변환하기 
 * http://doubles.mooo.com/sintoburi/webapp/audio/
 ```bash
