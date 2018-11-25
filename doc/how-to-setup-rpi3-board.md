@@ -206,11 +206,11 @@ sudo /etc/init.d/mysql restart
 
 기존의 MySQL 데이타베이스의 "root" id 암호를 변경하는 방법입니다. 
 ```bash
-sudo mysql -u root
-use mysql;
-update user set authentication_string=PASSWORD("NEW_PASSWORD_HERE") where User='root';
-flush privileges;
-exit;
+# To alter MySQL password from it's default empty value
+$ mysqladmin --user=root password "newpassword"
+
+# To alter MySQL password from the existing password value
+$ mysqladmin --user=root --password=oldpassword password "newpassword" 
 ```
 
 당신의 데이타베이스를 하나 만드는 예제입니다. 예를 들어  "sbdb"라는 데이타베이스를 만들겠습니다.
