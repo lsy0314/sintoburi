@@ -1,13 +1,13 @@
 ## 윈도우7을 위한 Console  프로그램 설치하기 
 
-####  putty (공짜 프로그램) 설치하기 
+#### 방법1: putty (공짜 프로그램) 설치하기 
 * https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
    * 64-bit: putty-64bit-0.70-installer.msi 다운로드 및 설치할것. 
 
 * Hostname: invain.mooo.com
 * Saved Sessions: invain.mooo.com
 
-#### mobaxterm (공짜 프로그램) 설치하기
+#### 방법2: mobaxterm (공짜 프로그램) 설치하기
 * https://mobaxterm.mobatek.net/download-home-edition.html 
 * "MobaXterm Home Edition (Installer edition)"을 다운로드후에 설치하세요. 
 
@@ -16,12 +16,12 @@
 * https://cloud.google.com/speech-to-text/docs/reference/libraries#client-libraries-usage-php
 * https://github.com/GoogleCloudPlatform/php-docs-samples/tree/master/speech
 
-## Google Speech API : PHP 언어 사용방법
+## Google Speech API 개발환경 설치하기: PHP 언어 사용
 * https://cloud.google.com/speech-to-text/
 * 설치 방법 
 ```bash
-id: ****
-pass:***
+ssh id: ****
+ssh pass:***
 
 pwd
 mkdir google-speech-api
@@ -53,11 +53,11 @@ cd ~/google-speech-api/php-docs-samples/speech/
 * from .m4a to PCM raw
 ```bash
 cd ~/google-speech-api/php-docs-samples/speech/
-ffmpeg -y  -i 201807201630.m4a  -acodec pcm_s16le -f s16le -ac 1 -ar 16000 201807201630.raw
+ffmpeg -y -i 201807201630.m4a -acodec pcm_s16le -f s16le -ac 1 -ar 16000 201807201630.raw
 
-* -f s16le 옵션 의미: signed 16-bit little endian samples
-* -ac 1 옵션 의미 : 1 channels (stereo)
-* -ar 16000 옵션 의미: sample rate 16,000Hz
+* -f s16le 옵션 의미: frequency, signed 16-bit little endian samples
+* -ac 1 옵션 의미 : 1 audio channels (stereo)
+* -ar 16000 옵션 의미: audio sample rate 16,000Hz
 ```
 
 * from .m4a to .flac
@@ -65,10 +65,10 @@ ffmpeg -y  -i 201807201630.m4a  -acodec pcm_s16le -f s16le -ac 1 -ar 16000 20180
 cd ~/google-speech-api/php-docs-samples/speech/
 ffmpeg -i 201807201630.m4a -f flac 201807201630.flac
 
-ffmpeg -i 201807201630.m4a -af aformat=s16:44100 201807201630.flac  (**RECOMMENDED**)
+ffmpeg -i 201807201630.m4a -ac 1 -af aformat=s16:44100 201807201630.flac  (**RECOMMENDED**)
 * 설명: The above command encodes to  44.1 kHz and 16-bit sample.
 
-ffmpeg -i 201807201630.m4a-af aformat=s32:176000 201807201630.flac
+ffmpeg -i 201807201630.m4a -ac 1 -af aformat=s32:176000 201807201630.flac
 * 설명: The above command encodes to a 176 kHz and 24-bit sample, stored as 32-bits. 
 ```
 
@@ -123,7 +123,6 @@ sudo ffmpeg -i 201808042130_45e234af17ecda8a63889767053b1b89.m4a -af aformat=s16
 
 speech=/home/hjoon0510/google-speech-api/php-docs-samples/speech/speech.php 
 /usr/bin/php $speech transcribe 201808042130_45e234af17ecda8a63889767053b1b89.flac  --encoding FLAC --language-code ko-KR --sample-rate 44100
-
 
 ```
 
