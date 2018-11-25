@@ -196,22 +196,21 @@ sudo apt-get install mysql-server
 password:*****
 sudo apt-get install mysql-client 
 sudo apt-get install php-mysql
+
 mysql -uroot -p
 status;
+exit
+
+sudo /etc/init.d/mysql restart
 ```
 
 기존의 MySQL 데이타베이스의 "root" id 암호를 변경하는 방법입니다. 
 ```bash
-mysql -uroot -p
-
-DROP USER 'root'@'localhost';
-CREATE USER 'root'@'localhost' IDENTIFIED BY 'password'; <------- 주의: 당신이 사용하려는 암호을 적어야 합니다. !!!!!
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
-
-exit
-
-mysql -uroot -p
-exit
+sudo mysql -u root
+use mysql;
+update user set authentication_string=PASSWORD("NEW_PASSWORD_HERE") where User='root';
+flush privileges;
+exit;
 ```
 
 당신의 데이타베이스를 하나 만드는 예제입니다. 예를 들어  "sbdb"라는 데이타베이스를 만들겠습니다.
