@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# @title: A script that transcripts from .m4a to a text message
+# @title:  A script to transcript from .m4a to a text message with Google Deep-Learning.
+# @note    doc/How-to-use-google-speech-api.md
+# @site:   https://cloud.google.com/speech-to-text/
 # @author: HyeonJun Lim <hjoon0510@gmail.com>
 #          Suweon Lim <lsy0314@gmail.com>
 
@@ -8,7 +10,7 @@
 # "message": The request is missing a valid API key.
 google_speech=/work/google-speech-api/php-docs-samples/speech/speech.php
 
-# import license key
+# import license key (1년간 공짜로 사용가능합니다. )
 export GOOGLE_APPLICATION_CREDENTIALS=/work/sintoburi-79c7917331aa.json
 
 # Check if required commands are prepared
