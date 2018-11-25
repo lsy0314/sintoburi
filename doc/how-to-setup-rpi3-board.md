@@ -33,17 +33,34 @@
 * 단계3: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
    * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
 
+* 단계4: 라즈베리 파이3 보드를 Power on할때 자동 로그인되도록 작업하기  (자동로그인하려면 계정의 ID가 'hjoon0510'이라고 가정한다.)
+```
+$ sudo vi /etc/lightdm/lightdm.conf
+[Seat:*]
+autologin-guest=false
+autologin-user=hjoon0510
+autologin-user-timeout=0
+```
 
 # 와이파이 설정하기
 
-라즈베리파이3는 WiFi 와 블루투스가 자체 내장되어 있다. WiFi으로 인터넷을 하려고 할대 wevo (leemgswevo2g)공유기는 호환이 안되어 WiFi 연결이 안된다.  
+라즈베리파이3는 인터넷을 위한 방법으로 WiFi 와 블루투스 장치를 제공하고 있다. 여기서는 WiFi 장치를 이용하는 방법으로 설명한다. 
 
-* Ubuntu Mate OS를 설치한 경우:
+* WiFi 동작위해 주의사항: 
+   * WiFi으로 인터넷을 하려고 할대 wevo (leemgswevo2g)공유기는 호환이 안되어 WiFi 연결이 안된다.  
    * 우측 상단의 와이파이 아이콘을 클릭후에 "Enable WiFi"를 클릭하면 Wifi 리스트가 scanning된다. 
-* 라즈비안 OS를 설치한경우:
-   * WiFI SSID를 정상적으로 scanning 잡을수 없다. 그래서 라즈비안 OS의 경우에는 WiFi SSI를 정상적으로 잡을수 있도록 하기 위하여 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
+   * WiFi 접속을 위해서 ko_KR.UTF8 설정하면 안되고, en_US.UTF8으로 설정해야 한다. 
 ```bash
-* 시스템 - 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
+$ locale
+$ sudo apt-get install language-pack-ko
+$ sudo locale-gen "en_US.UTF-8"
+$ sudo dpkg-reconfigure locales
+   [*] en_US.UTF-8   
+```
+
+   * 라즈비안OS의 경우에는 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
+```bash
+   시스템 - 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
 ```
 
 # SSH Server
@@ -51,23 +68,15 @@
   sudo apt -y install openssh-server openssh-client
   sudo systemctl restart ssh
   sudo systemctl enable ssh  
-  ifconfig
+  sudo netstat -natp | grep 22
 ```  
 
 
-hjoon0510 이라는 계정아이디를 추가하는 방법을 실행하려면 아래와 같이 터미널에서 adduser 명령을 이용하면 된다. 
+hjoon0510 이라는 계정아이디를 추가하는 방법이다.  아래와 같이 터미널에서 adduser 명령을 이용하면 된다. 
 ```bash
 $ sudo adduser hjoon0510
-Adding user `hjoon0510' ...
-Adding new group `hjoon0510' (1002) ...
-Adding new user `hjoon0510' (1002) with group `hjoon0510' ...
-Creating home directory `/home/hjoon0510' ...
-Copying files from `/etc/skel' ...
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-Changing the user information for hjoon0510
-Enter the new value, or press ENTER for the default
+Enter new UNIX password: ******
+Retype new UNIX password: ******
         Full Name []: hjoon0510
         Room Number []:
         Work Phone []:
