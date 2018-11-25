@@ -2,6 +2,7 @@
 require("./menu2.php");
 include('webapp_config.php');
 $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+mysqli_query($mysqli, "SET NAMES utf8");
 ?>
 
 <?php
@@ -28,6 +29,7 @@ if($id==NULL || $pw==NULL || $name==NULL || $email==NULL) //
 include('webapp_config.php');
 
 $mysqli=mysqli_connect($db_host,$db_user,$db_pass,$db_name);
+mysqli_query($mysqli, "SET NAMES utf8");
 
 $check="SELECT *from store_info WHERE id='$id'";
 $result=$mysqli->query($check);
