@@ -12,7 +12,7 @@
 - [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
-- [How to enable onboard ALSA audio to play sound file](#How-to-enable-nboard-ALSA-audio-to-play-sound-file)
+- [How to enable onboard ALSA audio to play sound file](#How-to-enable-onboard-ALSA-audio-to-play-sound-file)
 - [How to make live stream video using vlc from webcam on Linux](#how-to-make-live-stream-video-using-vlc-from-webcam-on-linux)
 - [How to record your voice from microphone of USB webcam using ALSA](#how-to-record-your-voice-from-microphone-of-usb-webcam-using-alsa)
 - [Play wma file with cvlc and mplayer command](#play-wma-file-with-cvlc-and-mplayer-command)
