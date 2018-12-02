@@ -12,6 +12,7 @@
 - [phpMyAdmin 설치하기](#phpmyadmin-설치하기)
 - [VNC Server Setup on Raspberry Pi 3](#vnc-server-setup-on-raspberry-pi-3)
 - [How to do realtime streamming service with camera and gstreamer software](#how-to-do-realtime-streamming-service-with-camera-and-gstreamer-software)
+- [How to enable onboard ALSA audio to play sound file](#How-to-enable-nboard-ALSA-audio-to-play-sound-file)
 - [How to make live stream video using vlc from webcam on Linux](#how-to-make-live-stream-video-using-vlc-from-webcam-on-linux)
 - [How to record your voice from microphone of USB webcam using ALSA](#how-to-record-your-voice-from-microphone-of-usb-webcam-using-alsa)
 - [Play wma file with cvlc and mplayer command](#play-wma-file-with-cvlc-and-mplayer-command)
@@ -378,6 +379,58 @@ chmod +x camera_test.sh
 * Port: 5000
 * Description: New Raspberry Pi device
 * Aspect ratio: 1.6 
+
+
+# How to enable onboard ALSA audio to play sound file
+모니터 화면을 위해 RPI3에 HDMI 케이블을 연결할경우에 mp3 플레이가 잘안되는 문제가 있다. rpi3 를 부팅후에 사운드 플레이 소리가 안들린다면 종종  스피커 선을 rpi3으로부터 분리하였다가 다시 꼽으면 하드웨어적으로 인식이 다시 잘되는 경우가 있었다. 
+
+"aplay -l " 명령을 이용하여 사운드 카드 정보를 확인하다. 
+```bash
+aplay -l 
+hjoon0510@ubuntu:~$ aplay -l
+**** List of PLAYBACK Hardware Devices ****
+MobaXterm X11 proxy: Authorisation not recognised
+xcb_connection_has_error() returned true
+MobaXterm X11 proxy: Authorisation not recognised
+card 0: ALSA [bcm2835 ALSA], device 0: bcm2835 ALSA [bcm2835 ALSA]
+  Subdevices: 7/8
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+  Subdevice #2: subdevice #2
+  Subdevice #3: subdevice #3
+  Subdevice #4: subdevice #4
+  Subdevice #5: subdevice #5
+  Subdevice #6: subdevice #6
+  Subdevice #7: subdevice #7
+card 0: ALSA [bcm2835 ALSA], device 1: bcm2835 ALSA [bcm2835 IEC958/HDMI]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+
+사운드 플레이를 위하여 커널의 사운드 모듈 (*.ko) 이 잘 실행되는지 확인한다. 
+```bash
+lsmod | grep snd_Bcm 
+snd_bcm2835            20447  1
+snd_pcm                75762  2 snd_bcm2835,snd_pcm_oss
+snd                    51908  11 snd_bcm2835,snd_pcm_oss,snd_timer,snd_pcm,snd_seq,snd_rawmidi,snd_seq_oss,snd_seq_device,snd_mixer_oss
+```
+
+커널의 환경 설정 파일을 점검한다. 
+```bash
+sudo vi /boot/config.txt
+## Enable the onboard ALSA audio (loads snd_bcm2835) (rpi3에 내장되어 있는 사운드 카드를 사용하려고 할때 주석을 해제하여라. 기본 지원임.)
+dtparm=audio=on
+
+# Chooses between HDMI and DVI modes (HDMI 모니터가 사운드 스피터 내장되는 모니터 인경우에 주석을 해제하여라.)
+hdmi_drive=2
+```
+
+wav 파일을 실행하여 기본적인 .wav 파일이 플레이가 잘되는지 확인하다. 
+```bash
+aplay /usr/share/scratch/Media/Sounds/Vocals/Singer2.wav
+cvlc  /usr/share/scratch/Media/Sounds/Animal/Cat.mp3  --repeat
+```
+
 
 # How to make live stream video using vlc from webcam on Linux
 
