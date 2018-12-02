@@ -5,7 +5,8 @@
 # @Title: Motion Probing Software with PIR sensor
 # @License: Star
 # @Prequisites:
-# $ sudo apt install mplayer
+# $ sudo apt install python-mysqldb
+# $ sudo apt install mplayer vlc
 # $ sudo pip install gpiozero
 #
 # @Caution:
