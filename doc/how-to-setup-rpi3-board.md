@@ -380,6 +380,7 @@ chmod +x camera_test.sh
 * Aspect ratio: 1.6 
 
 # How to make live stream video using vlc from webcam on Linux
+
 ```bash
 # Verify Webcam Device on VLC
 $ ls /dev/video*
@@ -396,6 +397,9 @@ $ mplayer http://<ip_address_of_webcam_host>:8080/stream.wmv
 
 ```
 # How to record your voice from microphone of USB webcam using ALSA
+* 참고 사이트 
+   * https://www.raspberrypi.org/documentation/configuration/audio-config.md
+   * https://www.mythtv.org/wiki/Raspberry_Pi
 
 * Record a voice
 ```bash
