@@ -135,7 +135,7 @@ try:
                 # run play_audio_file() function from module_play.py  file.
                 play_audio_file (audio_file_time, current_time, search_path, audio_file)
 
-        # wait for 5 seconds after finishing 'for' statement
+        # wait for specified seconds after finishing 'for' statement
         time.sleep(cfg.play_break_time_sec)
         print "[DEBUG]---- audio file list: end --------------"
         #---------------------------------------------- Read audio file folder: end
