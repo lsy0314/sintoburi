@@ -382,7 +382,8 @@ chmod +x camera_test.sh
 
 
 # How to enable onboard ALSA audio to play sound file
-모니터 화면을 위해 RPI3에 HDMI 케이블을 연결할경우에 mp3 플레이가 잘안되는 문제가 있다. rpi3 를 부팅후에 사운드 플레이 소리가 안들린다면 종종  스피커 선을 rpi3으로부터 분리하였다가 다시 꼽으면 하드웨어적으로 인식이 다시 잘되는 경우가 있었다. 또는 우분투 마테를 부팅시에 로그인 아이디가 아닌 다른 아이디로 플레이시에 권한이 없기때문에 사운드 플레이를 할수 없다.
+RPI3보드와 HDMI 모니터간에 HDMI 케이블을 연결할경우에 mp3 플레이가 잘안되는 문제가 있다. rpi3 를 부팅후에 사운드 플레이 소리가 안들린다면 종종  스피커 선을 rpi3으로부터 분리하였다가 다시 꼽으면 하드웨어적으로 인식이 다시 잘되는 경우가 있었다. 또는 우분투 마테를 부팅시에 로그인 아이디가 아닌 다른 아이디로 터미널환경에서 aplayer/cvlc 명령으로 .mp3를 플레이시에 권한이 없기때문에 사운드 플레이를 할수 없다.
+
 
 "aplay -l " 명령을 이용하여 사운드 카드 정보를 확인하다. 
 ```bash
@@ -415,7 +416,11 @@ snd_pcm                75762  2 snd_bcm2835,snd_pcm_oss
 snd                    51908  11 snd_bcm2835,snd_pcm_oss,snd_timer,snd_pcm,snd_seq,snd_rawmidi,snd_seq_oss,snd_seq_device,snd_mixer_oss
 ```
 
-커널의 환경 설정 파일을 점검한다. 
+사운드 스피커 플레이를 위한 커널의 환경 설정 파일을 점검한다. 
+* 주의사항: 
+   * 스피커가 내장된 HDMI 모니터를 이용하여 사운드를 플레이하려면, /boot/config.txt 파일내의 "hdmi_drive=2" 설정을 해주어야 한다. 이 경우에는 사운드는 무조건 RPI3 보드의 내장 스피커가 아닌 HDMI 모니터의 스피커로만 음악이 플레이된다. 
+   * 만약 RPI3 보드의 내장 스피커로만 음악이 플레이 되게 하려면, /boot/config.txt 파일내의 "#hdmi_drive=2" 이렇게 주석 설정을 해주면 된다. 
+
 ```bash
 sudo vi /boot/config.txt
 ## Enable the onboard ALSA audio (loads snd_bcm2835) (rpi3에 내장되어 있는 사운드 카드를 사용하려고 할때 주석을 해제하여라. 기본 지원임.)
