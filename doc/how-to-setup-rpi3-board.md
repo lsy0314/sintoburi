@@ -68,6 +68,7 @@ $ sudo dpkg-reconfigure locales
    * 우분투 마테의 경우
 ```bash
 u1404@lgs:~# apt-get install wi  wpasupplicant  iproute2  net-tools
+u1404@lgs:~# rfkill unblock wifi
 u1404@lgs:~# iw dev
 u1404@lgs:~# ip link set mlan0 up
 u1404@lgs:~# ip link show mlan0
