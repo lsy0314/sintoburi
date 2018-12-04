@@ -47,10 +47,11 @@ autologin-user-timeout=0
 
 라즈베리파이3는 인터넷을 위한 방법으로 WiFi 와 블루투스 장치를 제공하고 있다. 여기서는 WiFi 장치를 이용하는 방법으로 설명한다. 
 
-* WiFi 동작위해 주의사항: 
-   * WiFi으로 인터넷을 하려고 할대 wevo (leemgswevo2g)공유기는 호환이 안되어 WiFi 연결이 안된다.  
-   * 우측 상단의 와이파이 아이콘을 클릭후에 "Enable WiFi"를 클릭하면 Wifi 리스트가 scanning된다. 
-   * WiFi 접속을 위해서 ko_KR.UTF8 설정하면 안되고, en_US.UTF8으로 설정해야 한다. 
+* WiFi 동작 위해 주의사항: 
+   * RPI3에서 wifi을 사용하기위해 반드시 (1) 인터넷 공유기와 (2) RPI3 보드 둘다 모두 "country=US"을 설정되어 있어야 한다. 
+   * 20012년에 출시되었던 wevo (leemgswevo2g,)공유기는 호환이 안되어 WiFi 연결이 안되었다.  
+   * 우측 상단의 와이파이 아이콘을 클릭후 [v] "Enable WiFi"를 클릭하면 Wifi 리스트가 scanning된다. 
+* 우분투 마테의 경우에는 WiFi 접속을 위해서 ko_KR.UTF8 설정하면 안되고, en_US.UTF8으로 설정해야 한다. 
 ```bash
 $ locale
 $ sudo apt-get install language-pack-ko
@@ -59,9 +60,33 @@ $ sudo dpkg-reconfigure locales
    [*] en_US.UTF-8   
 ```
 
-   * 라즈비안OS의 경우에는 WiFi Country에서 반드시 US (United State)를 선택해야 한다.
+* WiFI 환경파일 설정: WiFi Country에서 반드시 US (United State)를 선택해야 한다.
+   * 라즈비안OS의 경우
 ```bash
    시스템 - 기본설정 - Raspberry Configuration - Localisation - WiFi Country - US (United State) 선택
+```
+   * 우분투 마테의 경우
+```bash
+u1404@lgs:~# apt-get install wi  wpasupplicant  iproute2  net-tools
+u1404@lgs:~# iw dev
+u1404@lgs:~# ip link set mlan0 up
+u1404@lgs:~# ip link show mlan0
+u1404@lgs:~# iw dev mlan0 scan | grep SSID
+u1404@lgs:~# wpa_passphrase [SSID]   [SSID_PASSWORD]   >>  /etc/wpa_supplicant.conf
+(ctrl+z and bg)
+u1404@lgs:~# wpa_supplicant -i mlan0 -c /etc/wpa_supplicant.conf
+u1404@lgs:~# /etc/wpa_supplicant.conf
+country=US
+u1404@lgs:~# iw mlan0 link
+u1404@lgs:~# ip link show mlan0
+u1404@lgs:~# dhclient mlan0
+u1404@lgs:~# ifconfig 
+u1404@lgs:~# ping 8.8.8.8
+(Where mlan0 is wifi adapter and essid is SSID)
+(Add Routing manually)
+u1404@lgs:~# ip route add default via 192.168.1.1 dev mlan0
+
+
 ```
 
 # SSH Server
