@@ -47,7 +47,7 @@ autologin-user-timeout=0
 
 라즈베리파이3에는 WiFi가 내장되어 있다. 그런데 어떤 WiFi SSID는 접속이 되고 어떤 WiFi 있는데, 활성화가 되지 않았다. 별짓을 다 했음에도 동작을 하지 않아서 집에 굴러다니던 USB형 WiFi동글을 꼽았더니 그냥 동작이 잘된다. 일반적으로 라즈베리파이3는 인터넷을 위한 방법으로 WiFi 와 블루투스 장치를 제공하고 있다. 여기서는 무선 WiFi 장치를 이용하는 방법으로 설명한다. 
    * RPI3에서 wifi을 사용하기위해 가급적  (1) 인터넷 공유기와 (2) RPI3 보드 둘다 모두 "country=US"을 설정되어 있어야 한다. 
-   * 20012년에 출시되었던 wevo (leemgswevo2g,)공유기는 호환이 안되어 WiFi 연결이 안되었다. LG Uplus 공유기에는 wifi접속이 잘되었다. 
+   * 20012년에 출시되었던 wevo공유기는 호환이 안되어  (leemgswevo2g)에 WiFi 연결이 안되었다. LG Uplus 공유기의 (leemgslgu2g)에는 wifi접속이 잘되었다. 
    * 우측 상단의 와이파이 아이콘을 클릭후 [v] "Enable WiFi"를 클릭하면 Wifi 리스트가 scanning된다. 
    
 * RPI3 보드에서 원활한 WiFi 접속을 위해서 ko_KR.UTF8 설정하면 안되고, en_US.UTF8으로 설정해야 한다. 
