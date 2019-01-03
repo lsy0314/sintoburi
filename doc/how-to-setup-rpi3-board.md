@@ -47,7 +47,7 @@
    autologin-user-timeout=0
    ```
 
-* 단계5: Manually resizing the SD card partitions 
+* 단계5: SD카드 파티션들을 수동으로 resizing하기 
    * The easiest way is to use the tool RPi `raspi-config`. Select the menu item `EXPAND-ROOTFS - Expand Root Partition` to Fill SD Card.
    * https://elinux.org/RPi_Resize_Flash_Partitions
    ```
