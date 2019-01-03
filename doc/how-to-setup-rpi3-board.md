@@ -31,10 +31,14 @@
    * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
 
 
-* 단계3: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
-   * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
-
-* 단계4: Ubuntu OS를 자동 로그인 시키기  (자동 로그인하려면 계정의 ID가 'hjoon0510'이라고 가정한다.)
+* 단계3: RPi3 보드의 microSD카드에 .img를 writeㅎ야 한다.
+   * https://www.raspberrypi.org/documentation/installation/installing-images/windows.md|
+   * Windows PC: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
+      * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
+   * Ubuntu PC:
+      * 다운로드 주소: https://www.balena.io/etcher/
+      
+* 단계4: RPi3보드 부팅시에 Ubuntu OS를 자동으로 로그인하기  (자동 로그인하려는 계정이 'hjoon0510'이라고 가정한다.)
 ```
 $ sudo vi /etc/lightdm/lightdm.conf
 [Seat:*]
@@ -43,6 +47,21 @@ autologin-user=hjoon0510
 autologin-user-timeout=0
 ```
 
+* 단계5: Manually resizing the SD card partitions 
+   * The easiest way is to use the tool RPi `raspi-config`. Select the menu item `EXPAND-ROOTFS - Expand Root Partition` to Fill SD Card.
+   * https://elinux.org/RPi_Resize_Flash_Partitions
+   ```
+   $ sudo fdisk -l /dev/mmcblk0
+   $ sudo dd if=/dev/mmcblk0 of=$HOME/sdbackup.img bs=512
+
+   $ sudo umount /dev/mmcblk0
+   $ sudo parted /dev/mmcblk0 (Expand the partition /dev/mmcblk0p2)
+   $ sudo dd if=$HOME/sdbackup.img of=/dev/mmcblk0 bs=512
+
+   $ sudo e2fsck -f /dev/mmcblk0p2
+   $ sudo resize2fs /dev/mmcblk0p2
+   ```
+   
 # 와이파이 설정하기
 
 라즈베리파이3에는 WiFi가 내장되어 있다. 그런데 어떤 WiFi SSID는 접속이 되고 어떤 WiFi 있는데, 활성화가 되지 않았다. 별짓을 다 했음에도 동작을 하지 않아서 집에 굴러다니던 USB형 WiFi동글을 꼽았더니 그냥 동작이 잘된다. 일반적으로 라즈베리파이3는 인터넷을 위한 방법으로 WiFi 와 블루투스 장치를 제공하고 있다. 여기서는 무선 WiFi 장치를 이용하는 방법으로 설명한다. 
