@@ -47,7 +47,8 @@
    autologin-user-timeout=0
    ```
 
-* 단계5: SD카드 파티션들을 수동으로 resizing하기 
+* 단계5: SD카드 파티션들을 수동으로 resizing하기
+   * 기본적으로 .img는 2GiB 또는 2GiB용량으로 제작된다. 그래서  사용자가 가지고 있는 microSD카드가 64gb이라면, 파티션의 resize가 필요하다.
    * The easiest way is to use the tool RPi `raspi-config`. Select the menu item `EXPAND-ROOTFS - Expand Root Partition` to Fill SD Card.
    * https://elinux.org/RPi_Resize_Flash_Partitions
    ```
