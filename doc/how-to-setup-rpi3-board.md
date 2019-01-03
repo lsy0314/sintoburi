@@ -39,13 +39,13 @@
       * 다운로드 주소: https://www.balena.io/etcher/
       
 * 단계4: RPi3보드 부팅시에 Ubuntu OS를 자동으로 로그인하기  (자동 로그인하려는 계정이 'hjoon0510'이라고 가정한다.)
-```
-$ sudo vi /etc/lightdm/lightdm.conf
-[Seat:*]
-autologin-guest=false
-autologin-user=hjoon0510
-autologin-user-timeout=0
-```
+   ```
+   $ sudo vi /etc/lightdm/lightdm.conf
+   [Seat:*]
+   autologin-guest=false
+   autologin-user=hjoon0510
+   autologin-user-timeout=0
+   ```
 
 * 단계5: Manually resizing the SD card partitions 
    * The easiest way is to use the tool RPi `raspi-config`. Select the menu item `EXPAND-ROOTFS - Expand Root Partition` to Fill SD Card.
