@@ -23,7 +23,7 @@
 
 # 운영체제 설치하기
 
-* 단계1: 인기 있는 OS 종류: 1) 라즈비안, 2) 우분투(마테버젼)
+* 단계1: 인기 있는 OS 종류: 1) Raspbian Stretch (=Debian Stretch, 9.0), 2) Ubuntu MATE (=Ubuntu 16.04, Xenial)
    * OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후에 2) 우분투(마테버젼)을 다운로드 한다.
    * Desktop PC의 보관 장소(OS): `D:\raspberrypi3\`
 
