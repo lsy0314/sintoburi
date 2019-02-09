@@ -49,8 +49,7 @@
 
 * 단계5: SD카드 파티션들을 수동으로 resizing하기
    * 기본적으로 .img는 2GiB 또는 2GiB용량으로 제작된다. 그래서  사용자가 가지고 있는 microSD카드가 64gb이라면, 파티션의 resize가 필요하다.
-   * 파티션을 resizing하기 위한 가장 간단한 방법은 `raspi-config` 메뉴의 `expand_rootfs` 옵션을 실행하는 것이다.
-   * https://elinux.org/RPi_Resize_Flash_Partitions
+     * https://elinux.org/RPi_Resize_Flash_Partitions
    ```
    $ sudo fdisk -l /dev/mmcblk0
    $ sudo dd if=/dev/mmcblk0 of=$HOME/sdbackup.img bs=512
@@ -61,6 +60,12 @@
 
    $ sudo e2fsck -f /dev/mmcblk0p2
    $ sudo resize2fs /dev/mmcblk0p2
+   ```
+   
+   * 파티션을 resizing하기 위한 가장 간단한 방법은 `raspi-config` 메뉴의 `expand_rootfs` 옵션을 실행하는 것이다.
+   ```
+   $ sudo raspi-config 
+   7. Advance options --> A1 Expand Filesystem --> reboot
    ```
    
 # 와이파이 설정하기
