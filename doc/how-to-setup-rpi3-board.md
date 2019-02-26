@@ -1,4 +1,5 @@
  
+ # Deprecated: Plewse use Moniwifi webpage since Feb-25-2019.
  
 **Table Of Contents**
 - [운영체제 설치하기](#운영체제-설치하기)
