@@ -22,16 +22,19 @@
 - [cron job으로부터 email notifications를 중지하는 방법](#cron-job으로부터-email-notifications를-중지하는-방법) 
 
 # 운영체제 설치하기
-
+* 참고 사이트
+   * https://elinux.org/RPi_Easy_SD_Card_Setup
 * 단계1: 인기 있는 OS 종류: 1) Raspbian Stretch (=Debian Stretch, 9.0), 2) Ubuntu MATE (=Ubuntu 16.04, Xenial)
    * OS 이미지를 다운로드하기 위하여 https://www.raspberrypi.org/downloads/ 에 접속후에 2) 우분투(마테버젼)을 다운로드 한다.
-   * Desktop PC의 보관 장소(OS): `D:\raspberrypi3\`
+   * Desktop PC의 보관 장소(OS): `D:\rpi3\`
 
-* 단계2: SD_CardFormatter0500SetupEN.exe 프로그램으로 micro SDcard를 포맷해야 한다.
-   * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
+* 단계2: micro SDcard를 포맷한다.
+   * Windows PC: SD_CardFormatter0500SetupEN.exe를 이용한다.
+      * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
+   * Ubuntu PC: fat32 형식으로 포맷하도록 한다.
+      * 댜운로드 주소: sudo apt install gparted
 
-
-* 단계3: RPi3 보드의 microSD카드에 .img를 writeㅎ야 한다.
+* 단계3: microSD카드에 .img를 flash 한다.
    * https://www.raspberrypi.org/documentation/installation/installing-images/windows.md|
    * Windows PC: win32diskimager-1.0.0-install.exe 프로그램을 실행후에 다운로드한 OS 이미지를 micro SDcard에 설치하도록 한다.
       * 다운로드 주소: https://sourceforge.net/projects/win32diskimager/files/Archive/ 
