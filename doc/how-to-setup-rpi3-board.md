@@ -32,7 +32,7 @@
 * 단계2: micro SDcard를 포맷한다.
    * Windows PC: SD_CardFormatter0500SetupEN.exe를 이용한다.
       * 다운로드 주소: https://www.download3k.com/Install-SDFormatter.html 
-   * Ubuntu PC: fat32 형식으로 포맷하도록 한다.
+   * Ubuntu PC: fat32 형식으로 포맷하도록 한다. (우분투에서 etcher 프로그램 사용시 gparted 명령을 수행안해도 된다.)
       * 댜운로드 주소: sudo apt install gparted
 
 * 단계3: microSD카드에 .img를 flash 한다.
