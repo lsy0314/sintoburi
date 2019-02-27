@@ -1,5 +1,6 @@
  
  # **Deprecated**: Please use a MoniWiki webpage since Feb-25-2019.
+ * http://invain.mooo.com/open/moniwiki/wiki.php/Raspberry%20Pi3%20Board%20-%20B%20model?action=show#s-3
  
 **Table Of Contents**
 - [운영체제 설치하기](#운영체제-설치하기)
