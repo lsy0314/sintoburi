@@ -822,3 +822,9 @@ $ vi /etc/crontab ( or $ crontab -e )
 ```
 To resume receiving e-mail notifications from cron jobs, simply remove >/dev/null 2>&1 from the command.
 
+
+# Raspbian OS: Korean input/display method
+```bash
+sudo apt install ibus ibus-hangul fonts-ufonts-core
+Preference - IBUS configuration setting - Hangul - Type "shift + space" key.
+```
