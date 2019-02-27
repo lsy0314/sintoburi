@@ -75,26 +75,25 @@
       * GUI
          * 다운로드 주소: https://www.balena.io/etcher/
       * CLI: using dd command
-      ```
-      $ unzip -p 2018-03-13-raspbian-stretch.zip
-$ cat /proc/partitions
-$ sudo time dd bs=4M if=2018-03-13-raspbian-stretch.img of=/dev/sdc conv=fsync
-1192+1 Record in
-1192+1 Record out
-5000000000 bytes (5.0 GB, 4.7 GiB) copied, 425.176 s, 11.8 MB/s
+   ```bash
+   $ unzip -p 2018-03-13-raspbian-stretch.zip
+   $ cat /proc/partitions
+   $ sudo time dd bs=4M if=2018-03-13-raspbian-stretch.img of=/dev/sdc conv=fsync
+   1192+1 Record in
+   1192+1 Record out
+   5000000000 bytes (5.0 GB, 4.7 GiB) copied, 425.176 s, 11.8 MB/s
+   
+   real    7m5.178s
+   user    0m0.000s
+   sys     0m2.772s
 
-real    7m5.178s
-user    0m0.000s
-sys     0m2.772s
-
-$ sync
-$ sudo hdparm -z /dev/sdc (How to re-read a partition table without rebooting) 
-$ cat /proc/partitions  | grep sdc
-   8       32   15558144 sdc
-   8       33      64512 sdc1 (c: W95 FAT32 LBA)
-   8       34    4816896 sdc2 (83: Linux)
-
-      ```   
+   $ sync
+   $ sudo hdparm -z /dev/sdc (How to re-read a partition table without rebooting) 
+   $ cat /proc/partitions  | grep sdc
+      8       32   15558144 sdc
+      8       33      64512 sdc1 (c: W95 FAT32 LBA)
+      8       34    4816896 sdc2 (83: Linux)
+   ```   
       
 * 단계4: RPi3보드 부팅시에 Ubuntu OS를 자동으로 로그인하기  (자동 로그인하려는 계정이 'hjoon0510'이라고 가정한다.)
    ```
