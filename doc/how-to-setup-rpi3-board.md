@@ -1,6 +1,5 @@
  
- **Deprecated**: Please use a MoniWiki webpage since Feb-25-2019.
- * http://invain.mooo.com/open/moniwiki/wiki.php/Raspberry%20Pi3%20Board%20-%20B%20model?action=show#s-3
+**Mirroring:** http://invain.mooo.com/open/moniwiki/wiki.php/Raspberry%20Pi3%20Board%20-%20B%20model?action=show#s-3
  
 **Table Of Contents**
 - [응용 예제](#응용-예제)
