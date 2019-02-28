@@ -377,6 +377,11 @@ http://192.168.219.102/phpmyadmin/ - sbdb 테이블 선택하기(좌측메뉴) -
  
 # VNC Server Setup on Raspberry Pi 3
 
+## Install built-in realvnc server on RPI3
+* sudo raspi-config --> interface setup --> [*] vnc service
+* Install tightvncserver on the Pi, or Install RealVNCviewer on your computer.
+
+## Install tightvncserver on RPI3
 Install VNC Server
 ```bash
 $ sudo apt install tightvncserver   (OR sudo apt install vnc4server)
@@ -409,7 +414,6 @@ export XKL_XMODMAP_DISABLE=1
 # VNC Server 서비스를 죽이는 방법 
 $ vncserver -kill :1
 ```
-
 
 Run VNC client
 
