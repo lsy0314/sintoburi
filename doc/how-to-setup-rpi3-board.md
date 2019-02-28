@@ -380,6 +380,7 @@ http://192.168.219.102/phpmyadmin/ - sbdb 테이블 선택하기(좌측메뉴) -
 ## Install built-in realvnc server on RPI3
 * sudo raspi-config --> interface setup --> [*] vnc service
 * Install tightvncserver on the Pi, or Install RealVNCviewer on your computer.
+  * RealVNC or Built-in vino-preference는 기본적으로 vnc 접속시 인증접속만을 허가한다. 따라서, 인증 접속기능이 없는 VNC Client으로 RealVNC server에 접속시에는 "No supported authentication methods!" 에러 메세지가 발생한다는 것을 알아야 한다. 
 
 ## Install tightvncserver on RPI3
 Install VNC Server
