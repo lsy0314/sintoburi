@@ -830,18 +830,20 @@ sudo rpi-config
 [*] ko_kr.UTF8
 
 
-1) nabi
-sudo apt install nabi fonts-nanum fonts-nanum-extra
-sudo apt install im-config
-im-config --> [*] default
+1) fcitx: cat /etc/debian_version (9.8) 환경에서 강추 
+sudo apt install fcitx fcitx-hangul
+sudo apt install fonts-unfonts-core 
+sudo im-config -n fcitx
 
 2) ibus
 sudo apt install ibus ibus-hangul fonts-ufonts-core (** 비강추: 로케일 한글설정이 한글 키보드 전환 버그 존재함.)
 sudo im-config -n ibus
 
-3) fcitx
-sudo apt install fcitx fonts-ufonts-core (** 비강추:  라즈비안에서 입력기 선택에서 fcitx가 안보이는 버그 존재함.)
-sudo im-config -n fcitx
+
+3) nabi
+sudo apt install nabi fonts-nanum fonts-nanum-extra
+sudo apt install im-config
+im-config --> [*] default
 
 4) uim
 sudo apt install uim
