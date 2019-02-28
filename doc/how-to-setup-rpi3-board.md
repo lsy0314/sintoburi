@@ -833,13 +833,16 @@ sudo rpi-config
 1) nabi
 sudo apt install nabi fonts-nanum fonts-nanum-extra
 sudo apt install im-config
-Rabian icon menu - Preference -  입력기 - Hangul (=Nabi 입력기)
+im-config --> [*] default
 
 2) ibus
 sudo apt install ibus ibus-hangul fonts-ufonts-core (** 비강추: 로케일 한글설정이 한글 키보드 전환 버그 존재함.)
-Rabian icon menu - Preference - IBUS configuration setting - Hangul - Type "shift + space" key.
+sudo im-config -n ibus
 
 3) fcitx
 sudo apt install fcitx fonts-ufonts-core (** 비강추:  라즈비안에서 입력기 선택에서 fcitx가 안보이는 버그 존재함.)
 sudo im-config -n fcitx
+
+4) uim
+sudo apt install uim
 ```
