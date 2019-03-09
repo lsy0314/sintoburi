@@ -22,7 +22,7 @@
 - [How to convert sound file from wma to wav](#how-to-convert-sound-file-from-wma-to-wav)
 - [터미널을 통한 WiFi 연결](#터미널을-통한-wifi-연결)
 - [cron job으로부터 email notifications를 중지하는 방법](#cron-job으로부터-email-notifications를-중지하는-방법) 
-- Raspbian OS: Korean input/display method
+- [Raspbian OS: Korean input/display method](#Raspbian-OS:-Korean-input/display-method)
 
 
 # 응용 예제
