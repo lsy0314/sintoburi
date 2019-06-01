@@ -202,7 +202,7 @@ ssh {account_id}@192.168.219.104
 
 
 
-# Raspberry Pi 화면 180도 회전시키기 
+# Raspberry Pi 화면을 180도 회전시키기 
 
 ```bash
 sudo vi /boot/config.txt 
@@ -210,18 +210,18 @@ display_rotate=2
 (0:0도, 1:90도, 2:180도, 3: 270도) 
 ```
 
-# 터치스크린 보정을 위해 xinput_calibrator 설치 
+#  xinput_calibrator으로 터치스크린 보정하기  
 
-필요한 프로그램 설치
+의존성 패키지들을 설치한다. 
 ```bash
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev 
 ```
-xinput_calibrator 다운로드
+xinput_calibrator 패키지 소스를 다운로드한다.
 ```bash
 wget http://github.com/downloads/tias/xinput_calibrator/xinput_calibrator-0.7.5.tar.gz 
 ls 
 ```
-설치...(압축 풀고 해당 폴더에서...)
+xinput_calibrator 소스를 컴파일 및 설치한다.
 ```bash
 tar xvzf xinput_calibrator-0.7.5.tar.gz
 cd xinput_calibrator-0.7.5
@@ -229,12 +229,13 @@ cd xinput_calibrator-0.7.5
 make 
 sudo make install 
 ```
-실행 (Rasp Berry Pi3 보드에서 실행해야함.)
+Rasp Berry Pi3 보드에서 xinput_calibrator을 실행한다. (반드시 라즈베리보드에서 실행해야 한다.)
 ```bash
 xinput_calibrator 
 ```
-터치 4번 손으로 직접 조정하면 보정됨.
-터치스크린 보정한 것을 부팅할때마다 자동으로 항상 불러오기
+
+이제 손으로 터치 스크린 모니터를 4번 터치하여 터치스크린을 보정하도록 한다. 
+터치스크린 보정한 것을 부팅할때마다 반영이되도록 아래의 설정 작업을 하도록 한다.
 ```bash
 # mkdir /etc/X11/xorg.conf.d
 # vi /etc/X11/xorg.conf.d/99-calibration.conf
@@ -245,11 +246,14 @@ Section "InputClass"
   Option "Calibration" "801 14 463 -12"
 EndSection
 ```
-재부팅시에 그래픽 화면이 나오지 않고 콘솔 화면으로 나온다면, 이 경우 대부분 99-calibration.conf 파일의 내용에 오타가 있었다.
+재부팅시에 그래픽 화면이 나오지 않고 콘솔 화면으로 나올수 있다. 
+필자의 경험상, 이 경우는 대부분 99-calibration.conf 파일 내용에 오타가 존재하기 때문이다.
 ```bash
 # cd /etc/X11/xorg.conf.d/
 # mv 99-calibration.conf 99-calibration.conf.disable
 ```
+
+
 # Apache 웹서버 설치하기 
 라즈베리 파이 보드를 이용하여 자신만의 웹서버를 운영할 수 있다.
 ```bash
