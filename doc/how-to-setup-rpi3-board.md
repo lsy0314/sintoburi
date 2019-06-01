@@ -217,7 +217,7 @@ display_rotate=2
 
 
 ### Raspbian OS: 방법1
-
+```bash
 sudo apt-get install xserver-xorg-input-evdev
 git clone https://github.com/goodtft/LCD-show.git
 chmod -R 755 LCD-show 
@@ -234,7 +234,7 @@ Section "InputClass"
   Option "SwapAxes" "1"
   Driver "evdev"
 EndSection
-
+```
 
 ### Raspbian OS: 방법2
 
