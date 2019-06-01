@@ -206,12 +206,63 @@ ssh {account_id}@192.168.219.104
 
 ```bash
 sudo vi /boot/config.txt 
+
+# 3.5 TFT LCD (7inch) monitor rotation
+# (0:0도, 1:90도, 2:180도, 3: 270도) 
 display_rotate=2 
-(0:0도, 1:90도, 2:180도, 3: 270도) 
+
 ```
 
 #  xinput_calibrator으로 터치스크린 보정하기  
 
+
+### Raspbian OS: 방법1
+
+sudo apt-get install xserver-xorg-input-evdev
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show 
+cd LCD-show/ 
+sudo ./LCD35-show 
+
+DISPLAY=:0.0 xinput_calibrator
+sudo rm -f /etc/X11/xorg.conf.d/99-calibration.conf
+sudo vi /usr/share/X11/xorg.conf.d/99-calibration.conf
+Section "InputClass"
+  Identifier "calibration"
+  MatchProduct "ADS7846 Touchscreen"
+  Option "Calibration" "56 4019 3893 120"
+  Option "SwapAxes" "1"
+  Driver "evdev"
+EndSection
+
+
+### Raspbian OS: 방법2
+
+```bash
+
+sudo apt-get install -y xinput-calibrator
+sudo DISPLAY=:0.0 xinput_calibrator
+sudo mkdir /etc/X11/xorg.conf.d
+sudo vi /etc/X11/xorg.conf.d/99-calibration.conf
+Section "InputClass"
+  Identifier "calibration"
+  MatchProduct "FT5406 memory based driver"
+  Option "MinX" "65916"
+  Option "MaxX" "601"
+  Option "MinY" "63998"
+  Option "MaxY" "-1263"
+  Option "SwapAxes" "1"
+  Option "InvertY" "true"
+  Option "InvertX" "true"
+EndSection
+
+sudo reboot
+
+```
+
+
+
+### Ubuntu Mate 16.04
 의존성 패키지들을 설치한다. 
 ```bash
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev 
