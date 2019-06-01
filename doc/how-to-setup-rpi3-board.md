@@ -213,10 +213,34 @@ display_rotate=2
 
 ```
 
-#  xinput_calibrator으로 터치스크린 보정하기  
+# xinput_calibrator으로 터치스크린 보정하기  
+
 
 
 ### Raspbian OS: 방법1
+
+```bash
+sudo apt-get install -y xinput-calibrator
+sudo DISPLAY=:0.0 xinput_calibrator
+# xinput_calibrator을 종료하면 화면에 출력되는 내용을 아래와 같이 99-calibration.conf 에 추가하도록 해야 한다. 
+sudo vi /usr/share/X11/xorg.conf.d/99-calibration.conf
+Section "InputClass"
+  Identifier "calibration"
+  MatchProduct "FT5406 memory based driver"
+  Option "MinX" "65916"
+  Option "MaxX" "601"
+  Option "MinY" "63998"
+  Option "MaxY" "-1263"
+  Option "SwapAxes" "1"
+  Option "InvertY" "true"
+  Option "InvertX" "true"
+EndSection
+
+sudo reboot
+
+```
+
+### Raspbian OS: 방법2 (위험/비추천)
 ```bash
 sudo apt-get install xserver-xorg-input-evdev
 git clone https://github.com/goodtft/LCD-show.git
@@ -235,31 +259,6 @@ Section "InputClass"
   Driver "evdev"
 EndSection
 ```
-
-### Raspbian OS: 방법2
-
-```bash
-
-sudo apt-get install -y xinput-calibrator
-sudo DISPLAY=:0.0 xinput_calibrator
-sudo mkdir /etc/X11/xorg.conf.d
-sudo vi /etc/X11/xorg.conf.d/99-calibration.conf
-Section "InputClass"
-  Identifier "calibration"
-  MatchProduct "FT5406 memory based driver"
-  Option "MinX" "65916"
-  Option "MaxX" "601"
-  Option "MinY" "63998"
-  Option "MaxY" "-1263"
-  Option "SwapAxes" "1"
-  Option "InvertY" "true"
-  Option "InvertX" "true"
-EndSection
-
-sudo reboot
-
-```
-
 
 
 ### Ubuntu Mate 16.04
