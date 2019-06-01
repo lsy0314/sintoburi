@@ -237,8 +237,8 @@ xinput_calibrator
 이제 손으로 터치 스크린 모니터를 4번 터치하여 터치스크린을 보정하도록 한다. 
 터치스크린 보정한 것을 부팅할때마다 반영이되도록 아래의 설정 작업을 하도록 한다.
 ```bash
-# mkdir /etc/X11/xorg.conf.d
-# vi /etc/X11/xorg.conf.d/99-calibration.conf
+$ sudo mkdir /etc/X11/xorg.conf.d
+$ sudo vi /etc/X11/xorg.conf.d/99-calibration.conf
  
 Section "InputClass"
   Identifier "calibration"
