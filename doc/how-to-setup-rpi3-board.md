@@ -215,6 +215,14 @@ display_rotate=2
 
 # xinput_calibrator으로 터치스크린 보정하기  
 
+xinput_calibrator으로 작업을 한후에 재부팅시에 그래픽 화면이 나오지 않고 콘솔 화면으로 나올수 있다. 
+필자의 경험상, 이 경우는 99% 대부분이 /etc/X11/xorg.conf.d/ 또는 /usr/share/X11/xorg.conf.d/ 폴더의 
+99-calibration.conf 파일 내용에 오타가 존재하기 때문이다.
+ 
+```bash
+# cd /etc/X11/xorg.conf.d/
+# mv 99-calibration.conf 99-calibration.conf.disable
+```
 
 
 ### Raspbian OS: 방법1
@@ -261,7 +269,7 @@ EndSection
 ```
 
 
-### Ubuntu Mate 16.04
+### Ubuntu Mate 16.04 OS
 의존성 패키지들을 설치한다. 
 ```bash
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev 
@@ -295,12 +303,6 @@ Section "InputClass"
   MatchProduct "FT5406 memory based driver"   
   Option "Calibration" "801 14 463 -12"
 EndSection
-```
-재부팅시에 그래픽 화면이 나오지 않고 콘솔 화면으로 나올수 있다. 
-필자의 경험상, 이 경우는 대부분 99-calibration.conf 파일 내용에 오타가 존재하기 때문이다.
-```bash
-# cd /etc/X11/xorg.conf.d/
-# mv 99-calibration.conf 99-calibration.conf.disable
 ```
 
 
