@@ -4,6 +4,8 @@
 **Table Of Contents**
 - [응용 예제](#응용-예제)
 - [운영체제 설치하기](#운영체제-설치하기)
+- [부팅시 SSH서버 및 WiFi 자동잡기](#부팅시-SSH서버-및-WiFi-자동잡기)
+- [USB로 네트워크 구성하기](#USB로-네트워크-구성하기)
 - [와이파이 설정하기](#와이파이-설정하기)
 - [SSH Server](#ssh-server)
 - [Raspberry Pi 화면 180도 회전시키기](#raspberry-pi-화면-180도-회전시키기)
@@ -124,7 +126,69 @@
    $ sudo raspi-config 
    7. Advance options --> A1 Expand Filesystem --> reboot
    ```
-   
+
+
+
+
+## 부팅시 SSH서버 및 WiFi 자동잡기
+
+
+1. /boot/ 폴더에 ssh 파일 만들기 
+SD카드의 루트 디렉토리 /boot에 ssh라는 이름의 빈 파일을 하나 새로 만든다.(확장자 없음) 
+그러면 부팅시 SSH 서버가 자동으로 enable 및 start 된다. 
+
+cd /boot/
+touch ssh 
+
+
+2. /boot/ 폴더에 wpa_supplicant.conf 파일 만들기 
+
+마찬가지로 /boot에 wpa_supplicant.conf파일을 아래 내용으로 만든다.
+notepad(메모장)을 연다. 아무런 내용 없이 Save as...한다. 
+반드시 file type을 all로 선택하고 확장자 없이 저장한다.
+
+부팅시 /boot 에 만든 wap_supplicant.conf 파일은 
+자동으로 /etc/wpa_supplicant/wpa_supplicant.conf 위치로 이동된다.
+
+country=GB
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="yjk931004"
+    psk="12345678"
+	key_mgmt=WPA-PSK
+}
+
+
+
+# USB로 네트워크 구성하기
+sd 카드를 삽입하고, 노트북과 usb로 연결한다. 이때, PWR가 아닌 USB에 연결한다.
+
+
+windows는 RNDIS 드라이버를 설치해야 usb를 네트워크 포트로 쓸 수 있다.
+참고: https://www.factoryforward.com/pi-zero-w-headless-setup-windows10-rndis-driver-issue-resolved/
+
+윈도우10 용 RNDIS 드라이버를 다운로드후 압축을 푼다. 
+여기에서 http://web1.moddevices.com/shared/mod-duo-rndis.zip
+라즈베리파이를 usb에 꽂는다.
+장치관리자를 열어 com&port 항목에 있는 라즈베리파이를 우클릭한다.
+
+드라이버 업데이트 > 컴퓨터에서 드라이버 소프트웨어 검색 > 아까 압축 풀어둔 RNDIS 드라이버 폴더 선택
+이제 장치관리자에서 '네트워크 어댑터' 아래에 'USB Ethernet/ RNDIS Gadget'이 보인다.
+
+
+windows
+시작메뉴 우클릭 > 네트워크 연결 > 어댑터 옵션 변경 > 현재 인터넷 연결된 네트워크(이더넷 or wifi) 선택. 
+우클릭 > 속성 > 공유탭 > '다른 네트워크 사용자가 이 컴퓨터의 인터넷 연결을 통해 연결할 수 있도록 허용' 선택 > 확인
+
+$ssh pi@raspberrypi.local
+
+
+
+
+
+
 # 와이파이 설정하기
 
 라즈베리파이3에는 WiFi가 내장되어 있다. 그런데 어떤 WiFi SSID는 접속이 되고 어떤 WiFi 있는데, 활성화가 되지 않았다. 별짓을 다 했음에도 동작을 하지 않아서 집에 굴러다니던 USB형 WiFi동글을 꼽았더니 그냥 동작이 잘된다. 일반적으로 라즈베리파이3는 인터넷을 위한 방법으로 WiFi 와 블루투스 장치를 제공하고 있다. 여기서는 무선 WiFi 장치를 이용하는 방법으로 설명한다. 
