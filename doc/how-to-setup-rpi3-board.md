@@ -150,19 +150,21 @@ notepad(메모장)을 연다. 아무런 내용 없이 Save as...한다.
 부팅시 /boot 에 만든 wap_supplicant.conf 파일은 
 자동으로 /etc/wpa_supplicant/wpa_supplicant.conf 위치로 이동된다.
 
-country=GB
+* /boot/wpa_supplicant/wpa_supplicant.conf
+```bash
+country=US
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
     ssid="yjk931004"
     psk="12345678"
-	key_mgmt=WPA-PSK
+    key_mgmt=WPA-PSK
 }
+```
 
+* 모바일폰을 이용한 RPI3의 WiFI 사용 예제 (2018.11.24)
 ```bash
-모바일폰을 이용한 RPI3의 WiFI 사용 예제 (2018.11.24)
-
 1. 모바일폰(무선 Hotspot) ---------> RPI3 무선 WiFi : 동작 불안정 했음.
    : 갤럭시 노트5 (RPI3에서 연결 불가능했음.)
    : 갤럭시 7      (RPI3에서 연결이 종종 정상 동작했음.)
