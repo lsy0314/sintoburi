@@ -133,7 +133,7 @@
 ## 부팅시 SSH서버 및 WiFi 자동잡기
 
 
-1. /boot/ 폴더에 ssh 파일 만들기 
+#### /boot/ 폴더에 ssh 파일 만들기 
 SD카드의 루트 디렉토리 /boot에 ssh라는 이름의 빈 파일을 하나 새로 만든다.(확장자 없음) 
 그러면 부팅시 SSH 서버가 자동으로 enable 및 start 된다. 
 
@@ -141,7 +141,7 @@ cd /boot/
 touch ssh 
 
 
-2. /boot/ 폴더에 wpa_supplicant.conf 파일 만들기 
+#### /boot/ 폴더에 wpa_supplicant.conf 파일 만들기 
 
 마찬가지로 /boot에 wpa_supplicant.conf파일을 아래 내용으로 만든다.
 notepad(메모장)을 연다. 아무런 내용 없이 Save as...한다. 
@@ -160,6 +160,17 @@ network={
 	key_mgmt=WPA-PSK
 }
 
+```bash
+모바일폰을 이용한 RPI3의 WiFI 사용 예제 (2018.11.24)
+
+1. 모바일폰(무선 Hotspot) ---------> RPI3 무선 WiFi : 동작 불안정 했음.
+   : 갤럭시 노트5 (RPI3에서 연결 불가능했음.)
+   : 갤럭시 7      (RPI3에서 연결이 종종 정상 동작했음.)
+
+2. 모바일폰(Bluetooth Hotspot) ---> RPI3 무선 WiFi: 동작 잘되었음.
+
+
+```
 
 
 # USB로 네트워크 구성하기
