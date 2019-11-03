@@ -1,5 +1,5 @@
  
-**Mirroring:** http://invain.mooo.com/open/moniwiki/wiki.php/Raspberry%20Pi3%20Board%20-%20B%20model?action=show#s-3
+* Mirroring: http://invain.mooo.com/open/moniwiki/wiki.php/Raspberry%20Pi3%20Board%20-%20B%20model?action=show#s-3
  
 **Table Of Contents**
 - [응용 예제](#응용-예제)
@@ -168,6 +168,7 @@ network={
 1. 모바일폰(무선 Hotspot) ---------> RPI3 무선 WiFi : 동작 불안정 했음.
    : 갤럭시 노트5 (RPI3에서 연결 불가능했음.)
    : 갤럭시 7      (RPI3에서 연결이 종종 정상 동작했음.)
+* 팁: RPI보드의 내장 WiFi가 정상동장하지 않았음. 이때 외장 5370 USB WiFi을 이용시 정장 동작했음.
 
 2. 모바일폰(Bluetooth Hotspot) ---> RPI3 무선 WiFi: 동작 잘되었음.
 
