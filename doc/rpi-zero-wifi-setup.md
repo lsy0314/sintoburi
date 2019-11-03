@@ -41,3 +41,10 @@ http://www.putty.org
 서버주소 : raspberrypi.local
 로그인 아이디 : pi
 로그인 패스워드 : raspberry 입니다
+
+절차6: 
+이제 무선 WIFI가 왜 안잡히는지 아래의 같은 방법으로 코솔 디버깅을 하도록 한다. 
+$ sudo wpa_supplicant -d -B -c/etc/wpa_supplicant/wpa_supplicant.conf -iwlan0 
+
+
+이상. 
