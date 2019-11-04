@@ -1,4 +1,8 @@
 
+# RPI3와 RPI Zero간에 UART Serial 연결하기
+
+* Setting Up UART Serial Communication between Raspberry Pi3 and Raspberry Pi Zero.
+   * https://scribles.net/setting-up-uart-serial-communication-between-raspberry-pis/
 
 # RPi Zero의 Wireless 모니터없이 설정하기
 
