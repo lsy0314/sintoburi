@@ -1,8 +1,17 @@
 
 # RPI3와 RPI Zero간에 UART Serial 연결하기
 
+* How to use USB-UARt serial on Raspberry Pi zero
+   * http://osoyoo.com/2017/10/23/raspberry-pi-zerow-basic-kit-lesson-3/
+   * https://www.thepolyglotdeveloper.com/2017/02/connect-raspberry-pi-pi-zero-usb-ttl-serial-cable/
+   
 * Setting Up UART Serial Communication between Raspberry Pi3 and Raspberry Pi Zero.
    * https://scribles.net/setting-up-uart-serial-communication-between-raspberry-pis/
+
+* How to connect UART Serial between RPI3 and Ardunio
+   * https://www.teachmemicro.com/raspberry-pi-serial-uart-tutorial
+   
+
 
 # RPi Zero의 Wireless 모니터없이 설정하기
 
